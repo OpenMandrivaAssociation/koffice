@@ -17,20 +17,11 @@
 
 %define krita_kjs_compile 0
 
-%define unstable 0
-%{?_unstable: %{expand: %%global unstable 1}}
-
-%if %unstable
-%define dont_strip 1
-%endif
-
-%define subrel	2
-
 Name: koffice
 URL: http://www.koffice.org/
 Summary: Set of office applications for KDE
 Version: 1.6.3
-Release: %mkrel 19
+Release: %mkrel 20
 Epoch: 11
 Source: %name-%version.tar.bz2
 Patch0: koffice-1.6.2-fix-desktopfiles.patch
@@ -60,6 +51,7 @@ BuildRequires: zlib1-devel
 BuildRequires: libxslt-devel 
 BuildRequires: libxml2-devel >= 2.4.28-2mdk
 BuildRequires: kdelibs-devel >= 3.2-13mdk
+BuildRequires: kde3-macros
 BuildRequires: wv2-devel
 BuildRequires: imagemagick-devel 
 BuildRequires: libjbig-devel
@@ -81,7 +73,8 @@ BuildRequires: kjsembed-devel
 BuildConflicts: kjsembed-devel
 %endif
 %if %compile_apidox
-BuildRequires: doxygen, graphviz
+BuildRequires: doxygen
+BuildRequires: graphviz
 %endif
 Conflicts:	koffice <= 1.3-10mdk
 
@@ -141,54 +134,54 @@ Common files for koffice applications.
 %defattr(-,root,root)
 %doc %_docdir/*/*/koffice
 %doc %_docdir/*/*/thesaurus
-%_datadir/icons/*/*/actions/*
-%_datadir/icons/*/*/mimetypes/*
-%_bindir/koconverter
-%_bindir/kthesaurus
-%_libdir/libkdeinit_kthesaurus.*
-%_libdir/kde3/kthesaurus.*
-%_libdir/kde3/kfile_*
-%_libdir/kde3/clipartthumbnail.*
-%_libdir/kde3/kofficethumbnail.*
-%_libdir/kde3/kodocinfopropspage.*
-%_libdir/kde3/kofficescan.*
-%_libdir/kde3/libgenerickofilter.*
-%_libdir/kde3/libkfolatexexport.*
-%_libdir/kde3/libkfomathmlexport.*
-%_libdir/kde3/libkfomathmlimport.*
-%_libdir/kde3/libkfopngexport.*
-%_libdir/kde3/libkounavailpart.*
-%_libdir/kde3/libthesaurustool.*
-%_libdir/kde3/libxsltexport.*
-%_libdir/kde3/libxsltimport.*
-%_libdir/kde3/krosspython.*
-%_libdir/kde3/krossruby.*
-%_datadir/services/kfile_*
-%_datadir/applnk/Office/KThesaurus.desktop
-%_datadir/applications/kde/koffice.desktop
-%dir %_datadir/apps/koffice/
-%_datadir/apps/koffice/*
-%dir %_datadir/apps/xsltfilter
-%_datadir/apps/xsltfilter/*
-%dir %_datadir/apps/thesaurus/
-%_datadir/apps/thesaurus/*
-%_datadir/services/clipartthumbnail.desktop
-%_datadir/services/generic_filter.desktop
-%_datadir/services/kodocinfopropspage.desktop
-%_datadir/services/kofficethumbnail.desktop
-%_datadir/services/kounavail.desktop
-%_datadir/services/thesaurustool.desktop
-%_datadir/services/xslt_export.desktop
-%_datadir/services/xslt_import.desktop
-%dir %_datadir/servicetypes/
-%_datadir/servicetypes/kochart.desktop
-%_datadir/servicetypes/kofficepart.desktop
-%_datadir/servicetypes/kofilter.desktop
-%_datadir/servicetypes/kofilterwrapper.desktop
-%_datadir/servicetypes/koplugin.desktop
-%_datadir/apps/kross/python
-%dir %_datadir/templates/
-%_datadir/apps/kofficewidgets/pics/*.png
+%_kde3_iconsdir/*/*/actions/*
+%_kde3_iconsdir/*/*/mimetypes/*
+%_kde3_bindir/koconverter
+%_kde3_bindir/kthesaurus
+%_kde3_libdir/libkdeinit_kthesaurus.*
+%_kde3_libdir/kde3/kthesaurus.*
+%_kde3_libdir/kde3/kfile_*
+%_kde3_libdir/kde3/clipartthumbnail.*
+%_kde3_libdir/kde3/kofficethumbnail.*
+%_kde3_libdir/kde3/kodocinfopropspage.*
+%_kde3_libdir/kde3/kofficescan.*
+%_kde3_libdir/kde3/libgenerickofilter.*
+%_kde3_libdir/kde3/libkfolatexexport.*
+%_kde3_libdir/kde3/libkfomathmlexport.*
+%_kde3_libdir/kde3/libkfomathmlimport.*
+%_kde3_libdir/kde3/libkfopngexport.*
+%_kde3_libdir/kde3/libkounavailpart.*
+%_kde3_libdir/kde3/libthesaurustool.*
+%_kde3_libdir/kde3/libxsltexport.*
+%_kde3_libdir/kde3/libxsltimport.*
+%_kde3_libdir/kde3/krosspython.*
+%_kde3_libdir/kde3/krossruby.*
+%_kde3_datadir/services/kfile_*
+%_kde3_datadir/applnk/Office/KThesaurus.desktop
+%_kde3_datadir/applications/kde/koffice.desktop
+%dir %_kde3_appsdir/koffice/
+%_kde3_appsdir/koffice/*
+%dir %_kde3_appsdir/xsltfilter
+%_kde3_appsdir/xsltfilter/*
+%dir %_kde3_appsdir/thesaurus/
+%_kde3_appsdir/thesaurus/*
+%_kde3_datadir/services/clipartthumbnail.desktop
+%_kde3_datadir/services/generic_filter.desktop
+%_kde3_datadir/services/kodocinfopropspage.desktop
+%_kde3_datadir/services/kofficethumbnail.desktop
+%_kde3_datadir/services/kounavail.desktop
+%_kde3_datadir/services/thesaurustool.desktop
+%_kde3_datadir/services/xslt_export.desktop
+%_kde3_datadir/services/xslt_import.desktop
+%dir %_kde3_datadir/servicetypes/
+%_kde3_datadir/servicetypes/kochart.desktop
+%_kde3_datadir/servicetypes/kofficepart.desktop
+%_kde3_datadir/servicetypes/kofilter.desktop
+%_kde3_datadir/servicetypes/kofilterwrapper.desktop
+%_kde3_datadir/servicetypes/koplugin.desktop
+%_kde3_appsdir/kross/python
+%dir %_kde3_datadir/templates/
+%_kde3_appsdir/kofficewidgets/pics/*.png
 
 #--------------------------------------------------------------------
 
@@ -208,30 +201,30 @@ Library files for Koffice.
 
 %files -n %lib_name-common
 %defattr(-,root,root)
-%_libdir/libkrossapi.la
-%_libdir/libkrossapi.so.*
-%_libdir/libkstore.la
-%_libdir/libkwmf.la
-%_libdir/libkofficecore.la
-%_libdir/libkofficeui.la
-%_libdir/libkotext.la
-%_libdir/libkopainter.la
-%_libdir/libkochart.la
-%_libdir/libkowmf.la
-%_libdir/libkopalette.la
-%_libdir/libkopalette.so.*
-%_libdir/libkofficecore.so.*
-%_libdir/libkofficeui.so.*
-%_libdir/libkotext.so.*
-%_libdir/libkopainter.so.*
-%_libdir/libkochart.so.*
-%_libdir/libkstore.so.*
-%_libdir/libkwmf.so.*
-%_libdir/libkowmf.so.*
-%_libdir/libkoproperty.la
-%_libdir/libkoproperty.so.*
-%_libdir/libkrossmain.la
-%_libdir/libkrossmain.so.*
+%_kde3_libdir/libkrossapi.la
+%_kde3_libdir/libkrossapi.so.*
+%_kde3_libdir/libkstore.la
+%_kde3_libdir/libkwmf.la
+%_kde3_libdir/libkofficecore.la
+%_kde3_libdir/libkofficeui.la
+%_kde3_libdir/libkotext.la
+%_kde3_libdir/libkopainter.la
+%_kde3_libdir/libkochart.la
+%_kde3_libdir/libkowmf.la
+%_kde3_libdir/libkopalette.la
+%_kde3_libdir/libkopalette.so.*
+%_kde3_libdir/libkofficecore.so.*
+%_kde3_libdir/libkofficeui.so.*
+%_kde3_libdir/libkotext.so.*
+%_kde3_libdir/libkopainter.so.*
+%_kde3_libdir/libkochart.so.*
+%_kde3_libdir/libkstore.so.*
+%_kde3_libdir/libkwmf.so.*
+%_kde3_libdir/libkowmf.so.*
+%_kde3_libdir/libkoproperty.la
+%_kde3_libdir/libkoproperty.so.*
+%_kde3_libdir/libkrossmain.la
+%_kde3_libdir/libkrossmain.so.*
 
 #--------------------------------------------------------------------
 
@@ -260,50 +253,50 @@ Kword is a word processor for kde project
 %files kword
 %defattr(-,root,root)
 %doc %_docdir/*/*/kword
-%_datadir/icons/*/*/*/kword.png
-%_bindir/kword
-%_datadir/applications/kde/kword.desktop
-%dir %_datadir/apps/kword
-%_datadir/apps/kword/*
-%_datadir/services/kwordpart.desktop
-%_datadir/services/kwserialletter_classic.desktop
-%_datadir/services/kwserialletter_qtsqldb_power.desktop
-%_datadir/services/kword_*
-%_datadir/services/kwmailmerge_kabc.desktop
-%_datadir/services/kwmailmerge_kspread.desktop
-%_datadir/servicetypes/kwmailmerge.desktop
-%_datadir/apps/xsltfilter/export/kword
-%_datadir/apps/konqueror/servicemenus/kword*
-%_libdir/kde3/libkword*
-%_libdir/kde3/kwmailmerge_*
-%_libdir/kde3/libabiwordexport.*
-%_libdir/kde3/libabiwordimport.*
-%_libdir/kde3/libamiproexport.*
-%_libdir/kde3/libamiproimport.*
-%_libdir/kde3/libapplixwordimport.*
-%_libdir/kde3/libasciiexport.*
-%_libdir/kde3/libasciiimport.*
-%_libdir/kde3/libdocbookexport.*
-%_libdir/kde3/libhtmlexport.*
-%_libdir/kde3/libhtmlimport.*
-%_libdir/kde3/libmswordimport.*
-%_libdir/kde3/libmswriteexport.*
-%_libdir/kde3/libmswriteimport.*
-%_libdir/kde3/liboowriterexport.*
-%_libdir/kde3/liboowriterimport.*
-%_libdir/kde3/libpalmdocexport.*
-%_libdir/kde3/libpalmdocimport.*
-%_libdir/kde3/librtfexport.*
-%_libdir/kde3/librtfimport.*
-%_libdir/kde3/libwmlexport.*
-%_libdir/kde3/libwmlimport.*
-%_libdir/kde3/libwpexport.*
-%_libdir/kde3/kword*
-%_libdir/kde3/libpdfimport.*
-%_libdir/kde3/libwpimport.*
-%_libdir/libkdeinit_kword.*
-%_datadir/templates/TextDocument.desktop
-%_datadir/templates/.source/TextDocument.kwt
+%_kde3_iconsdir/*/*/*/kword.png
+%_kde3_bindir/kword
+%_kde3_datadir/applications/kde/kword.desktop
+%dir %_kde3_appsdir/kword
+%_kde3_appsdir/kword/*
+%_kde3_datadir/services/kwordpart.desktop
+%_kde3_datadir/services/kwserialletter_classic.desktop
+%_kde3_datadir/services/kwserialletter_qtsqldb_power.desktop
+%_kde3_datadir/services/kword_*
+%_kde3_datadir/services/kwmailmerge_kabc.desktop
+%_kde3_datadir/services/kwmailmerge_kspread.desktop
+%_kde3_datadir/servicetypes/kwmailmerge.desktop
+%_kde3_appsdir/xsltfilter/export/kword
+%_kde3_appsdir/konqueror/servicemenus/kword*
+%_kde3_libdir/kde3/libkword*
+%_kde3_libdir/kde3/kwmailmerge_*
+%_kde3_libdir/kde3/libabiwordexport.*
+%_kde3_libdir/kde3/libabiwordimport.*
+%_kde3_libdir/kde3/libamiproexport.*
+%_kde3_libdir/kde3/libamiproimport.*
+%_kde3_libdir/kde3/libapplixwordimport.*
+%_kde3_libdir/kde3/libasciiexport.*
+%_kde3_libdir/kde3/libasciiimport.*
+%_kde3_libdir/kde3/libdocbookexport.*
+%_kde3_libdir/kde3/libhtmlexport.*
+%_kde3_libdir/kde3/libhtmlimport.*
+%_kde3_libdir/kde3/libmswordimport.*
+%_kde3_libdir/kde3/libmswriteexport.*
+%_kde3_libdir/kde3/libmswriteimport.*
+%_kde3_libdir/kde3/liboowriterexport.*
+%_kde3_libdir/kde3/liboowriterimport.*
+%_kde3_libdir/kde3/libpalmdocexport.*
+%_kde3_libdir/kde3/libpalmdocimport.*
+%_kde3_libdir/kde3/librtfexport.*
+%_kde3_libdir/kde3/librtfimport.*
+%_kde3_libdir/kde3/libwmlexport.*
+%_kde3_libdir/kde3/libwmlimport.*
+%_kde3_libdir/kde3/libwpexport.*
+%_kde3_libdir/kde3/kword*
+%_kde3_libdir/kde3/libpdfimport.*
+%_kde3_libdir/kde3/libwpimport.*
+%_kde3_libdir/libkdeinit_kword.*
+%_kde3_datadir/templates/TextDocument.desktop
+%_kde3_datadir/templates/.source/TextDocument.kwt
 
 #--------------------------------------------------------------------
 
@@ -321,12 +314,12 @@ Libraries file for KWord
 
 %files -n %lib_name-kword
 %defattr(-,root,root)
-%_libdir/libkwordexportfilters.la
-%_libdir/libkwordexportfilters.so.*
-%_libdir/libkwmailmerge_interface.la   
-%_libdir/libkwmailmerge_interface.so.*
-%_libdir/libkwordprivate.la
-%_libdir/libkwordprivate.so.*
+%_kde3_libdir/libkwordexportfilters.la
+%_kde3_libdir/libkwordexportfilters.so.*
+%_kde3_libdir/libkwmailmerge_interface.la   
+%_kde3_libdir/libkwmailmerge_interface.so.*
+%_kde3_libdir/libkwordprivate.la
+%_kde3_libdir/libkwordprivate.so.*
 
 #--------------------------------------------------------------------
 
@@ -353,15 +346,15 @@ A new project management application for koffice.
 %files kplato
 %defattr(-,root,root)
 %doc %_docdir/*/*/kplato
-%_datadir/icons/*/*/*/kplato.*
-%_bindir/kplato
-%_libdir/kde3/kplato.*
-%_libdir/kde3/libkplatopart.*
-%_libdir/libkdeinit_kplato.*
-%_datadir/applications/kde/kplato.desktop
-%dir %_datadir/apps/kplato
-%_datadir/apps/kplato/*
-%_datadir/services/kplatopart.desktop
+%_kde3_iconsdir/*/*/*/kplato.*
+%_kde3_bindir/kplato
+%_kde3_libdir/kde3/kplato.*
+%_kde3_libdir/kde3/libkplatopart.*
+%_kde3_libdir/libkdeinit_kplato.*
+%_kde3_datadir/applications/kde/kplato.desktop
+%dir %_kde3_appsdir/kplato
+%_kde3_appsdir/kplato/*
+%_kde3_datadir/services/kplatopart.desktop
 
 #--------------------------------------------------------------------
 
@@ -389,31 +382,31 @@ KSpread is a spreadsheet for kde project
 %files kspread
 %defattr(-,root,root)
 %doc %_docdir/*/*/kspread
-%_datadir/icons/*/*/*/kspread.png
-%_bindir/kspread
-%_libdir/kde3/krosskspreadcore.*
-%_libdir/kde3/kspreadscripting.*
-%_libdir/kde3/libexcelimport.*
-%_libdir/kde3/libapplixspreadimport.*
-%_libdir/kde3/libcsvexport.*
-%_libdir/kde3/libcsvimport.*
-%_libdir/kde3/libdbaseimport.*
-%_libdir/kde3/libgnumericexport.*
-%_libdir/kde3/libgnumericimport.*
-%_libdir/kde3/libopencalcexport.*
-%_libdir/kde3/libopencalcimport.*
-%_libdir/kde3/libqproimport.*
-%_libdir/kde3/libhancomwordimport.*
-%_libdir/kde3/libkspread*
-%_libdir/kde3/kspread.*
-%_libdir/libkdeinit_kspread.*
-%dir %_datadir/apps/kspread/
-%_datadir/apps/kspread/*
-%_datadir/applications/kde/kspread.desktop
-%_datadir/services/kspread*
-%_datadir/apps/konqueror/servicemenus/kspread*
-%_datadir/templates/SpreadSheet.desktop
-%_datadir/templates/.source/SpreadSheet.kst
+%_kde3_iconsdir/*/*/*/kspread.png
+%_kde3_bindir/kspread
+%_kde3_libdir/kde3/krosskspreadcore.*
+%_kde3_libdir/kde3/kspreadscripting.*
+%_kde3_libdir/kde3/libexcelimport.*
+%_kde3_libdir/kde3/libapplixspreadimport.*
+%_kde3_libdir/kde3/libcsvexport.*
+%_kde3_libdir/kde3/libcsvimport.*
+%_kde3_libdir/kde3/libdbaseimport.*
+%_kde3_libdir/kde3/libgnumericexport.*
+%_kde3_libdir/kde3/libgnumericimport.*
+%_kde3_libdir/kde3/libopencalcexport.*
+%_kde3_libdir/kde3/libopencalcimport.*
+%_kde3_libdir/kde3/libqproimport.*
+%_kde3_libdir/kde3/libhancomwordimport.*
+%_kde3_libdir/kde3/libkspread*
+%_kde3_libdir/kde3/kspread.*
+%_kde3_libdir/libkdeinit_kspread.*
+%dir %_kde3_appsdir/kspread/
+%_kde3_appsdir/kspread/*
+%_kde3_datadir/applications/kde/kspread.desktop
+%_kde3_datadir/services/kspread*
+%_kde3_appsdir/konqueror/servicemenus/kspread*
+%_kde3_datadir/templates/SpreadSheet.desktop
+%_kde3_datadir/templates/.source/SpreadSheet.kst
 
 #--------------------------------------------------------------------
 
@@ -441,17 +434,17 @@ KChart is a chart for kde project
 %files kchart
 %defattr(-,root,root)
 %doc %_docdir/HTML/en/kchart
-%_datadir/icons/*/*/*/kchart.png
-%_bindir/kchart
-%_libdir/kde3/kchart.*
-%_libdir/kde3/libkchart*
-%_libdir/libkdeinit_kchart.*
-%dir %_datadir/apps/kchart/
-%_datadir/apps/kchart/*
-%_datadir/applications/kde/kchart.desktop
-%_datadir/services/kchart_*
-%_datadir/services/kchartpart.desktop
-%_datadir/apps/konqueror/servicemenus/kchart*
+%_kde3_iconsdir/*/*/*/kchart.png
+%_kde3_bindir/kchart
+%_kde3_libdir/kde3/kchart.*
+%_kde3_libdir/kde3/libkchart*
+%_kde3_libdir/libkdeinit_kchart.*
+%dir %_kde3_appsdir/kchart/
+%_kde3_appsdir/kchart/*
+%_kde3_datadir/applications/kde/kchart.desktop
+%_kde3_datadir/services/kchart_*
+%_kde3_datadir/services/kchartpart.desktop
+%_kde3_appsdir/konqueror/servicemenus/kchart*
 
 #--------------------------------------------------------------------
 
@@ -470,8 +463,8 @@ Libraries file for KSpread
 
 %files -n %lib_name-kspread
 %defattr(-,root,root)
-%_libdir/libkspreadcommon.la
-%_libdir/libkspreadcommon.so.*
+%_kde3_libdir/libkspreadcommon.la
+%_kde3_libdir/libkspreadcommon.so.*
 
 #--------------------------------------------------------------------
 
@@ -490,12 +483,12 @@ Libraries file for KChart.
 
 %files -n %lib_name-kchart
 %defattr(-,root,root)
-%_libdir/libkchartimageexport.la
-%_libdir/libkchartimageexport.so.*
-%_libdir/libkdchart.la
-%_libdir/libkdchart.so.*
-%_libdir/libkchartcommon.la
-%_libdir/libkchartcommon.so.*
+%_kde3_libdir/libkchartimageexport.la
+%_kde3_libdir/libkchartimageexport.so.*
+%_kde3_libdir/libkdchart.la
+%_kde3_libdir/libkdchart.so.*
+%_kde3_libdir/libkchartcommon.la
+%_kde3_libdir/libkchartcommon.so.*
 
 #--------------------------------------------------------------------
 
@@ -525,25 +518,25 @@ KPresenter is a presentation for kde project.
 %files kpresenter
 %defattr(-,root,root)
 %doc %_docdir/*/*/kpresenter
-%_datadir/icons/*/*/*/kpresenter.png
-%_bindir/kprconverter.pl
-%_bindir/kpresenter
-%_libdir/libkdeinit_kpresenter.*
-%_datadir/services/ole_powerpoint97_import.desktop
-%_datadir/services/kpresenter*
-%dir %_datadir/apps/kpresenter
-%_datadir/apps/kpresenter/*
-%_datadir/applications/kde/kpresenter.desktop
-%_datadir/services/kprkword.desktop
-%_libdir/kde3/libolefilter.*
-%_libdir/kde3/libkpresenter*
-%_libdir/kde3/libkprkword.*
-%_libdir/kde3/libooimpressexport.*
-%_libdir/kde3/libooimpressimport.*
-%_libdir/kde3/kpresenter.*
-%_datadir/templates/Presentation.desktop
-%_datadir/templates/.source/Presentation.kpt
-%_datadir/apps/konqueror/servicemenus/kpresenter*
+%_kde3_iconsdir/*/*/*/kpresenter.png
+%_kde3_bindir/kprconverter.pl
+%_kde3_bindir/kpresenter
+%_kde3_libdir/libkdeinit_kpresenter.*
+%_kde3_datadir/services/ole_powerpoint97_import.desktop
+%_kde3_datadir/services/kpresenter*
+%dir %_kde3_appsdir/kpresenter
+%_kde3_appsdir/kpresenter/*
+%_kde3_datadir/applications/kde/kpresenter.desktop
+%_kde3_datadir/services/kprkword.desktop
+%_kde3_libdir/kde3/libolefilter.*
+%_kde3_libdir/kde3/libkpresenter*
+%_kde3_libdir/kde3/libkprkword.*
+%_kde3_libdir/kde3/libooimpressexport.*
+%_kde3_libdir/kde3/libooimpressimport.*
+%_kde3_libdir/kde3/kpresenter.*
+%_kde3_datadir/templates/Presentation.desktop
+%_kde3_datadir/templates/.source/Presentation.kpt
+%_kde3_appsdir/konqueror/servicemenus/kpresenter*
 
 #--------------------------------------------------------------------
 
@@ -561,10 +554,10 @@ Libraries file for KPresenter
 
 %files -n %lib_name-kpresenter
 %defattr(-,root,root)
-%_libdir/libkpresenterimageexport.la
-%_libdir/libkpresenterimageexport.so.*
-%_libdir/libkpresenterprivate.la
-%_libdir/libkpresenterprivate.so.*
+%_kde3_libdir/libkpresenterimageexport.la
+%_kde3_libdir/libkpresenterimageexport.so.*
+%_kde3_libdir/libkpresenterprivate.la
+%_kde3_libdir/libkpresenterprivate.so.*
 
 #--------------------------------------------------------------------
 
@@ -593,16 +586,16 @@ KFormula is a formula for kde project.
 %files kformula
 %defattr(-,root,root)
 %doc %_docdir/*/*/kformula
-%_datadir/icons/*/*/*/kformula.*
-%_bindir/kformula
-%_libdir/kde3/libkformulapart.*
-%_libdir/kde3/kformula.*
-%_libdir/libkdeinit_kformula.*
-%dir %_datadir/apps/kformula
-%_datadir/apps/kformula/*
-%_datadir/applications/kde/kformula.desktop
-%_datadir/services/kformula*
-%_datadir/apps/konqueror/servicemenus/kformula*
+%_kde3_iconsdir/*/*/*/kformula.*
+%_kde3_bindir/kformula
+%_kde3_libdir/kde3/libkformulapart.*
+%_kde3_libdir/kde3/kformula.*
+%_kde3_libdir/libkdeinit_kformula.*
+%dir %_kde3_appsdir/kformula
+%_kde3_appsdir/kformula/*
+%_kde3_datadir/applications/kde/kformula.desktop
+%_kde3_datadir/services/kformula*
+%_kde3_appsdir/konqueror/servicemenus/kformula*
 
 #--------------------------------------------------------------------
 
@@ -622,8 +615,8 @@ Libraries file for KFormula
 
 %files -n %lib_name-kformula
 %defattr(-,root,root)
-%_libdir/libkformulalib.la
-%_libdir/libkformulalib.so.*
+%_kde3_libdir/libkformulalib.la
+%_kde3_libdir/libkformulalib.so.*
 
 #--------------------------------------------------------------------
 
@@ -650,14 +643,14 @@ Koshell for kde project.
 %files koshell
 %defattr(-,root,root)
 %doc %_docdir/*/*/koshell
-%_datadir/icons/*/*/*/koshell.*
-%_bindir/koshell
-%_libdir/libkdeinit_koshell.*
-%_libdir/kde3/koshell.*
-%_datadir/applications/kde/koshell.desktop
-%_datadir/config.kcfg/koshell.kcfg
-%dir %_datadir/apps/koshell
-%_datadir/apps/koshell/*
+%_kde3_iconsdir/*/*/*/koshell.*
+%_kde3_bindir/koshell
+%_kde3_libdir/libkdeinit_koshell.*
+%_kde3_libdir/kde3/koshell.*
+%_kde3_datadir/applications/kde/koshell.desktop
+%_kde3_datadir/config.kcfg/koshell.kcfg
+%dir %_kde3_appsdir/koshell
+%_kde3_appsdir/koshell/*
 
 #--------------------------------------------------------------------
 
@@ -685,18 +678,18 @@ Kivio is a diagramme for kde project.
 %files kivio
 %defattr(-,root,root)
 %doc %_docdir/*/*/kivio
-%_datadir/icons/*/*/*/kivio.png
-%_bindir/kivio
-%_libdir/libkdeinit_kivio.*
-%_libdir/kde3/kivio*
-%_libdir/kde3/libkivio*
-%_libdir/kde3/straight_connector.*
-%_datadir/services/kivio*
-%_datadir/applications/kde/kivio.desktop
-%_datadir/config.kcfg/kivio.kcfg
-%dir %_datadir/apps/kivio
-%_datadir/apps/kivio/*
-%_datadir/apps/konqueror/servicemenus/kivio*
+%_kde3_iconsdir/*/*/*/kivio.png
+%_kde3_bindir/kivio
+%_kde3_libdir/libkdeinit_kivio.*
+%_kde3_libdir/kde3/kivio*
+%_kde3_libdir/kde3/libkivio*
+%_kde3_libdir/kde3/straight_connector.*
+%_kde3_datadir/services/kivio*
+%_kde3_datadir/applications/kde/kivio.desktop
+%_kde3_datadir/config.kcfg/kivio.kcfg
+%dir %_kde3_appsdir/kivio
+%_kde3_appsdir/kivio/*
+%_kde3_appsdir/konqueror/servicemenus/kivio*
 
 #--------------------------------------------------------------------
 
@@ -714,8 +707,8 @@ Libraries file for kivio
 
 %files -n %lib_name-kivio
 %defattr(-,root,root)
-%_libdir/libkiviocommon.la
-%_libdir/libkiviocommon.so.*
+%_kde3_libdir/libkiviocommon.la
+%_kde3_libdir/libkiviocommon.so.*
 
 #--------------------------------------------------------------------
 
@@ -744,23 +737,23 @@ Karbon is a scalable drawing for kde project.
 %files karbon
 %defattr(-,root,root)
 %doc %_docdir/*/*/karbon
-%_datadir/icons/*/*/*/karbon.*
-%_bindir/karbon
-%_libdir/kde3/libkfosvgexport.*
-%_libdir/kde3/liboodrawimport.*
-%_libdir/kde3/libkarbon*
-%_libdir/kde3/libwmfexport.*
-%_libdir/kde3/libwmfimport.*
-%_libdir/kde3/karbon*
-%_libdir/libkdeinit_karbon.*
-%dir %_datadir/apps/karbon
-%_datadir/apps/karbon/*
-%_datadir/services/karbon*
-%_datadir/applications/kde/karbon.desktop
-%_datadir/servicetypes/karbon_module.desktop
-%_datadir/templates/Illustration.desktop  
-%_datadir/templates/.source/Illustration.karbon
-%_datadir/apps/konqueror/servicemenus/karbon*
+%_kde3_iconsdir/*/*/*/karbon.*
+%_kde3_bindir/karbon
+%_kde3_libdir/kde3/libkfosvgexport.*
+%_kde3_libdir/kde3/liboodrawimport.*
+%_kde3_libdir/kde3/libkarbon*
+%_kde3_libdir/kde3/libwmfexport.*
+%_kde3_libdir/kde3/libwmfimport.*
+%_kde3_libdir/kde3/karbon*
+%_kde3_libdir/libkdeinit_karbon.*
+%dir %_kde3_appsdir/karbon
+%_kde3_appsdir/karbon/*
+%_kde3_datadir/services/karbon*
+%_kde3_datadir/applications/kde/karbon.desktop
+%_kde3_datadir/servicetypes/karbon_module.desktop
+%_kde3_datadir/templates/Illustration.desktop  
+%_kde3_datadir/templates/.source/Illustration.karbon
+%_kde3_appsdir/konqueror/servicemenus/karbon*
 
 #--------------------------------------------------------------------
 
@@ -778,8 +771,8 @@ Libraries file for KArbon
 
 %files -n %lib_name-karbon
 %defattr(-,root,root)
-%_libdir/libkarboncommon.la
-%_libdir/libkarboncommon.so.*
+%_kde3_libdir/libkarboncommon.la
+%_kde3_libdir/libkarboncommon.so.*
 
 #--------------------------------------------------------------------
 
@@ -808,24 +801,24 @@ Krita is a pixel-based image manipulation program.
 %files krita
 %defattr(-,root,root)
 %doc %_docdir/*/*/krita
-%_datadir/icons/*/*/*/krita.png
-%_bindir/krita
-%dir %_datadir/apps/krita
-%_datadir/apps/krita/*
-%dir %_datadir/apps/kritaplugins
-%_datadir/apps/kritaplugins/*
-%_libdir/kde3/krosskritacore.*
-%_libdir/libkdeinit_krita.*
-%_libdir/kde3/libkrita*
-%_libdir/kde3/krita*
+%_kde3_iconsdir/*/*/*/krita.png
+%_kde3_bindir/krita
+%dir %_kde3_appsdir/krita
+%_kde3_appsdir/krita/*
+%dir %_kde3_appsdir/kritaplugins
+%_kde3_appsdir/kritaplugins/*
+%_kde3_libdir/kde3/krosskritacore.*
+%_kde3_libdir/libkdeinit_krita.*
+%_kde3_libdir/kde3/libkrita*
+%_kde3_libdir/kde3/krita*
 %if %krita_kjs_compile
-%_libdir/kde3/kritakjsembed.*
+%_kde3_libdir/kde3/kritakjsembed.*
 %endif
-%_datadir/services/krita*
-%_datadir/servicetypes/krita_*
-%_datadir/applnk/.hidden/krita_*
-%_datadir/applications/kde/krita.desktop
-%_datadir/apps/konqueror/servicemenus/krita*
+%_kde3_datadir/services/krita*
+%_kde3_datadir/servicetypes/krita_*
+%_kde3_datadir/applnk/.hidden/krita_*
+%_kde3_datadir/applications/kde/krita.desktop
+%_kde3_appsdir/konqueror/servicemenus/krita*
 
 #--------------------------------------------------------------------
 
@@ -843,8 +836,8 @@ Libraries file for Krita
 
 %files -n %lib_name-krita
 %defattr(-,root,root)
-%_libdir/libkrita*.so.*
-%_libdir/libkrita*.la
+%_kde3_libdir/libkrita*.so.*
+%_kde3_libdir/libkrita*.la
 
 #--------------------------------------------------------------------
 
@@ -872,35 +865,35 @@ Kexi is an integrated environment for managing data.
 %files kexi
 %defattr(-,root,root)
 %doc %_docdir/*/*/kexi
-%_datadir/icons/*/*/*/kexi.*
-%_bindir/kexi
-%_bindir/ksqlite
-%_bindir/ksqlite2
-%_bindir/ksqlite2to3
-%_bindir/kexi_*
-%_bindir/krossrunner
-%_libdir/libkdeinit_kexi.*
-%_libdir/kde3/kexi*
-%_libdir/kde3/libkspreadkexiimport.*
-%_libdir/kde3/kformdesigner_*
-%dir %_datadir/apps/kexi
-%_datadir/apps/kexi/*
-%_datadir/mimelnk/application/x-kexi-connectiondata.desktop
-%_datadir/services/kexi
-%_datadir/services/kexidb*
-%_datadir/services/keximigrate*
-%_datadir/services/kformdesigner
-%_datadir/applications/kde/kexi.desktop
-%_datadir/servicetypes/widgetfactory.desktop
-%_datadir/locale/*/*/kexi*
-%_datadir/services/kspread_kexi_import.desktop
-%_datadir/mimelnk/application/x-kexiproject-*
-%_datadir/servicetypes/kexi*
-%_datadir/config/kexirc
-%_datadir/config/magic/kexi.magic
-%_libdir/kde3/krosskexiapp.*
-%_libdir/kde3/krosskexidb.*
-%_datadir/apps/konqueror/servicemenus/kexi*
+%_kde3_iconsdir/*/*/*/kexi.*
+%_kde3_bindir/kexi
+%_kde3_bindir/ksqlite
+%_kde3_bindir/ksqlite2
+%_kde3_bindir/ksqlite2to3
+%_kde3_bindir/kexi_*
+%_kde3_bindir/krossrunner
+%_kde3_libdir/libkdeinit_kexi.*
+%_kde3_libdir/kde3/kexi*
+%_kde3_libdir/kde3/libkspreadkexiimport.*
+%_kde3_libdir/kde3/kformdesigner_*
+%dir %_kde3_appsdir/kexi
+%_kde3_appsdir/kexi/*
+%_kde3_datadir/mimelnk/application/x-kexi-connectiondata.desktop
+%_kde3_datadir/services/kexi
+%_kde3_datadir/services/kexidb*
+%_kde3_datadir/services/keximigrate*
+%_kde3_datadir/services/kformdesigner
+%_kde3_datadir/applications/kde/kexi.desktop
+%_kde3_datadir/servicetypes/widgetfactory.desktop
+%_kde3_datadir/locale/*/*/kexi*
+%_kde3_datadir/services/kspread_kexi_import.desktop
+%_kde3_datadir/mimelnk/application/x-kexiproject-*
+%_kde3_datadir/servicetypes/kexi*
+%_kde3_datadir/config/kexirc
+%_kde3_datadir/config/magic/kexi.magic
+%_kde3_libdir/kde3/krosskexiapp.*
+%_kde3_libdir/kde3/krosskexidb.*
+%_kde3_appsdir/konqueror/servicemenus/kexi*
 
 #--------------------------------------------------------------------
 
@@ -920,10 +913,10 @@ Libraries file for Kexi
 
 %files -n %lib_name-kexi
 %defattr(-,root,root)
-%_libdir/libkexi*.la
-%_libdir/libkexi*.so.*
-%_libdir/libkformdesigner.la
-%_libdir/libkformdesigner.so.*
+%_kde3_libdir/libkexi*.la
+%_kde3_libdir/libkexi*.so.*
+%_kde3_libdir/libkformdesigner.la
+%_kde3_libdir/libkformdesigner.so.*
 
 #--------------------------------------------------------------------
 
@@ -950,24 +943,24 @@ Kugar for kde project.
 %files kugar
 %defattr(-,root,root)
 %doc %_docdir/*/*/kugar
-%_datadir/icons/*/*/*/kudesigner.*
-%_bindir/kudesigner
-%_bindir/kugar
-%_libdir/libkdeinit_kudesigner.*
-%_libdir/libkdeinit_kugar.*
-%_libdir/kde3/libkudesign*
-%_libdir/kde3/libkugar*
-%_libdir/kde3/kudesigner*
-%_libdir/kde3/kugar.*
-%_datadir/icons/*/*/*/kugar.png
-%dir %_datadir/apps/kugar
-%_datadir/apps/kugar/*
-%dir %_datadir/apps/kudesigner
-%_datadir/apps/kudesigner/*
-%_datadir/services/kugar_kugar_import.desktop
-%_datadir/services/kugarpart.desktop
-%_datadir/applications/kde/kugar.desktop
-%_datadir/applications/kde/kudesigner.desktop
+%_kde3_iconsdir/*/*/*/kudesigner.*
+%_kde3_bindir/kudesigner
+%_kde3_bindir/kugar
+%_kde3_libdir/libkdeinit_kudesigner.*
+%_kde3_libdir/libkdeinit_kugar.*
+%_kde3_libdir/kde3/libkudesign*
+%_kde3_libdir/kde3/libkugar*
+%_kde3_libdir/kde3/kudesigner*
+%_kde3_libdir/kde3/kugar.*
+%_kde3_iconsdir/*/*/*/kugar.png
+%dir %_kde3_appsdir/kugar
+%_kde3_appsdir/kugar/*
+%dir %_kde3_appsdir/kudesigner
+%_kde3_appsdir/kudesigner/*
+%_kde3_datadir/services/kugar_kugar_import.desktop
+%_kde3_datadir/services/kugarpart.desktop
+%_kde3_datadir/applications/kde/kugar.desktop
+%_kde3_datadir/applications/kde/kudesigner.desktop
 
 #--------------------------------------------------------------------
 
@@ -985,10 +978,10 @@ Libraries file for Kugar
 
 %files -n %lib_name-kugar
 %defattr(-,root,root)
-%_libdir/libkudesignercore.la*
-%_libdir/libkudesignercore.so*
-%_libdir/libkugarlib.la
-%_libdir/libkugarlib.so.*
+%_kde3_libdir/libkudesignercore.la*
+%_kde3_libdir/libkudesignercore.so*
+%_kde3_libdir/libkugarlib.la
+%_kde3_libdir/libkugarlib.so.*
 
 #--------------------------------------------------------------------
 
@@ -1023,13 +1016,13 @@ Development files for koffice.
 
 %files devel
 %defattr(-,root,root)
-%_libdir/*.so
-%exclude %_libdir/libkudesignercore.so
-%_includedir/*
+%_kde3_libdir/*.so
+%exclude %_kde3_libdir/libkudesignercore.so
+%_kde3_includedir/*
 %if %compile_apidox
 %doc %_docdir/*/*/koffice-apidocs
 %endif
-%exclude %_libdir/libkdeinit_*
+%exclude %_kde3_libdir/libkdeinit_*
 
 #--------------------------------------------------------------------
 
@@ -1043,28 +1036,9 @@ Development files for koffice.
 
 %build
 export QTDIR=%{qt3dir}
-export KDEDIR=%_prefix
+export KDEDIR=%_kde3_prefix
 
-%configure2_5x \
-%if %unstable
-	--enable-debug=full \
-%else
-	--disable-debug \
-%endif
-%if %use_enable_final
-	--enable-final \
-%else
-	--disable-final \
-%endif
-	--disable-static \
-%if "%{_lib}" != "lib"
-    --enable-libsuffix="%(A=%{_lib}; echo ${A/lib/})" \
-%endif
-	--disable-rpath \
-%if ! %use_python
-    --without-python \
-%endif
-	--with-xinerama 
+%configure_kde3 --disable-static 
 
 %make
 
@@ -1077,11 +1051,11 @@ rm -fr %buildroot
 
 %makeinstall
 
-perl -pi -e "s|Icon=kudesigner|Icon=text_tools_section.png|" %buildroot/%_datadir/applications/kde/kudesigner.desktop
-perl -pi -e "s|Icon=kthesaurus|Icon=office_accessories_section.png|" %buildroot/%_datadir/applnk/Office/KThesaurus.desktop
+perl -pi -e "s|Icon=kudesigner|Icon=text_tools_section.png|" %buildroot/%_kde3_datadir/applications/kde/kudesigner.desktop
+perl -pi -e "s|Icon=kthesaurus|Icon=office_accessories_section.png|" %buildroot/%_kde3_datadir/applnk/Office/KThesaurus.desktop
 
-rm -f %buildroot/%_datadir/apps/kontour/kpartplugins/scan-kontour.rc
-rm -f %buildroot/%_datadir/mimelnk/image/x-raw.desktop
+rm -f %buildroot/%_kde3_appsdir/kontour/kpartplugins/scan-kontour.rc
+rm -f %buildroot/%_kde3_datadir/mimelnk/image/x-raw.desktop
 
 %if %compile_apidox
 make install-apidox DESTDIR=%buildroot/
