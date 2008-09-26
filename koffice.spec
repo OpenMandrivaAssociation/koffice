@@ -1,5 +1,8 @@
 %define _requires_exceptions devel\(libtwopigen\)\\|devel\(libgvrender\)\\|devel\(libcdt\)\\|devel\(libdotgen\)\\|devel\(libcommon\)\\|devel\(libpathplan\)\\|devel\(libneatogen\)\\|devel\(libcircogen\)\\|devel\(libgraph\)\\|devel\(libdotneato\)\\|devel\(libfdpgen\)\\|devel\(libpack\)
 
+%define _disable_ld_as_needed=1
+%define _disable_ld_no_undefined=1
+
 %define lib_name_orig %mklibname koffice
 %define lib_major 2
 %define lib_name %lib_name_orig%lib_major
@@ -8,26 +11,22 @@
 %define lib_major_kexi 0
 %define lib_name_kexi %lib_name_orig_kexi%lib_major_kexi
 
-%define use_enable_final 0
-%{?_no_enable_final: %{expand: %%global use_enable_final 0}}
-
 %define use_python 1
-
 %define compile_apidox 0
-
 %define krita_kjs_compile 0
 
 Name: koffice
 URL: http://www.koffice.org/
 Summary: Set of office applications for KDE
 Version: 1.6.3
-Release: %mkrel 20
+Release: %mkrel 21
 Epoch: 11
 Source: %name-%version.tar.bz2
 Patch0: koffice-1.6.2-fix-desktopfiles.patch
 Patch1: koffice-xpdf-CVE-2007-3387.diff
 Patch2: koffice-1.6.3-xpdf2-CVE-2007-4352-5392-5393.diff
 Patch3: koffice-1.6.2-ubu-CVE-2008-1693.patch
+Patch4: koffice-1.6.3-compile2009.patch
 Group: Office
 License: GPLv2+
 BuildRoot: %_tmppath/%name-%version-kde3-%release-root
@@ -1038,7 +1037,8 @@ Development files for koffice.
 export QTDIR=%{qt3dir}
 export KDEDIR=%_kde3_prefix
 
-%configure_kde3 --disable-static 
+%configure_kde3 \
+    --disable-static
 
 %make
 
