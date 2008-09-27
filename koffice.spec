@@ -1032,6 +1032,7 @@ Development files for koffice.
 %patch1 -p0 -b .cve_kpdf
 %patch2 -p0 -b .cve_kpdf
 %patch3 -p1 -b .cve-2008-1693
+%patch4 -p0 -b .cve-2008-1693
 
 %build
 export QTDIR=%{qt3dir}
