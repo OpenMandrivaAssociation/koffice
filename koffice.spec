@@ -51,7 +51,7 @@ BuildRequires: qca2-devel
 BuildRequires: glpk-devel
 BuildRequires: mesaglut-devel
 BuildRequires: glew-devel
-BuildRequires: GraphicsMagick-devel
+#BuildRequires: GraphicsMagick-devel
 BuildRequires: mysql-static-devel
 BuildRequires: kdegraphics4-devel
 BuildRequires: libtiff-devel
