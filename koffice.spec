@@ -14,7 +14,7 @@ Name: koffice
 URL: http://www.koffice.org/
 Summary: Set of office applications for KDE
 Version: 1.9.98.0
-Release: %mkrel 1
+Release: %mkrel 2
 Epoch: 11
 Source: %name-%version.tar.bz2
 Patch1: koffice-1.9.95.4-disable-gmagick.patch
