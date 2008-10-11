@@ -69,10 +69,10 @@ Requires: kspread
 Requires: karbon
 Requires: kugar
 Requires: kpresenter
-Requires: kivio
-Requires: kformula
+#Requires: kivio
+#Requires: kformula
 Requires: koshell
-Requires: kexi
+#Requires: kexi
 Requires: krita
 Requires: kplato
 Requires: kchart
@@ -130,29 +130,29 @@ Common files for Koffice
 
 %_kde_appsdir/koffice/icons/*/*/*/*
 %_kde_appsdir/koffice/icons/*.png
-%_kde_iconsdir/hicolor/*/actions/abs.png
-%_kde_iconsdir/hicolor/*/actions/brackets.png
-%_kde_iconsdir/hicolor/*/actions/frac.png
-%_kde_iconsdir/hicolor/*/actions/gsub.png
-%_kde_iconsdir/hicolor/*/actions/gsup.png
-%_kde_iconsdir/hicolor/*/actions/int.png
-%_kde_iconsdir/hicolor/*/actions/lsub.png
-%_kde_iconsdir/hicolor/*/actions/lsup.png
-%_kde_iconsdir/hicolor/*/actions/matrix.png
-%_kde_iconsdir/hicolor/*/actions/multiline.png
-%_kde_iconsdir/hicolor/*/actions/onetwomatrix.png
-%_kde_iconsdir/hicolor/*/actions/over.png
-%_kde_iconsdir/hicolor/*/actions/paren.png
-%_kde_iconsdir/hicolor/*/actions/prod.png
-%_kde_iconsdir/hicolor/*/actions/rsub.png
-%_kde_iconsdir/hicolor/*/actions/rsup.png
-%_kde_iconsdir/hicolor/*/actions/sqrt.png
-%_kde_iconsdir/hicolor/*/actions/sum.png
-%_kde_iconsdir/hicolor/*/actions/under.png
-%_kde_iconsdir/hicolor/22x22/actions/inscol.png
-%_kde_iconsdir/hicolor/22x22/actions/insrow.png
-%_kde_iconsdir/hicolor/22x22/actions/remcol.png
-%_kde_iconsdir/hicolor/22x22/actions/remrow.png
+#%_kde_iconsdir/hicolor/*/actions/abs.png
+#%_kde_iconsdir/hicolor/*/actions/brackets.png
+#%_kde_iconsdir/hicolor/*/actions/frac.png
+#%_kde_iconsdir/hicolor/*/actions/gsub.png
+#%_kde_iconsdir/hicolor/*/actions/gsup.png
+#%_kde_iconsdir/hicolor/*/actions/int.png
+#%_kde_iconsdir/hicolor/*/actions/lsub.png
+#%_kde_iconsdir/hicolor/*/actions/lsup.png
+#%_kde_iconsdir/hicolor/*/actions/matrix.png
+#%_kde_iconsdir/hicolor/*/actions/multiline.png
+#%_kde_iconsdir/hicolor/*/actions/onetwomatrix.png
+#%_kde_iconsdir/hicolor/*/actions/over.png
+#%_kde_iconsdir/hicolor/*/actions/paren.png
+#%_kde_iconsdir/hicolor/*/actions/prod.png
+#%_kde_iconsdir/hicolor/*/actions/rsub.png
+#%_kde_iconsdir/hicolor/*/actions/rsup.png
+#%_kde_iconsdir/hicolor/*/actions/sqrt.png
+#%_kde_iconsdir/hicolor/*/actions/sum.png
+#%_kde_iconsdir/hicolor/*/actions/under.png
+#%_kde_iconsdir/hicolor/22x22/actions/inscol.png
+#%_kde_iconsdir/hicolor/22x22/actions/insrow.png
+#%_kde_iconsdir/hicolor/22x22/actions/remcol.png
+#%_kde_iconsdir/hicolor/22x22/actions/remrow.png
 %_kde_iconsdir/hicolor/*/mimetypes/*
 %_kde_iconsdir/oxygen/*/actions/table.*
 %_kde_iconsdir/oxygen/22x22/actions/aoleft.png
@@ -175,10 +175,9 @@ Common files for Koffice
 %_kde_datadir/kde4/services/clipartthumbnail.desktop
 %_kde_datadir/kde4/services/defaulttools.desktop
 %_kde_datadir/kde4/services/divineproportionshape.desktop
-%_kde_datadir/kde4/services/formulashape.desktop
 %_kde_datadir/kde4/services/generic_filter.desktop
-%_kde_datadir/kde4/services/kformdesigner/kformdesigner_containers.desktop
-%_kde_datadir/kde4/services/kformdesigner/kformdesigner_stdwidgets.desktop
+#%_kde_datadir/kde4/services/kformdesigner/kformdesigner_containers.desktop
+#%_kde_datadir/kde4/services/kformdesigner/kformdesigner_stdwidgets.desktop
 %_kde_datadir/kde4/services/kodocinfopropspage.desktop
 %_kde_datadir/kde4/services/koffice_graya_u16_plugin.desktop
 %_kde_datadir/kde4/services/kofficedockers.desktop
@@ -193,6 +192,8 @@ Common files for Koffice
 %_kde_datadir/kde4/services/kofficesimpletextedit.desktop
 %_kde_datadir/kde4/services/simpletextshape.desktop
 %_kde_datadir/kde4/services/Filterkpr2odf.desktop
+%_kde_datadir/kde4/services/paragraphtool.desktop
+%_kde_datadir/kde4/services/kopabackgroundtool.desktop
 %_kde_datadir/kde4/servicetypes/scripteventaction.desktop
 %_kde_datadir/kde4/servicetypes/flakedevice.desktop
 %_kde_datadir/kde4/servicetypes/pigmentextension.desktop
@@ -207,7 +208,7 @@ Common files for Koffice
 %_kde_datadir/kde4/servicetypes/kofilterwrapper.desktop
 %_kde_datadir/kde4/servicetypes/koplugin.desktop
 %_kde_datadir/kde4/servicetypes/texteditingplugin.desktop
-%_kde_datadir/kde4/servicetypes/widgetfactory.desktop
+#%_kde_datadir/kde4/servicetypes/widgetfactory.desktop
 %_kde_datadir/kde4/servicetypes/textvariableplugin.desktop
 %_kde_datadir/templates/.source/Presentation.kpt
 %_kde_datadir/templates/.source/SpreadSheet.kst
@@ -222,9 +223,9 @@ Common files for Koffice
 %_kde_libdir/kde4/clipartthumbnail.so
 %_kde_libdir/kde4/defaulttools.so
 %_kde_libdir/kde4/divineproportionshape.so
-%_kde_libdir/kde4/formulashape.so
-%_kde_libdir/kde4/kformdesigner_containers.so
-%_kde_libdir/kde4/kformdesigner_stdwidgets.so
+#%_kde_libdir/kde4/formulashape.so
+#%_kde_libdir/kde4/kformdesigner_containers.so
+#%_kde_libdir/kde4/kformdesigner_stdwidgets.so
 %_kde_libdir/kde4/kodocinfopropspage.so
 %_kde_libdir/kde4/koffice_graya_u16_plugin.so
 %_kde_libdir/kde4/kofficedockers.so
@@ -241,6 +242,8 @@ Common files for Koffice
 %_kde_libdir/kde4/simpletextshape.so
 %_kde_libdir/kde4/libFilterkpr2odf.so
 %_kde_libdir/kde4/libmswordodf_import.so
+%_kde_libdir/kde4/paragraphtool.so
+%_kde_libdir/kde4/kopabackgroundtool.so
 
 %_kde_bindir/kthesaurus
 %_kde_datadir/applications/kde4/KThesaurus.desktop
@@ -354,7 +357,7 @@ Koffice 2 core library.
 %_kde_libdir/libkopageapp.so.%libkopageapp_major.0.0
 
 #--------------------------------------------------------------------
-
+%if 0
 %define libkoproperty_major 5
 %define libkoproperty %mklibname koproperty %libkoproperty_major
 
@@ -376,7 +379,7 @@ Koffice 2 core library.
 %defattr(-,root,root)
 %_kde_libdir/libkoproperty.so.%libkoproperty_major
 %_kde_libdir/libkoproperty.so.%libkoproperty_major.0.0
-
+%endif
 #--------------------------------------------------------------------
 
 %define libkoresources_major 5
@@ -475,27 +478,27 @@ Koffice 2 core library.
 
 #--------------------------------------------------------------------
 
-%define libkstore_major 5
-%define libkstore %mklibname kstore %libkstore_major
+%define libkostore_major 5
+%define libkostore %mklibname kostore %libkostore_major
 
-%package -n %libkstore
+%package -n %libkostore
 Summary: Koffice 2 core library
 Group: System/Libraries
 
-%description -n %libkstore
+%description -n %libkostore
 Koffice 2 core library.
 
 %if %mdkversion < 200900
-%post -n   %libkstore -p /sbin/ldconfig
+%post -n   %libkostore -p /sbin/ldconfig
 %endif
 %if %mdkversion < 200900
-%postun -n %libkstore -p /sbin/ldconfig
+%postun -n %libkostore -p /sbin/ldconfig
 %endif
 
-%files -n %libkstore
+%files -n %libkostore
 %defattr(-,root,root)
-%_kde_libdir/libkstore.so.%libkstore_major
-%_kde_libdir/libkstore.so.%libkstore_major.0.0
+%_kde_libdir/libkostore.so.%libkostore_major
+%_kde_libdir/libkostore.so.%libkostore_major.0.0
 
 #--------------------------------------------------------------------
 
@@ -546,8 +549,7 @@ Koffice 2 core library.
 %_kde_libdir/libflake.so.%libflake_major.0.0
 
 #--------------------------------------------------------------------
-
-%define libpigmentcms_major 1
+%define libpigmentcms_major 5
 %define libpigmentcms %mklibname pigmentcms %libpigmentcms_major
 
 %package -n %libpigmentcms
@@ -573,7 +575,7 @@ Koffice 2 core library.
 %_kde_libdir/libpigmentcms.so.%libpigmentcms_major.0.0
 
 #--------------------------------------------------------------------
-
+%if 0
 %define libkformdesigner_major 5
 %define libkformdesigner %mklibname kformdesigner %libkformdesigner_major
 
@@ -595,7 +597,7 @@ Koffice 2 core library.
 %defattr(-,root,root)
 %_kde_libdir/libkformdesigner.so.%libkformdesigner_major
 %_kde_libdir/libkformdesigner.so.%libkformdesigner_major.0.0
-
+%endif
 #--------------------------------------------------------------------
 
 %define libkochart_major 5
@@ -710,22 +712,22 @@ Header files needed for developing koffice2 applications.
 %_kde_libdir/libkarbonui.so
 %_kde_libdir/libkchartcommon.so
 %_kde_libdir/libkdchart.so
-%_kde_libdir/libkexicore.so
-%_kde_libdir/libkexidatatable.so
-%_kde_libdir/libkexidb.so
-%_kde_libdir/libkexiextendedwidgets.so
-%_kde_libdir/libkexiformutils.so
-%_kde_libdir/libkexiguiutils.so
-%_kde_libdir/libkeximain.so
-%_kde_libdir/libkeximigrate.so
-%_kde_libdir/libkexirelationsview.so
-%_kde_libdir/libkexisql3.so
-%_kde_libdir/libkexiutils.so
-%_kde_libdir/libkformdesigner.so
-%_kde_libdir/libkformulalib.so
-%_kde_libdir/libkformulaprivate.so
+#%_kde_libdir/libkexicore.so
+#%_kde_libdir/libkexidatatable.so
+#%_kde_libdir/libkexidb.so
+#%_kde_libdir/libkexiextendedwidgets.so
+#%_kde_libdir/libkexiformutils.so
+#%_kde_libdir/libkexiguiutils.so
+#%_kde_libdir/libkeximain.so
+#%_kde_libdir/libkeximigrate.so
+#%_kde_libdir/libkexirelationsview.so
+#%_kde_libdir/libkexisql3.so
+#%_kde_libdir/libkexiutils.so
+#%_kde_libdir/libkformdesigner.so
+#%_kde_libdir/libkformulalib.so
+#%_kde_libdir/libkformulaprivate.so
 %_kde_libdir/libkisexiv2.so
-%_kde_libdir/libkivioprivate.so
+#%_kde_libdir/libkivioprivate.so
 %_kde_libdir/libkochart.so
 %_kde_libdir/libkoffice_graya_u16.so
 %_kde_libdir/libkofficegrayau8colorspace.so
@@ -734,7 +736,7 @@ Header files needed for developing koffice2 applications.
 %_kde_libdir/libkomain.so
 %_kde_libdir/libkoodf.so
 %_kde_libdir/libkopageapp.so
-%_kde_libdir/libkoproperty.so
+#%_kde_libdir/libkoproperty.so
 %_kde_libdir/libkoresources.so
 %_kde_libdir/libkotext.so
 %_kde_libdir/libkowmf.so
@@ -754,11 +756,14 @@ Header files needed for developing koffice2 applications.
 %_kde_libdir/libkritaui.so
 %_kde_libdir/libkrossmodulekrita.so
 %_kde_libdir/libkspreadcommon.so
-%_kde_libdir/libkstore.so
+#%_kde_libdir/libkstore.so
 %_kde_libdir/libkwmf.so
 %_kde_libdir/libkwordexportfilters.so
 %_kde_libdir/libkwordprivate.so
 %_kde_libdir/libpigmentcms.so
+%_kde_libdir/libkostore.so
+%_kde_libdir/libkritalibpaintop.so
+%_kde_libdir/libKritaRulerAssistantCommon.so
 
 #--------------------------------------------------------------------
 
@@ -768,7 +773,7 @@ Group:		Graphical desktop/KDE
 Requires:	%name-core = %{epoch}:%{version}-%{release}
 URL:            http://www.koffice.org/
 Requires:	wordnet
-Requires:       %name-kformula
+#Requires:       kformula
 Provides:	%name-apps
 Provides:       kword2
 Obsoletes:      %name-kword <= 11:1.9.95.3-0.766453.5
@@ -814,8 +819,8 @@ Kword is a word processor for kde project
 %_kde_libdir/kde4/libamiproimport.so
 %_kde_libdir/kde4/libapplixspreadimport.so
 %_kde_libdir/kde4/libapplixwordimport.so
-%_kde_libdir/kde4/libasciiexport.so
-%_kde_libdir/kde4/libasciiimport.so
+#%_kde_libdir/kde4/libasciiexport.so
+#%_kde_libdir/kde4/libasciiimport.so
 %_kde_libdir/kde4/libcsvexport.so
 %_kde_libdir/kde4/libcsvimport.so
 %_kde_libdir/kde4/libdbaseimport.so
@@ -1154,7 +1159,7 @@ KSpread is a spreadsheet for kde project
 %_kde_bindir/kspread
 %_kde_libdir/kde4/krossmodulekspread.so
 %_kde_libdir/kde4/libkspreadhtmlexport.so
-%_kde_libdir/kde4/libkspreadinsertcalendar.so
+#%_kde_libdir/kde4/libkspreadinsertcalendar.so
 %_kde_libdir/kde4/libkspreadlatexexport.so
 %_kde_libdir/kde4/libkspreadpart.so
 %_kde_libdir/kde4/libkspreadsolver.so
@@ -1206,7 +1211,7 @@ Summary:	Presentation for koffice2
 Group:		Graphical desktop/KDE
 Requires:	%name-core = %{epoch}:%{version}-%{release}
 URL:            http://www.koffice.org/
-Requires:       %name-kformula
+#Requires:       kformula
 Requires:	xdg-utils
 Provides:       %name-apps
 Provides:       kpresenter2
@@ -1244,6 +1249,7 @@ KPresenter is a presentation for kde project.
 %_kde_libdir/kde4/kpr_shapeanimation_example.so
 %_kde_libdir/kde4/libpowerpointimport.so
 %_kde_libdir/kde4/kpresentereventactions.so 
+%_kde_libdir/kde4/kpresentertoolanimation.so
 %_kde_libdir/libkdeinit4_kpresenter.so
 %_kde_datadir/applications/kde4/kpresenter.desktop
 %_kde_datadir/kde4/services/ServiceMenus/kpresenter_konqi.desktop
@@ -1260,6 +1266,7 @@ KPresenter is a presentation for kde project.
 %_kde_datadir/kde4/services/kpr_pageeffect_matrixwipe.desktop
 %_kde_datadir/kde4/services/kpr_pageeffect_slidewipe.desktop
 %_kde_datadir/kde4/services/kpr_shapeanimation_example.desktop
+%_kde_datadir/kde4/services/kpresentertoolanimation.desktop
 %_kde_datadir/kde4/servicetypes/kpr_pageeffect.desktop
 %_kde_datadir/kde4/servicetypes/kpr_shapeanimation.desktop
 
@@ -1290,7 +1297,6 @@ Koffice 2 core library.
 %_kde_libdir/libkpresenterprivate.so.%kpresenterprivate_major.0.0
 
 #--------------------------------------------------------------------
-
 %package -n kformula
 Summary:	Formula for koffice2
 Group:		Graphical desktop/KDE
@@ -1322,6 +1328,7 @@ KFormula is a formula for kde project.
 
 %files -n kformula
 %defattr(-,root,root)
+%if 0
 %_kde_bindir/kformula
 %_kde_libdir/kde4/libkformulapart.so
 %_kde_libdir/libkdeinit4_kformula.so
@@ -1331,11 +1338,12 @@ KFormula is a formula for kde project.
 %_kde_datadir/kde4/services/ServiceMenus/kformula_konqi.desktop
 %_kde_iconsdir/hicolor/*/apps/kformula.png
 %_kde_datadir/kde4/services/kformulapart.desktop
-
+%endif
 %_kde_docdir/HTML/en/kformula
+%_kde_datadir/kde4/services/ServiceMenus/kformula_konqi.desktop
 
 #--------------------------------------------------------------------
-
+%if 0
 %define kformulalib_major 5
 %define libkformulalib %mklibname kformulalib %kformulalib_major
 
@@ -1381,7 +1389,7 @@ Koffice 2 core library.
 %defattr(-,root,root)
 %_kde_libdir/libkformulaprivate.so.%kformulaprivate_major
 %_kde_libdir/libkformulaprivate.so.%kformulaprivate_major.0.0
-
+%endif
 #--------------------------------------------------------------------
 
 %package -n koshell
@@ -1444,17 +1452,20 @@ Kivio is a diagramme for kde project.
 
 %files -n kivio
 %defattr(-,root,root)
+%if 0
 %_kde_bindir/kivio
 %_kde_libdir/kde4/libkiviopart.so
 %_kde_libdir/libkdeinit4_kivio.so
 %_kde_datadir/applications/kde4/kivio.desktop
 %_kde_appsdir/kivio
 %_kde_datadir/kde4/services/ServiceMenus/kivio_konqi.desktop
-%_kde_docdir/HTML/en/kivio
 %_kde_datadir/kde4/services/kiviopart.desktop
+%endif
+%_kde_docdir/HTML/en/kivio
+%_kde_datadir/kde4/services/ServiceMenus/kivio_konqi.desktop
 
 #--------------------------------------------------------------------
-
+%if 0
 %define  kivioprivate_major 5
 %define  libkivioprivate %mklibname kivioprivate  %kivioprivate_major 
 
@@ -1476,8 +1487,7 @@ Koffice 2 core library.
 %defattr(-,root,root)
 %_kde_libdir/libkivioprivate.so.%kivioprivate_major 
 %_kde_libdir/libkivioprivate.so.%kivioprivate_major.0.0
-
-
+%endif
 #--------------------------------------------------------------------
 
 %package -n kchart
@@ -1665,6 +1675,7 @@ Krita is a pixel-based image manipulation program.
 %_kde_datadir/applications/kde4/krita_ora.desktop
 %_kde_datadir/applications/kde4/krita_pdf.desktop
 %_kde_datadir/applications/kde4/krita_tiff.desktop
+%_kde_datadir/applications/kde4/krita_raw.desktop
 %_kde_datadir/kde4/services/ServiceMenus/krita_konqi.desktop
 %_kde_datadir/kde4/services/*krita*.desktop
 %_kde_datadir/kde4/servicetypes/*krita*.desktop
@@ -1891,6 +1902,29 @@ Koffice 2 core library.
 
 #--------------------------------------------------------------------
 
+%define  libkritalibpaintop_major 5
+%define  libkritalibpaintop %mklibname kritalibpaintop  %libkritalibpaintop_major
+
+%package -n %libkritalibpaintop
+Summary: Koffice 2 core library
+Group: System/Libraries
+
+%description -n %libkritalibpaintop
+Koffice 2 core library.
+
+%if %mdkversion < 200900
+%post -n %libkritalibpaintop -p /sbin/ldconfig
+%endif
+%if %mdkversion < 200900
+%postun -n %libkritalibpaintop -p /sbin/ldconfig
+%endif
+
+%files -n %libkritalibpaintop
+%defattr(-,root,root)
+%_kde_libdir/libkritalibpaintop.so.%{libkritalibpaintop_major}*
+
+#--------------------------------------------------------------------
+
 %package -n karbon
 Summary:	Scalable drawing for koffice2
 Group:		Graphical desktop/KDE
@@ -1935,6 +1969,7 @@ Karbon is a scalable drawing for kde project.
 %_kde_libdir/kde4/libkarbon1ximport.so
 %_kde_libdir/kde4/karbon_refinepathplugin.so
 %_kde_libdir/kde4/karbon_roundcornersplugin.so
+%_kde_libdir/kde4/karbondockersplugin.so
 %_kde_libdir/libkdeinit4_karbon.so
 %_kde_datadir/applications/kde4/karbon.desktop
 %_kde_appsdir/karbon
@@ -2026,6 +2061,7 @@ Karbon is an integrated environment for managing data.
 
 %files -n kexi
 %defattr(-,root,root)
+%if 0
 %_kde_bindir/kexi
 %_kde_bindir/ksqlite
 %_kde_bindir/ksqlite2to3
@@ -2051,9 +2087,10 @@ Karbon is an integrated environment for managing data.
 %_kde_appsdir/kexi
 %_kde_datadir/kde4/services/ServiceMenus/kexi_konqi.desktop
 %_kde_datadir/config/kexirc
-
+%endif
 %_kde_docdir/HTML/en/kexi
-
+%_kde_datadir/kde4/services/ServiceMenus/kexi_konqi.desktop
+%if 0
 %_kde_datadir/kde4/services/kexi/*.desktop
 %_kde_datadir/kde4/services/kexidb_mysqldriver.desktop
 %_kde_datadir/kde4/services/kexidb_pqxxsqldriver.desktop
@@ -2328,7 +2365,7 @@ Koffice 2 core library.
 %defattr(-,root,root)
 %_kde_libdir/libkexiutils.so.%libkexiutils_major
 %_kde_libdir/libkexiutils.so.%libkexiutils_major.0.0
-
+%endif
 #--------------------------------------------------------------------
 
 %package -n kugar
