@@ -13,7 +13,7 @@
 Name: koffice
 URL: http://www.koffice.org/
 Summary: Set of office applications for KDE
-Version: 1.9.98.0
+Version: 1.9.98.1
 Release: %mkrel 2
 Epoch: 11
 Source: %name-%version.tar.bz2
@@ -190,7 +190,7 @@ Common files for Koffice
 %_kde_datadir/kde4/services/textshape.desktop
 %_kde_datadir/kde4/services/textvariables.desktop
 %_kde_datadir/kde4/services/kofficesimpletextedit.desktop
-%_kde_datadir/kde4/services/simpletextshape.desktop
+%_kde_datadir/kde4/services/artistictextshape.desktop
 %_kde_datadir/kde4/services/Filterkpr2odf.desktop
 %_kde_datadir/kde4/services/paragraphtool.desktop
 %_kde_datadir/kde4/services/kopabackgroundtool.desktop
@@ -219,6 +219,8 @@ Common files for Koffice
 %_kde_datadir/templates/TextDocument.desktop
 
 %_kde_libdir/kde4/autocorrect.so
+%_kde_libdir/kde4/libasciiexport.so
+%_kde_libdir/kde4/libasciiimport.so
 %_kde_libdir/kde4/changecase.so
 %_kde_libdir/kde4/clipartthumbnail.so
 %_kde_libdir/kde4/defaulttools.so
@@ -239,7 +241,7 @@ Common files for Koffice
 %_kde_libdir/kde4/textshape.so
 %_kde_libdir/kde4/textvariables.so
 %_kde_libdir/kde4/libmswordimport.so
-%_kde_libdir/kde4/simpletextshape.so
+%_kde_libdir/kde4/artistictextshape.so
 %_kde_libdir/kde4/libFilterkpr2odf.so
 %_kde_libdir/kde4/libmswordodf_import.so
 %_kde_libdir/kde4/paragraphtool.so
@@ -1340,7 +1342,6 @@ KFormula is a formula for kde project.
 %_kde_datadir/kde4/services/kformulapart.desktop
 %endif
 %_kde_docdir/HTML/en/kformula
-%_kde_datadir/kde4/services/ServiceMenus/kformula_konqi.desktop
 
 #--------------------------------------------------------------------
 %if 0
@@ -1462,7 +1463,6 @@ Kivio is a diagramme for kde project.
 %_kde_datadir/kde4/services/kiviopart.desktop
 %endif
 %_kde_docdir/HTML/en/kivio
-%_kde_datadir/kde4/services/ServiceMenus/kivio_konqi.desktop
 
 #--------------------------------------------------------------------
 %if 0
@@ -2089,7 +2089,6 @@ Karbon is an integrated environment for managing data.
 %_kde_datadir/config/kexirc
 %endif
 %_kde_docdir/HTML/en/kexi
-%_kde_datadir/kde4/services/ServiceMenus/kexi_konqi.desktop
 %if 0
 %_kde_datadir/kde4/services/kexi/*.desktop
 %_kde_datadir/kde4/services/kexidb_mysqldriver.desktop
