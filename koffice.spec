@@ -2031,6 +2031,20 @@ Koffice 2 core library.
 
 #--------------------------------------------------------------------
 
+%package -n katelier
+Summary: Metapackage for krita and karbon
+Group: Graphical desktop/KDE
+Requires: krita = %{epoch}:%{version}-%{release}
+Requires: karbon = %{epoch}:%{version}-%{release}
+
+%description -n katelier
+Meta package for krita and karbon.
+
+%files -n katelier
+%defattr(-,root,root)
+
+#--------------------------------------------------------------------
+
 %package -n kexi
 Summary:    An integrated environment for managing data
 Group:	    Graphical desktop/KDE
