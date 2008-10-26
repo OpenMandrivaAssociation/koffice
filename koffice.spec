@@ -1621,8 +1621,8 @@ Koffice 2 core library.
 %package -n katelier
 Summary: Krita and karbon meta package
 Group: Graphical desktop/KDE
-Requires: krita
-Requires: karbon
+Requires: krita = %{epoch}:%{version}-%{release}
+Requires: karbon = %{epoch}:%{version}-%{release}
 
 %description -n katelier
 Krita and karbon meta package
@@ -2028,20 +2028,6 @@ Koffice 2 core library.
 %defattr(-,root,root)
 %_kde_libdir/libkarbonui.so.%karbonui_major
 %_kde_libdir/libkarbonui.so.%karbonui_major.0.0
-
-#--------------------------------------------------------------------
-
-%package -n katelier
-Summary: Metapackage for krita and karbon
-Group: Graphical desktop/KDE
-Requires: krita = %{epoch}:%{version}-%{release}
-Requires: karbon = %{epoch}:%{version}-%{release}
-
-%description -n katelier
-Meta package for krita and karbon.
-
-%files -n katelier
-%defattr(-,root,root)
 
 #--------------------------------------------------------------------
 
