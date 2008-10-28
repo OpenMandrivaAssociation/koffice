@@ -14,7 +14,7 @@ Name: koffice
 URL: http://www.koffice.org/
 Summary: Set of office applications for KDE
 Version: 1.9.98.1
-Release: %mkrel 2
+Release: %mkrel 3
 Epoch: 11
 Source: %name-%version.tar.bz2
 Patch1: koffice-1.9.95.4-disable-gmagick.patch
@@ -114,6 +114,7 @@ Conflicts: koffice-kpresenter < 11:1.6.3-20
 Conflicts: koffice-karbon < 11:1.6.3-20
 Conflicts: koffice-kchart < 11:1.6.3-20
 Conflicts: koffice-kword < 11:1.6.3-20
+Conflicts: koffice-devel < 11:1.9.98.1-3
 Requires: kdebase4-runtime
 
 %description core
@@ -246,6 +247,9 @@ Common files for Koffice
 %_kde_libdir/kde4/libmswordodf_import.so
 %_kde_libdir/kde4/paragraphtool.so
 %_kde_libdir/kde4/kopabackgroundtool.so
+
+#needed by Krita
+%_kde_libdir/libKritaRulerAssistantCommon.so
 
 %_kde_bindir/kthesaurus
 %_kde_datadir/applications/kde4/KThesaurus.desktop
@@ -765,7 +769,6 @@ Header files needed for developing koffice2 applications.
 %_kde_libdir/libpigmentcms.so
 %_kde_libdir/libkostore.so
 %_kde_libdir/libkritalibpaintop.so
-%_kde_libdir/libKritaRulerAssistantCommon.so
 
 #--------------------------------------------------------------------
 
