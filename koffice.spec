@@ -13,8 +13,8 @@
 Name: koffice
 URL: http://www.koffice.org/
 Summary: Set of office applications for KDE
-Version: 1.9.98.1
-Release: %mkrel 3
+Version: 1.9.98.2
+Release: %mkrel 1
 Epoch: 11
 Source: %name-%version.tar.bz2
 Patch1: koffice-1.9.95.4-disable-gmagick.patch
@@ -51,7 +51,7 @@ BuildRequires: qca2-devel
 BuildRequires: glpk-devel
 BuildRequires: mesaglut-devel
 BuildRequires: glew-devel
-#BuildRequires: GraphicsMagick-devel
+BuildRequires: GraphicsMagick-devel
 BuildRequires: mysql-static-devel
 BuildRequires: kdegraphics4-devel
 BuildRequires: libtiff-devel
@@ -129,6 +129,11 @@ Common files for Koffice
 %_kde_libdir/kde4/spellcheck.so
 %_kde_libdir/kde4/libkarbonsvgimport.so
 
+%dir %_kde_appsdir/koffice
+%_kde_appsdir/koffice/autocorrect
+%_kde_appsdir/koffice/hyphdicts
+%_kde_appsdir/koffice/koffice_shell.rc
+
 %_kde_appsdir/koffice/icons/*/*/*/*
 %_kde_appsdir/koffice/icons/*.png
 #%_kde_iconsdir/hicolor/*/actions/abs.png
@@ -155,19 +160,34 @@ Common files for Koffice
 #%_kde_iconsdir/hicolor/22x22/actions/remcol.png
 #%_kde_iconsdir/hicolor/22x22/actions/remrow.png
 %_kde_iconsdir/hicolor/*/mimetypes/*
+%_kde_iconsdir/oxygen/16x16/actions/format-justify-center.png                                                           
+%_kde_iconsdir/oxygen/16x16/actions/format-justify-fill.png                                                             
+%_kde_iconsdir/oxygen/16x16/actions/format-justify-left.png                                                             
+%_kde_iconsdir/oxygen/16x16/actions/format-justify-right.png                                                            
+%_kde_iconsdir/oxygen/16x16/actions/format-text-bold.png
+%_kde_iconsdir/oxygen/16x16/actions/format-text-italic.png
+%_kde_iconsdir/oxygen/16x16/actions/format-text-underline.png
+%_kde_iconsdir/oxygen/16x16/actions/object-align-horizontal-center.png
+%_kde_iconsdir/oxygen/16x16/actions/object-align-horizontal-left.png
+%_kde_iconsdir/oxygen/16x16/actions/object-align-horizontal-right.png
+%_kde_iconsdir/oxygen/16x16/actions/object-align-vertical-bottom-top.png
+%_kde_iconsdir/oxygen/16x16/actions/object-align-vertical-bottom.png
+%_kde_iconsdir/oxygen/16x16/actions/object-align-vertical-center.png
+%_kde_iconsdir/oxygen/16x16/actions/object-align-vertical-top.png
+%_kde_iconsdir/oxygen/16x16/actions/object-group.png
+%_kde_iconsdir/oxygen/16x16/actions/object-order-back.png
+%_kde_iconsdir/oxygen/16x16/actions/object-order-front.png
+%_kde_iconsdir/oxygen/16x16/actions/object-order-lower.png
+%_kde_iconsdir/oxygen/16x16/actions/object-order-raise.png
+%_kde_iconsdir/oxygen/16x16/actions/object-ungroup.png
+%_kde_iconsdir/oxygen/scalable/actions/shape-choose.svgz
 %_kde_iconsdir/oxygen/*/actions/table.*
-%_kde_iconsdir/oxygen/22x22/actions/aoleft.png
-%_kde_iconsdir/oxygen/22x22/actions/object-arrange-back.png
-%_kde_iconsdir/oxygen/22x22/actions/object-arrange-front.png
-%_kde_iconsdir/oxygen/22x22/actions/object-arrange-lower.png
-%_kde_iconsdir/oxygen/22x22/actions/object-arrange-raise.png
 %_kde_iconsdir/oxygen/32x32/actions/shape-choose.png
 %_kde_iconsdir/oxygen/32x32/actions/x-shape-chart.png
 %_kde_iconsdir/oxygen/32x32/actions/x-shape-connection.png
 %_kde_iconsdir/oxygen/32x32/actions/x-shape-formula.png
 %_kde_iconsdir/oxygen/32x32/actions/x-shape-image.png
 %_kde_iconsdir/oxygen/32x32/actions/x-shape-text.png
-%_kde_appsdir/koffice
 
 %_kde_datadir/kde4/services/ServiceMenus/kchart_konqi.desktop
 %_kde_appsdir/musicshape
@@ -754,9 +774,9 @@ Header files needed for developing koffice2 applications.
 %_kde_libdir/libkplatoworkfactory.so
 %_kde_libdir/libkpresenterprivate.so
 %_kde_libdir/libkrita_xyz_u16.so
-%_kde_libdir/libkritabasicdynamiccoloringprogram.so
-%_kde_libdir/libkritabasicdynamicshapeprogram.so
-%_kde_libdir/libkritadynamicbrush.so
+#%_kde_libdir/libkritabasicdynamiccoloringprogram.so
+#%_kde_libdir/libkritabasicdynamicshapeprogram.so
+#%_kde_libdir/libkritadynamicbrush.so
 %_kde_libdir/libkritagrayscale.so
 %_kde_libdir/libkritaimage.so
 %_kde_libdir/libkritaui.so
@@ -1340,11 +1360,11 @@ KFormula is a formula for kde project.
 %_kde_datadir/applications/kde4/kformula.desktop
 %_kde_appsdir/formulashape
 %_kde_appsdir/kformula
-%_kde_datadir/kde4/services/ServiceMenus/kformula_konqi.desktop
 %_kde_iconsdir/hicolor/*/apps/kformula.png
 %_kde_datadir/kde4/services/kformulapart.desktop
 %endif
 %_kde_docdir/HTML/en/kformula
+%_kde_datadir/kde4/services/ServiceMenus/kformula_konqi.desktop
 
 #--------------------------------------------------------------------
 %if 0
@@ -1462,10 +1482,10 @@ Kivio is a diagramme for kde project.
 %_kde_libdir/libkdeinit4_kivio.so
 %_kde_datadir/applications/kde4/kivio.desktop
 %_kde_appsdir/kivio
-%_kde_datadir/kde4/services/ServiceMenus/kivio_konqi.desktop
 %_kde_datadir/kde4/services/kiviopart.desktop
 %endif
 %_kde_docdir/HTML/en/kivio
+%_kde_datadir/kde4/services/ServiceMenus/kivio_konqi.desktop
 
 #--------------------------------------------------------------------
 %if 0
@@ -1523,11 +1543,11 @@ Kchart is a chart and diagram drawing program.
 
 %files -n kchart
 %defattr(-,root,root)
-%{_kde_bindir}/kchart
+#%{_kde_bindir}/kchart
 
 %_kde_libdir/kde4/chartshape.so
-%_kde_libdir/kde4/libkchartpart.so
-%_kde_libdir/libkdeinit4_kchart.so
+#%_kde_libdir/kde4/libkchartpart.so
+#%_kde_libdir/libkdeinit4_kchart.so
 %_kde_libdir/kde4/libkchartgenericimageexport.so
 %_kde_libdir/kde4/libkchartsvgexport.so
 
@@ -1541,8 +1561,8 @@ Kchart is a chart and diagram drawing program.
 %{_kde_datadir}/kde4/services/kchart_xbm_export.desktop
 %{_kde_datadir}/kde4/services/kchart_xpm_export.desktop
 
-%{_kde_datadir}/applications/kde4/kchart.desktop
-%{_kde_datadir}/config.kcfg/kchart.kcfg
+#%{_kde_datadir}/applications/kde4/kchart.desktop
+#%{_kde_datadir}/config.kcfg/kchart.kcfg
 %{_kde_appsdir}/kchart
 %{_kde_iconsdir}/hicolor/*/apps/kchart.png
 
@@ -1717,52 +1737,51 @@ Koffice 2 core library.
 %_kde_libdir/libkrita_xyz_u16.so.%{libkrita_xyz_u16_major}*
 
 #--------------------------------------------------------------------
-
-
-%define  kritabasicdynamiccoloringprogram_major 5
-%define  libkritabasicdynamiccoloringprogram  %mklibname kritabasicdynamiccoloringprogram  %kritabasicdynamiccoloringprogram_major
-
-%package -n %libkritabasicdynamiccoloringprogram
-Summary: Koffice 2 core library
-Group: System/Libraries
-
-%description -n %libkritabasicdynamiccoloringprogram
-Koffice 2 core library.
-
-%if %mdkversion < 200900
-%post -n %libkritabasicdynamiccoloringprogram -p /sbin/ldconfig
-%endif
-%if %mdkversion < 200900
-%postun -n %libkritabasicdynamiccoloringprogram -p /sbin/ldconfig
-%endif
-
-%files -n %libkritabasicdynamiccoloringprogram
-%defattr(-,root,root)
-%_kde_libdir/libkritabasicdynamiccoloringprogram.so.%{kritabasicdynamiccoloringprogram_major}*
-
+#
+#define  kritabasicdynamiccoloringprogram_major 5
+#define  libkritabasicdynamiccoloringprogram  %mklibname kritabasicdynamiccoloringprogram  %kritabasicdynamiccoloringprogram_major
+#
+#%package -n %libkritabasicdynamiccoloringprogram
+#Summary: Koffice 2 core library
+#Group: System/Libraries
+#
+#%description -n %libkritabasicdynamiccoloringprogram
+#Koffice 2 core library.
+#
+#%if %mdkversion < 200900
+#%post -n %libkritabasicdynamiccoloringprogram -p /sbin/ldconfig
+#%endif
+#%if %mdkversion < 200900
+#%postun -n %libkritabasicdynamiccoloringprogram -p /sbin/ldconfig
+#%endif
+#
+#%files -n %libkritabasicdynamiccoloringprogram
+#%defattr(-,root,root)
+#%_kde_libdir/libkritabasicdynamiccoloringprogram.so.%{kritabasicdynamiccoloringprogram_major}*
+#
 #--------------------------------------------------------------------
-
-%define  kritabasicdynamicshapeprogram_major 5
-%define  libkritabasicdynamicshapeprogram %mklibname kritabasicdynamicshapeprogram  %kritabasicdynamicshapeprogram_major
-
-%package -n %libkritabasicdynamicshapeprogram
-Summary: Koffice 2 core library
-Group: System/Libraries
-
-%description -n %libkritabasicdynamicshapeprogram
-Koffice 2 core library.
-
-%if %mdkversion < 200900
-%post -n %libkritabasicdynamicshapeprogram -p /sbin/ldconfig
-%endif
-%if %mdkversion < 200900
-%postun -n %libkritabasicdynamicshapeprogram -p /sbin/ldconfig
-%endif
-
-%files -n %libkritabasicdynamicshapeprogram
-%defattr(-,root,root)
-%_kde_libdir/libkritabasicdynamicshapeprogram.so.%{kritabasicdynamicshapeprogram_major}*
-
+#
+#define  kritabasicdynamicshapeprogram_major 5
+#define  libkritabasicdynamicshapeprogram %mklibname kritabasicdynamicshapeprogram  %kritabasicdynamicshapeprogram_major
+#
+#%package -n %libkritabasicdynamicshapeprogram
+#Summary: Koffice 2 core library
+#Group: System/Libraries
+#
+#%description -n %libkritabasicdynamicshapeprogram
+#Koffice 2 core library.
+#
+#%if %mdkversion < 200900
+#%post -n %libkritabasicdynamicshapeprogram -p /sbin/ldconfig
+#%endif
+#%if %mdkversion < 200900
+#%postun -n %libkritabasicdynamicshapeprogram -p /sbin/ldconfig
+#%endif
+#
+#%files -n %libkritabasicdynamicshapeprogram
+#%defattr(-,root,root)
+#%_kde_libdir/libkritabasicdynamicshapeprogram.so.%{kritabasicdynamicshapeprogram_major}*
+#
 #--------------------------------------------------------------------
 
 %define  libkritaui_major 5
@@ -1788,29 +1807,30 @@ Koffice 2 core library.
 %_kde_libdir/libkritaui.so.%libkritaui_major.0.0
 
 #--------------------------------------------------------------------
-
-%define  kritadynamicbrush_major 5
-%define  libkritadynamicbrush %mklibname kritadynamicbrush  %kritadynamicbrush_major
-
-%package -n %libkritadynamicbrush
-Summary: Koffice 2 core library
-Group: System/Libraries
-
-%description -n %libkritadynamicbrush
-Koffice 2 core library.
-
-%if %mdkversion < 200900
-%post -n %libkritadynamicbrush -p /sbin/ldconfig
-%endif
-%if %mdkversion < 200900
-%postun -n %libkritadynamicbrush -p /sbin/ldconfig
-%endif
-
-%files -n %libkritadynamicbrush
-%defattr(-,root,root)
-%_kde_libdir/libkritadynamicbrush.so.%kritadynamicbrush_major
-%_kde_libdir/libkritadynamicbrush.so.%kritadynamicbrush_major.0.0
-
+#
+#define  kritadynamicbrush_major 5
+#define  libkritadynamicbrush %mklibname kritadynamicbrush  %kritadynamicbrush_major
+#
+#%package -n %libkritadynamicbrush
+#Summary: Koffice 2 core library
+#Group: System/Libraries
+#
+#%description -n %libkritadynamicbrush
+#Koffice 2 core library.
+#
+#%if %mdkversion < 200900
+#%post -n %libkritadynamicbrush -p /sbin/ldconfig
+#%endif
+#
+#%if %mdkversion < 200900
+#%postun -n %libkritadynamicbrush -p /sbin/ldconfig
+#%endif
+#
+#%files -n %libkritadynamicbrush
+#%defattr(-,root,root)
+#%_kde_libdir/libkritadynamicbrush.so.%kritadynamicbrush_major
+#%_kde_libdir/libkritadynamicbrush.so.%kritadynamicbrush_major.0.0
+#
 #--------------------------------------------------------------------
 
 %define  libkrossmodulekrita_major 5
@@ -2088,10 +2108,10 @@ Karbon is an integrated environment for managing data.
 %_kde_libdir/kde4/krossmodulekexidb.so
 %_kde_datadir/applications/kde4/kexi.desktop
 %_kde_appsdir/kexi
-%_kde_datadir/kde4/services/ServiceMenus/kexi_konqi.desktop
 %_kde_datadir/config/kexirc
 %endif
 %_kde_docdir/HTML/en/kexi
+%_kde_datadir/kde4/services/ServiceMenus/kexi_konqi.desktop
 %if 0
 %_kde_datadir/kde4/services/kexi/*.desktop
 %_kde_datadir/kde4/services/kexidb_mysqldriver.desktop
