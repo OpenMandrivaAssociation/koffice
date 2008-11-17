@@ -14,7 +14,7 @@ Name: koffice
 URL: http://www.koffice.org/
 Summary: Set of office applications for KDE
 Version: 1.9.98.2
-Release: %mkrel 1
+Release: %mkrel 2
 Epoch: 11
 Source: %name-%version.tar.bz2
 Patch1: koffice-1.9.95.4-disable-gmagick.patch
@@ -160,13 +160,6 @@ Common files for Koffice
 #%_kde_iconsdir/hicolor/22x22/actions/remcol.png
 #%_kde_iconsdir/hicolor/22x22/actions/remrow.png
 %_kde_iconsdir/hicolor/*/mimetypes/*
-%_kde_iconsdir/oxygen/16x16/actions/format-justify-center.png                                                           
-%_kde_iconsdir/oxygen/16x16/actions/format-justify-fill.png                                                             
-%_kde_iconsdir/oxygen/16x16/actions/format-justify-left.png                                                             
-%_kde_iconsdir/oxygen/16x16/actions/format-justify-right.png                                                            
-%_kde_iconsdir/oxygen/16x16/actions/format-text-bold.png
-%_kde_iconsdir/oxygen/16x16/actions/format-text-italic.png
-%_kde_iconsdir/oxygen/16x16/actions/format-text-underline.png
 %_kde_iconsdir/oxygen/16x16/actions/object-align-horizontal-center.png
 %_kde_iconsdir/oxygen/16x16/actions/object-align-horizontal-left.png
 %_kde_iconsdir/oxygen/16x16/actions/object-align-horizontal-right.png
@@ -174,12 +167,6 @@ Common files for Koffice
 %_kde_iconsdir/oxygen/16x16/actions/object-align-vertical-bottom.png
 %_kde_iconsdir/oxygen/16x16/actions/object-align-vertical-center.png
 %_kde_iconsdir/oxygen/16x16/actions/object-align-vertical-top.png
-%_kde_iconsdir/oxygen/16x16/actions/object-group.png
-%_kde_iconsdir/oxygen/16x16/actions/object-order-back.png
-%_kde_iconsdir/oxygen/16x16/actions/object-order-front.png
-%_kde_iconsdir/oxygen/16x16/actions/object-order-lower.png
-%_kde_iconsdir/oxygen/16x16/actions/object-order-raise.png
-%_kde_iconsdir/oxygen/16x16/actions/object-ungroup.png
 %_kde_iconsdir/oxygen/scalable/actions/shape-choose.svgz
 %_kde_iconsdir/oxygen/*/actions/table.*
 %_kde_iconsdir/oxygen/32x32/actions/shape-choose.png
@@ -2447,6 +2434,13 @@ make apidox
 rm -fr %buildroot
 
 %makeinstall_std -C build
+
+# fwang: those files conflict with oxygen-icon-theme 
+rm -fr %buildroot%_kde_iconsdir/oxygen/16x16/actions/format-justify*.png
+rm -fr %buildroot%_kde_iconsdir/oxygen/16x16/actions/format-text*.png
+rm -fr %buildroot%_kde_iconsdir/oxygen/16x16/actions/object-group.png
+rm -fr %buildroot%_kde_iconsdir/oxygen/16x16/actions/object-order-*.png
+rm -fr %buildroot%_kde_iconsdir/oxygen/16x16/actions/object-ungroup.png
 
 %if %compile_apidox
 make install-apidox DESTDIR=%buildroot/
