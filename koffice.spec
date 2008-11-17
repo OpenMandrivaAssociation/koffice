@@ -115,6 +115,7 @@ Conflicts: koffice-karbon < 11:1.6.3-20
 Conflicts: koffice-kchart < 11:1.6.3-20
 Conflicts: koffice-kword < 11:1.6.3-20
 Conflicts: koffice-devel < 11:1.9.98.1-3
+Conflicts: kchart < 11:1.9.98.2-4
 Requires: kdebase4-runtime
 
 %description core
@@ -272,8 +273,6 @@ Common files for Koffice
 %_kde_libdir/libkdeinit4_kthesaurus.so
 
 %_kde_bindir/koconverter
-
-%_kde_docdir/HTML/en/kchart
 
 %_kde_docdir/HTML/en/koffice
 
@@ -1517,6 +1516,7 @@ Obsoletes:      %name-kchart <= 11:1.9.95.3-0.766453.5
 Provides:       %name-kchart = %epoch:%version-%release
 Obsoletes:      koffice2-kchart < 1:1.9.95.3-0.766453.6
 Provides:       koffice2-kchart = %epoch:%version-%release
+Conflicts:	%name-core < 11:1.9.98.2-4
 
 %description -n kchart
 Kchart is a chart and diagram drawing program.
@@ -1558,6 +1558,7 @@ Kchart is a chart and diagram drawing program.
 #%{_kde_datadir}/config.kcfg/kchart.kcfg
 %{_kde_appsdir}/kchart
 %{_kde_iconsdir}/hicolor/*/apps/kchart.png
+%_kde_docdir/HTML/en/kchart
 
 #--------------------------------------------------------------------
 
