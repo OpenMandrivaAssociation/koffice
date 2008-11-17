@@ -14,7 +14,7 @@ Name: koffice
 URL: http://www.koffice.org/
 Summary: Set of office applications for KDE
 Version: 1.9.98.2
-Release: %mkrel 2
+Release: %mkrel 3
 Epoch: 11
 Source: %name-%version.tar.bz2
 Patch1: koffice-1.9.95.4-disable-gmagick.patch
@@ -175,6 +175,12 @@ Common files for Koffice
 %_kde_iconsdir/oxygen/32x32/actions/x-shape-formula.png
 %_kde_iconsdir/oxygen/32x32/actions/x-shape-image.png
 %_kde_iconsdir/oxygen/32x32/actions/x-shape-text.png
+# Those files conflict with oxygen-icon-theme
+%exclude %_kde_iconsdir/oxygen/16x16/actions/format-justify*.png
+%exclude %_kde_iconsdir/oxygen/16x16/actions/format-text*.png
+%exclude %_kde_iconsdir/oxygen/16x16/actions/object-group.png
+%exclude %_kde_iconsdir/oxygen/16x16/actions/object-order-*.png
+%exclude %_kde_iconsdir/oxygen/16x16/actions/object-ungroup.png
 
 %_kde_datadir/kde4/services/ServiceMenus/kchart_konqi.desktop
 %_kde_appsdir/musicshape
@@ -2434,13 +2440,6 @@ make apidox
 rm -fr %buildroot
 
 %makeinstall_std -C build
-
-# fwang: those files conflict with oxygen-icon-theme 
-rm -fr %buildroot%_kde_iconsdir/oxygen/16x16/actions/format-justify*.png
-rm -fr %buildroot%_kde_iconsdir/oxygen/16x16/actions/format-text*.png
-rm -fr %buildroot%_kde_iconsdir/oxygen/16x16/actions/object-group.png
-rm -fr %buildroot%_kde_iconsdir/oxygen/16x16/actions/object-order-*.png
-rm -fr %buildroot%_kde_iconsdir/oxygen/16x16/actions/object-ungroup.png
 
 %if %compile_apidox
 make install-apidox DESTDIR=%buildroot/
