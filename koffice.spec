@@ -14,7 +14,7 @@ Name: koffice
 URL: http://www.koffice.org/
 Summary: Set of office applications for KDE
 Version: 1.9.98.2
-Release: %mkrel 3
+Release: %mkrel 4
 Epoch: 11
 Source: %name-%version.tar.bz2
 Patch1: koffice-1.9.95.4-disable-gmagick.patch
@@ -76,6 +76,8 @@ Requires: koshell
 Requires: krita
 Requires: kplato
 Requires: kchart
+
+Requires: koffice-l10n
 
 %description
 Office applications for the K Desktop Environment.
