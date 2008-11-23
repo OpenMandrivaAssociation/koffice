@@ -77,8 +77,6 @@ Requires: krita
 Requires: kplato
 Requires: kchart
 
-Requires: koffice-l10n
-
 %description
 Office applications for the K Desktop Environment.
 
@@ -336,6 +334,7 @@ Koffice 2 core library.
 %package -n %libkomain
 Summary: Koffice 2 core library
 Group: System/Libraries
+Requires: koffice-l10n
 
 %description -n %libkomain
 Koffice 2 core library.
