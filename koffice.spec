@@ -14,10 +14,9 @@ Name: koffice
 URL: http://www.koffice.org/
 Summary: Set of office applications for KDE
 Version: 1.9.98.2
-Release: %mkrel 4
+Release: %mkrel 5
 Epoch: 11
 Source: %name-%version.tar.bz2
-Patch1: koffice-1.9.95.4-disable-gmagick.patch
 Patch2: koffice-1.9.95.8-fix-desktopfiles.patch
 Group: Office
 License: GPL
@@ -644,11 +643,12 @@ Koffice 2 core library.
 #--------------------------------------------------------------------
 
 %define libkoffice_graya_u16_major 5
-%define libkoffice_graya_u16 %mklibname koffice_graya_u16 %libkoffice_graya_u16_major
+%define libkoffice_graya_u16 %mklibname koffice_graya_u16_ %libkoffice_graya_u16_major
 
 %package -n %libkoffice_graya_u16
 Summary: Koffice 2 core library
 Group: System/Libraries
+Obsoletes: %{_lib}koffice_graya_u165 < 11:1.9.98.2-5
 
 %description -n %libkoffice_graya_u16
 Koffice 2 core library.
@@ -1694,6 +1694,7 @@ Krita is a pixel-based image manipulation program.
 %_kde_datadir/applications/kde4/krita_pdf.desktop
 %_kde_datadir/applications/kde4/krita_tiff.desktop
 %_kde_datadir/applications/kde4/krita_raw.desktop
+%_kde_datadir/applications/kde4/krita_magick.desktop
 %_kde_datadir/kde4/services/ServiceMenus/krita_konqi.desktop
 %_kde_datadir/kde4/services/*krita*.desktop
 %_kde_datadir/kde4/servicetypes/*krita*.desktop
@@ -2423,7 +2424,6 @@ Kugar for kde project.
 %prep
 
 %setup -q -n %name-%version
-%patch1 -p0
 #patch2 -p0
 
 %build
