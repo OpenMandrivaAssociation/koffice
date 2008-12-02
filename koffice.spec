@@ -14,7 +14,7 @@ Name: koffice
 URL: http://www.koffice.org/
 Summary: Set of office applications for KDE
 Version: 1.9.98.2
-Release: %mkrel 5
+Release: %mkrel 6
 Epoch: 11
 Source: %name-%version.tar.bz2
 Patch2: koffice-1.9.95.8-fix-desktopfiles.patch
