@@ -13,10 +13,10 @@
 Name: koffice
 URL: http://www.koffice.org/
 Summary: Set of office applications for KDE
-Version: 1.9.98.2
-Release: %mkrel 6
+Version: 1.9.98.3
+Release: %mkrel 1
 Epoch: 11
-Source: %name-%version.tar.bz2
+Source: http://fr2.rpmfind.net/linux/KDE/unstable/koffice-%version/src/%name-%version.tar.bz2
 Patch2: koffice-1.9.95.8-fix-desktopfiles.patch
 Group: Office
 License: GPL
@@ -66,11 +66,11 @@ BuildRequires: doxygen, graphviz
 Requires: kword
 Requires: kspread
 Requires: karbon
-Requires: kugar
+#Requires: kugar
 Requires: kpresenter
 #Requires: kivio
 #Requires: kformula
-Requires: koshell
+#Requires: koshell
 #Requires: kexi
 Requires: krita
 Requires: kplato
@@ -84,14 +84,12 @@ KOffice contains:
    * KSpread: spreadsheet
    * KPresenter: presentations
    * KChart: diagram generator
-   * Kugar: A tool for generating business quality reports.
    * Kivio: A Visio(r)-style flowcharting application.
    * Kexi: an integrated environment for managing data
    * Some filters (Excel 97, Winword 97/2000, etc.)
    * karbon: the scalable vector drawing application for KDE.
    * kformula:  a formula editor for KOffice.
    * krita: painting and image editing application.
-   * koshell
    * kplato: a project management.
 
 %files
@@ -745,7 +743,7 @@ Header files needed for developing koffice2 applications.
 #%_kde_libdir/libkformdesigner.so
 #%_kde_libdir/libkformulalib.so
 #%_kde_libdir/libkformulaprivate.so
-%_kde_libdir/libkisexiv2.so
+#%_kde_libdir/libkisexiv2.so
 #%_kde_libdir/libkivioprivate.so
 %_kde_libdir/libkochart.so
 %_kde_libdir/libkoffice_graya_u16.so
@@ -763,8 +761,8 @@ Header files needed for developing koffice2 applications.
 %_kde_libdir/libkplatomodels.so
 %_kde_libdir/libkplatoprivate.so
 %_kde_libdir/libkplatoui.so
-%_kde_libdir/libkplatoworkapp.so
-%_kde_libdir/libkplatoworkfactory.so
+#%_kde_libdir/libkplatoworkapp.so
+#%_kde_libdir/libkplatoworkfactory.so
 %_kde_libdir/libkpresenterprivate.so
 %_kde_libdir/libkrita_xyz_u16.so
 #%_kde_libdir/libkritabasicdynamiccoloringprogram.so
@@ -953,22 +951,22 @@ A new project management application for koffice2.
 %files -n kplato
 %defattr(-,root,root)
 %_kde_bindir/kplato
-%_kde_bindir/kplatowork
+#%_kde_bindir/kplatowork
 %_kde_datadir/applications/kde4/kplato.desktop
-%_kde_datadir/applications/kde4/kplatowork.desktop
+#%_kde_datadir/applications/kde4/kplatowork.desktop
 %_kde_appsdir/kplato
 %_kde_datadir/config/kplatorc
 %_kde_libdir/libkdeinit4_kplato.so
-%_kde_libdir/kde4/libkplatoworkpart.so
+#%_kde_libdir/kde4/libkplatoworkpart.so
 %_kde_libdir/kde4/krossmodulekplato.so
 %_kde_libdir/kde4/libkplatopart.so
-%_kde_libdir/libkdeinit4_kplatowork.so
+#%_kde_libdir/libkdeinit4_kplatowork.so
 %_kde_datadir/kde4/services/kplatopart.desktop
-%_kde_datadir/kde4/services/kplatoworkpart.desktop
+#%_kde_datadir/kde4/services/kplatoworkpart.desktop
 %_kde_datadir/kde4/services/krossmodulekplato.desktop
 %_kde_iconsdir/hicolor/*/*/kplato*.*
 
-%_kde_appsdir/kplatowork
+#%_kde_appsdir/kplatowork
 
 %_kde_docdir/HTML/en/kplato
 
@@ -1094,7 +1092,7 @@ Koffice 2 core library.
 %_kde_libdir/libkplatoui.so.%kplatoui_major.0.0
 
 #--------------------------------------------------------------------
-
+%if 0
 %define kplatoworkapp_major 5
 %define libkplatoworkapp %mklibname kplatoworkapp %kplatoworkapp_major
 
@@ -1116,7 +1114,6 @@ Koffice 2 core library.
 %defattr(-,root,root)
 %_kde_libdir/libkplatoworkapp.so.%kplatoworkapp_major
 %_kde_libdir/libkplatoworkapp.so.%kplatoworkapp_major.0.0
-
 #--------------------------------------------------------------------
 
 %define kplatoworkfactory_major 5
@@ -1140,7 +1137,7 @@ Koffice 2 core library.
 %defattr(-,root,root)
 %_kde_libdir/libkplatoworkfactory.so.%kplatoworkfactory_major
 %_kde_libdir/libkplatoworkfactory.so.%kplatoworkfactory_major.0.0
-
+%endif
 #--------------------------------------------------------------------
 
 
@@ -1357,7 +1354,7 @@ KFormula is a formula for kde project.
 %_kde_datadir/kde4/services/kformulapart.desktop
 %endif
 %_kde_docdir/HTML/en/kformula
-%_kde_datadir/kde4/services/ServiceMenus/kformula_konqi.desktop
+#%_kde_datadir/kde4/services/ServiceMenus/kformula_konqi.desktop
 
 #--------------------------------------------------------------------
 %if 0
@@ -1409,6 +1406,7 @@ Koffice 2 core library.
 %endif
 #--------------------------------------------------------------------
 
+%if 0
 %package -n koshell
 Summary:	Koshell for koffice2
 Group:		Graphical desktop/KDE
@@ -1437,6 +1435,7 @@ Koshell for kde project.
 %defattr(-,root,root)
 %_kde_docdir/HTML/en/koshell
 
+%endif
 #--------------------------------------------------------------------
 
 %package -n kivio
@@ -1611,6 +1610,7 @@ Koffice 2 core library.
 
 #--------------------------------------------------------------------
 
+%if 0
 %define  kisexiv2_major 5
 %define  libkisexiv2 %mklibname kisexiv2 %kisexiv2_major
 
@@ -1633,6 +1633,7 @@ Koffice 2 core library.
 %defattr(-,root,root)
 %_kde_libdir/libkisexiv2.so.%kisexiv2_major
 %_kde_libdir/libkisexiv2.so.%kisexiv2_major.0.0
+%endif
 
 #--------------------------------------------------------------------
 
@@ -2107,8 +2108,8 @@ Karbon is an integrated environment for managing data.
 %_kde_datadir/config/kexirc
 %endif
 %_kde_docdir/HTML/en/kexi
-%_kde_datadir/kde4/services/ServiceMenus/kexi_konqi.desktop
 %if 0
+%_kde_datadir/kde4/services/ServiceMenus/kexi_konqi.desktop
 %_kde_datadir/kde4/services/kexi/*.desktop
 %_kde_datadir/kde4/services/kexidb_mysqldriver.desktop
 %_kde_datadir/kde4/services/kexidb_pqxxsqldriver.desktop
@@ -2385,7 +2386,7 @@ Koffice 2 core library.
 %_kde_libdir/libkexiutils.so.%libkexiutils_major.0.0
 %endif
 #--------------------------------------------------------------------
-
+%if 0
 %package -n kugar
 Summary:	Kugar for koffice2
 Group:		Graphical desktop/KDE
@@ -2418,6 +2419,7 @@ Kugar for kde project.
 %files -n kugar
 %defattr(-,root,root)
 %_kde_docdir/HTML/en/kugar
+%endif
 
 #--------------------------------------------------------------------
 
