@@ -14,7 +14,7 @@ Name: koffice
 URL: http://www.koffice.org/
 Summary: Set of office applications for KDE
 Version: 1.9.98.3
-Release: %mkrel 1
+Release: %mkrel 2
 Epoch: 11
 Source: http://fr2.rpmfind.net/linux/KDE/unstable/koffice-%version/src/%name-%version.tar.bz2
 Patch2: koffice-1.9.95.8-fix-desktopfiles.patch
@@ -75,6 +75,8 @@ Requires: kpresenter
 Requires: krita
 Requires: kplato
 Requires: kchart
+Provides: koshell, kugar, kplatowork, kivio, kformula, kexi
+Obsoletes: koshell, kugar, kplatowork, kivio, kformula, kexi
 
 %description
 Office applications for the K Desktop Environment.
