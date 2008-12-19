@@ -77,6 +77,7 @@ Requires: kplato
 Requires: kchart
 Provides: koshell, kugar, kplatowork, kivio, kformula, kexi
 Obsoletes: koshell, kugar, kplatowork, kivio, kformula, kexi
+Obsoletes: koffice2 < 1:1.9.95.4
 
 %description
 Office applications for the K Desktop Environment.
