@@ -1192,7 +1192,7 @@ Summary: Koffice 2 core library
 Group: System/Libraries
 
 %description -n %libkrossmodulekrita
-
+Krita core library
 
 %files -n %libkrossmodulekrita
 %defattr(-,root,root)
