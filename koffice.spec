@@ -10,8 +10,8 @@
 Name: koffice
 URL: http://www.koffice.org/
 Summary: Set of office applications for KDE
-Version: 1.9.98.3
-Release: %mkrel 4
+Version: 1.9.98.5
+Release: %mkrel 1
 Epoch: 11
 Source: http://fr2.rpmfind.net/linux/KDE/unstable/koffice-%version/src/%name-%version.tar.bz2
 Patch0: koffice-1.9.98.3-exiv2-tmp-disable.patch
@@ -174,7 +174,6 @@ Common files for Koffice
 %_kde_datadir/kde4/services/kofficesimpletextedit.desktop
 %_kde_datadir/kde4/services/artistictextshape.desktop
 %_kde_datadir/kde4/services/Filterkpr2odf.desktop
-%_kde_datadir/kde4/services/paragraphtool.desktop
 %_kde_datadir/kde4/services/kopabackgroundtool.desktop
 %_kde_datadir/kde4/servicetypes/scripteventaction.desktop
 %_kde_datadir/kde4/servicetypes/flakedevice.desktop
@@ -221,7 +220,6 @@ Common files for Koffice
 %_kde_libdir/kde4/artistictextshape.so
 %_kde_libdir/kde4/libFilterkpr2odf.so
 %_kde_libdir/kde4/libmswordodf_import.so
-%_kde_libdir/kde4/paragraphtool.so
 %_kde_libdir/kde4/kopabackgroundtool.so
 #needed by Krita
 %_kde_libdir/libKritaRulerAssistantCommon.so
@@ -241,7 +239,6 @@ Common files for Koffice
 %exclude %_kde_iconsdir/oxygen/16x16/actions/object-order-*.png
 %exclude %_kde_iconsdir/oxygen/16x16/actions/object-ungroup.png
 # Those are installed despite their parent packages are available
-%exclude %_kde_docdir/HTML/en/kexi
 %exclude %_kde_docdir/HTML/en/kivio
 %exclude %_kde_docdir/HTML/en/kformula
 %exclude %_kde_datadir/kde4/services/ServiceMenus/kivio_konqi.desktop
@@ -623,7 +620,6 @@ Kword is a word processor for kde project
 %_kde_datadir/kde4/services/kwordpart.desktop
 %_kde_datadir/kde4/services/xslt_export.desktop
 %_kde_datadir/kde4/services/xslt_import.desktop
-%_kde_datadir/kde4/servicetypes/kwmailmerge.desktop
 %_kde_libdir/kde4/krossmodulekword.so
 %_kde_libdir/kde4/libkwordkword1dot3import.so
 %_kde_libdir/kde4/libkwordpart.so
@@ -1250,6 +1246,22 @@ Koffice 2 core library.
 %defattr(-,root,root)
 %_kde_libdir/libkritalibpaintop.so.%{libkritalibpaintop_major}*
 
+
+#--------------------------------------------------------------------
+
+%define  libKritaRulerAssistantCommon_major 5
+%define  libkritarulerassistantcommon %mklibname kritarulerassistantcommon  %libKritaRulerAssistantCommon_major
+
+%package -n %libkritarulerassistantcommon
+Summary: Koffice 2 core library
+Group: System/Libraries
+
+%description -n %libkritarulerassistantcommon
+Koffice 2 core library.
+
+%files -n %libkritarulerassistantcommon
+%defattr(-,root,root)
+%_kde_libdir/libKritaRulerAssistantCommon.so.%{libKritaRulerAssistantCommon_major}*
 #--------------------------------------------------------------------
 
 %package -n karbon
@@ -1340,7 +1352,7 @@ Koffice 2 core library.
 %prep
 
 %setup -q -n %name-%version
-%patch0 -p0 -b .exiv2
+#%patch0 -p0 -b .exiv2
 
 %build
 %cmake_kde4 \
