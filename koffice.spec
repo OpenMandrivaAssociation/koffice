@@ -11,7 +11,7 @@ Name: koffice
 URL: http://www.koffice.org/
 Summary: Set of office applications for KDE
 Version: 1.9.98.5
-Release: %mkrel 2
+Release: %mkrel 3
 Epoch: 11
 Source: http://fr2.rpmfind.net/linux/KDE/unstable/koffice-%version/src/%name-%version.tar.bz2
 Patch0: koffice-1.9.98.3-exiv2-tmp-disable.patch
@@ -221,8 +221,6 @@ Common files for Koffice
 %_kde_libdir/kde4/libFilterkpr2odf.so
 %_kde_libdir/kde4/libmswordodf_import.so
 %_kde_libdir/kde4/kopabackgroundtool.so
-#needed by Krita
-%_kde_libdir/libKritaRulerAssistantCommon.so
 %_kde_bindir/kthesaurus
 %_kde_datadir/applications/kde4/KThesaurus.desktop
 %_kde_datadir/kde4/services/thesaurustool.desktop
@@ -535,7 +533,7 @@ Conflicts: kplato < 11:1.9.95.8-3
 Conflicts: kpresenter < 11:1.9.95.8-3
 Conflicts: krita < 11:1.9.95.8-3
 Conflicts: kspread < 11:1.9.95.8-3
-Conflicts: koffice-core < 11:1.9.95.8-3
+Conflicts: koffice-core < 11:1.9.98.5-3
 Conflicts: kword < 11:1.9.95.8-3
 Obsoletes: koffice2-devel < 1:1.9.95.3-0.766453.6
 Provides: koffice2-devel = %epoch:%version-%release
@@ -581,6 +579,7 @@ Header files needed for developing koffice2 applications.
 %_kde_libdir/libpigmentcms.so
 %_kde_libdir/libkostore.so
 %_kde_libdir/libkritalibpaintop.so
+%_kde_libdir/libKritaRulerAssistantCommon.so
 
 #--------------------------------------------------------------------
 
