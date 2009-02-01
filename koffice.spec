@@ -138,13 +138,6 @@ Common files for Koffice
 %_kde_appsdir/koffice/icons/*/*/*/*
 %_kde_appsdir/koffice/icons/*.png
 %_kde_iconsdir/hicolor/*/mimetypes/*
-%_kde_iconsdir/oxygen/16x16/actions/object-align-horizontal-center.png
-%_kde_iconsdir/oxygen/16x16/actions/object-align-horizontal-left.png
-%_kde_iconsdir/oxygen/16x16/actions/object-align-horizontal-right.png
-%_kde_iconsdir/oxygen/16x16/actions/object-align-vertical-bottom-top.png
-%_kde_iconsdir/oxygen/16x16/actions/object-align-vertical-bottom.png
-%_kde_iconsdir/oxygen/16x16/actions/object-align-vertical-center.png
-%_kde_iconsdir/oxygen/16x16/actions/object-align-vertical-top.png
 %_kde_iconsdir/oxygen/scalable/actions/shape-choose.svgz
 %_kde_iconsdir/oxygen/*/actions/table.*
 %_kde_iconsdir/oxygen/32x32/actions/shape-choose.png
@@ -153,6 +146,15 @@ Common files for Koffice
 %_kde_iconsdir/oxygen/32x32/actions/x-shape-formula.png
 %_kde_iconsdir/oxygen/32x32/actions/x-shape-image.png
 %_kde_iconsdir/oxygen/32x32/actions/x-shape-text.png
+%_kde_iconsdir/oxygen/16x16/actions/object-align-horizontal-center-koffice.png
+%_kde_iconsdir/oxygen/16x16/actions/object-align-horizontal-left-koffice.png
+%_kde_iconsdir/oxygen/16x16/actions/object-align-horizontal-right-koffice.png
+%_kde_iconsdir/oxygen/16x16/actions/object-align-vertical-bottom-koffice.png
+%_kde_iconsdir/oxygen/16x16/actions/object-align-vertical-bottom-top-koffice.png
+%_kde_iconsdir/oxygen/16x16/actions/object-align-vertical-center-koffice.png
+%_kde_iconsdir/oxygen/16x16/actions/object-align-vertical-top-koffice.png
+%_kde_iconsdir/oxygen/16x16/actions/object-group-koffice.png
+%_kde_iconsdir/oxygen/16x16/actions/object-ungroup-koffice.png
 %_kde_datadir/kde4/services/ServiceMenus/kchart_konqi.desktop
 %_kde_appsdir/musicshape
 %_kde_datadir/kde4/services/autocorrect.desktop
@@ -232,11 +234,7 @@ Common files for Koffice
 %_kde_docdir/HTML/en/koffice
 %_kde_docdir/HTML/en/thesaurus
 # Those files conflict with oxygen-icon-theme
-%exclude %_kde_iconsdir/oxygen/16x16/actions/format-justify*.png
-%exclude %_kde_iconsdir/oxygen/16x16/actions/format-text*.png
-%exclude %_kde_iconsdir/oxygen/16x16/actions/object-group.png
 %exclude %_kde_iconsdir/oxygen/16x16/actions/object-order-*.png
-%exclude %_kde_iconsdir/oxygen/16x16/actions/object-ungroup.png
 # Those are installed despite their parent packages are available
 %exclude %_kde_docdir/HTML/en/kivio
 %exclude %_kde_docdir/HTML/en/kformula
@@ -957,7 +955,6 @@ KPresenter is a presentation for kde project.
 %_kde_libdir/kde4/kpr_pageeffect_matrixwipe.so
 %_kde_libdir/kde4/kpr_pageeffect_slidewipe.so
 %_kde_libdir/kde4/kpr_shapeanimation_example.so
-%_kde_libdir/kde4/libpowerpointimport.so
 %_kde_libdir/kde4/kpresentereventactions.so 
 %_kde_libdir/kde4/kpresentertoolanimation.so
 %_kde_libdir/libkdeinit4_kpresenter.so
@@ -966,7 +963,6 @@ KPresenter is a presentation for kde project.
 %_kde_appsdir/kpresenter
 %_kde_iconsdir/hicolor/*/apps/kpresenter.png
 %_kde_datadir/kde4/services/kpresenterpart.desktop
-%_kde_datadir/kde4/services/kpresenter_powerpoint_import.desktop
 %_kde_datadir/kde4/services/kpresentereventactions.desktop
 %_kde_datadir/kde4/servicetypes/presentationeventaction.desktop
 %_kde_datadir/kde4/services/kpr_pageeffect_barwipe.desktop
