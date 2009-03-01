@@ -10,13 +10,12 @@
 Name: koffice
 URL: http://www.koffice.org/
 Summary: Set of office applications for KDE
-Version: 1.9.98.6
+Version: 1.9.98.7
 Release: %mkrel 1
 Epoch: 11
 Source: http://fr2.rpmfind.net/linux/KDE/unstable/koffice-%version/src/%name-%version.tar.bz2
 Patch0: koffice-1.9.98.3-exiv2-tmp-disable.patch
 Patch2: koffice-1.9.95.8-fix-desktopfiles.patch
-Patch3: koffice-1.9.98.6-fix-exiv2-build.patch
 Group: Office
 License: GPL
 BuildRoot: %_tmppath/%name-%version-%release-root
@@ -1349,7 +1348,6 @@ Koffice 2 core library.
 
 %setup -q -n %name-%version
 #%patch0 -p0 -b .exiv2
-%patch3 -p0
 
 %build
 %cmake_kde4 \
