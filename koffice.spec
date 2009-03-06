@@ -129,7 +129,7 @@ Common files for Koffice
 %_kde_datadir/kde4/services/spellcheck.desktop
 %_kde_libdir/kde4/kofficesimpletextedit.so
 %_kde_libdir/kde4/spellcheck.so
-%_kde_libdir/kde4/libkarbonsvgimport.so
+#%_kde_libdir/kde4/libkarbonsvgimport.so
 %dir %_kde_appsdir/koffice
 %_kde_appsdir/koffice/autocorrect
 %_kde_appsdir/koffice/hyphdicts
@@ -218,7 +218,7 @@ Common files for Koffice
 %_kde_libdir/kde4/pictureshape.so
 %_kde_libdir/kde4/textshape.so
 %_kde_libdir/kde4/textvariables.so
-%_kde_libdir/kde4/libmswordimport.so
+#%_kde_libdir/kde4/libmswordimport.so
 %_kde_libdir/kde4/artistictextshape.so
 %_kde_libdir/kde4/libFilterkpr2odf.so
 %_kde_libdir/kde4/libmswordodf_import.so
