@@ -14,7 +14,7 @@ Version: 1.9.98.7
 Release: %mkrel 1
 Epoch: 11
 Source: http://fr2.rpmfind.net/linux/KDE/unstable/koffice-%version/src/%name-%version.tar.bz2
-Patch0: koffice-1.9.98.3-exiv2-tmp-disable.patch
+Patch0: koffice-1.9.98.7-fix-build.patch
 Patch2: koffice-1.9.95.8-fix-desktopfiles.patch
 Group: Office
 License: GPL
@@ -1347,7 +1347,7 @@ Koffice 2 core library.
 %prep
 
 %setup -q -n %name-%version
-#%patch0 -p0 -b .exiv2
+%patch0 -p0 -b .wv2
 
 %build
 %cmake_kde4 \
