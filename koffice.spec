@@ -1289,12 +1289,12 @@ Karbon is a scalable drawing for kde project.
 %_kde_libdir/kde4/karbon_whirlpinchplugin.so
 %_kde_libdir/kde4/karbontools.so
 %_kde_libdir/kde4/libkarbonpart.so
-%_kde_libdir/kde4/libkarbonpngexport.so
-%_kde_libdir/kde4/libkarbonsvgexport.so
-%_kde_libdir/kde4/libkarbonepsimport.so
-%_kde_libdir/kde4/libwmfexport.so
-%_kde_libdir/kde4/libwmfimport.so
-%_kde_libdir/kde4/libkarbon1ximport.so
+#%_kde_libdir/kde4/libkarbonpngexport.so
+#%_kde_libdir/kde4/libkarbonsvgexport.so
+#%_kde_libdir/kde4/libkarbonepsimport.so
+#%_kde_libdir/kde4/libwmfexport.so
+#%_kde_libdir/kde4/libwmfimport.so
+#%_kde_libdir/kde4/libkarbon1ximport.so
 %_kde_libdir/kde4/karbon_refinepathplugin.so
 %_kde_libdir/kde4/karbon_roundcornersplugin.so
 %_kde_libdir/kde4/karbondockersplugin.so
@@ -1302,7 +1302,7 @@ Karbon is a scalable drawing for kde project.
 %_kde_datadir/applications/kde4/karbon.desktop
 %_kde_appsdir/karbon
 %_kde_datadir/kde4/services/ServiceMenus/karbon_konqi.desktop
-%_kde_docdir/HTML/en/karbon
+#%_kde_docdir/HTML/en/karbon
 %_kde_datadir/kde4/services/karbon*.desktop
 %_kde_datadir/kde4/servicetypes/karbon_module.desktop
 %_kde_datadir/templates/.source/Illustration.karbon
