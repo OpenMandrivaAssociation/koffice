@@ -578,6 +578,9 @@ Header files needed for developing koffice2 applications.
 %_kde_libdir/libkostore.so
 %_kde_libdir/libkritalibpaintop.so
 %_kde_libdir/libKritaRulerAssistantCommon.so
+%_kde_libdir/libkritabasicdynamiccoloringprogram.so
+%_kde_libdir/libkritabasicdynamicshapeprogram.so
+%_kde_libdir/libkritadynamicbrush.so
 
 #--------------------------------------------------------------------
 
@@ -1241,6 +1244,53 @@ Koffice 2 core library.
 %defattr(-,root,root)
 %_kde_libdir/libkritalibpaintop.so.%{libkritalibpaintop_major}*
 
+#--------------------------------------------------------------------
+
+%define  libkritabasicdynamiccoloringprogram_major 5
+%define  libkritabasicdynamiccoloringprogram %mklibname kritabasicdynamiccoloringprogram  %libkritabasicdynamiccoloringprogram_major
+
+%package -n %libkritabasicdynamiccoloringprogram
+Summary: Koffice 2 core library
+Group: System/Libraries
+
+%description -n %libkritabasicdynamiccoloringprogram
+Koffice 2 core library.
+
+%files -n %libkritabasicdynamiccoloringprogram
+%defattr(-,root,root)
+%_kde_libdir/libkritabasicdynamiccoloringprogram.so.%{libkritabasicdynamiccoloringprogram_major}*
+
+#--------------------------------------------------------------------
+
+%define  libkritabasicdynamicshapeprogram_major 5
+%define  libkritabasicdynamicshapeprogram %mklibname kritabasicdynamicshapeprogram  %libkritabasicdynamicshapeprogram_major
+
+%package -n %libkritabasicdynamicshapeprogram
+Summary: Koffice 2 core library
+Group: System/Libraries
+
+%description -n %libkritabasicdynamicshapeprogram
+Koffice 2 core library.
+
+%files -n %libkritabasicdynamicshapeprogram
+%defattr(-,root,root)
+%_kde_libdir/libkritabasicdynamicshapeprogram.so.%{libkritabasicdynamicshapeprogram_major}*
+
+#--------------------------------------------------------------------
+
+%define  libkritadynamicbrush_major 5
+%define  libkritadynamicbrush %mklibname kritadynamicbrush  %libkritadynamicbrush_major
+
+%package -n %libkritadynamicbrush
+Summary: Koffice 2 core library
+Group: System/Libraries
+
+%description -n %libkritadynamicbrush
+Koffice 2 core library.
+
+%files -n %libkritadynamicbrush
+%defattr(-,root,root)
+%_kde_libdir/libkritadynamicbrush.so.%{libkritadynamicbrush_major}*
 
 #--------------------------------------------------------------------
 
