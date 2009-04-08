@@ -10,12 +10,10 @@
 Name: koffice
 URL: http://www.koffice.org/
 Summary: Set of office applications for KDE
-Version: 1.9.98.7
+Version: 1.9.99.0
 Release: %mkrel 1
 Epoch: 11
 Source: http://fr2.rpmfind.net/linux/KDE/unstable/koffice-%version/src/%name-%version.tar.bz2
-Patch0: koffice-1.9.98.7-fix-build.patch
-Patch2: koffice-1.9.95.8-fix-desktopfiles.patch
 Group: Office
 License: GPL
 BuildRoot: %_tmppath/%name-%version-%release-root
@@ -569,7 +567,6 @@ Header files needed for developing koffice2 applications.
 %_kde_libdir/libkritagrayscale.so
 %_kde_libdir/libkritaimage.so
 %_kde_libdir/libkritaui.so
-%_kde_libdir/libkrossmodulekrita.so
 %_kde_libdir/libkspreadcommon.so
 %_kde_libdir/libkwmf.so
 %_kde_libdir/libkwordexportfilters.so
@@ -581,6 +578,7 @@ Header files needed for developing koffice2 applications.
 %_kde_libdir/libkritabasicdynamiccoloringprogram.so
 %_kde_libdir/libkritabasicdynamicshapeprogram.so
 %_kde_libdir/libkritadynamicbrush.so
+%_kde_libdir/libkritalibbrush.so
 
 #--------------------------------------------------------------------
 
@@ -613,6 +611,7 @@ Kword is a word processor for kde project
 %_kde_iconsdir/*/*/apps/kword.png
 %_kde_datadir/applications/kde4/kword.desktop
 %_kde_datadir/kde4/services/ServiceMenus/kword_konqi.desktop
+%_kde_configdir/kwordrc
 %_kde_appsdir/kword
 %_kde_appsdir/xsltfilter/export/kword/xslfo/*
 %_kde_datadir/kde4/services/kword_*
@@ -1135,7 +1134,7 @@ Krita is a pixel-based image manipulation program.
 %_kde_iconsdir/hicolor/*/apps/krita.png
 %_kde_appsdir/krita
 %_kde_appsdir/kritaplugins
-
+%_kde_configdir/kritarc
 %_kde_datadir/color/icc/krita/*.icm
 %_kde_datadir/color/icc/pigment/*.icm
 %_kde_datadir/kde4/servicetypes/pigment.desktop
@@ -1178,23 +1177,6 @@ Koffice 2 core library.
 
 #--------------------------------------------------------------------
 
-%define  libkrossmodulekrita_major 5
-%define  libkrossmodulekrita %mklibname krossmodulekrita %libkrossmodulekrita_major
-
-%package -n %libkrossmodulekrita
-Summary: Koffice 2 core library
-Group: System/Libraries
-
-%description -n %libkrossmodulekrita
-Krita core library
-
-%files -n %libkrossmodulekrita
-%defattr(-,root,root)
-%_kde_libdir/libkrossmodulekrita.so.%libkrossmodulekrita_major
-%_kde_libdir/libkrossmodulekrita.so.%libkrossmodulekrita_major.0.0
-
-#--------------------------------------------------------------------
-
 %define  libkritagrayscale_major 5
 %define  libkritagrayscale %mklibname kritagrayscale  %libkritagrayscale_major
 
@@ -1227,6 +1209,22 @@ Koffice 2 core library.
 %defattr(-,root,root)
 %_kde_libdir/libkritaimage.so.%libkritaimage_major
 %_kde_libdir/libkritaimage.so.%libkritaimage_major.0.0
+
+#--------------------------------------------------------------------
+
+%define  libkritalibbrush_major 5
+%define  libkritalibbrush %mklibname kritalibbrush  %libkritalibbrush_major
+
+%package -n %libkritalibbrush
+Summary: Koffice 2 core library
+Group: System/Libraries
+
+%description -n %libkritalibbrush
+Koffice 2 core library.
+
+%files -n %libkritalibbrush
+%defattr(-,root,root)
+%_kde_libdir/libkritalibbrush.so.%{libkritalibbrush_major}*
 
 #--------------------------------------------------------------------
 
@@ -1339,20 +1337,22 @@ Karbon is a scalable drawing for kde project.
 %_kde_libdir/kde4/karbon_whirlpinchplugin.so
 %_kde_libdir/kde4/karbontools.so
 %_kde_libdir/kde4/libkarbonpart.so
-#%_kde_libdir/kde4/libkarbonpngexport.so
-#%_kde_libdir/kde4/libkarbonsvgexport.so
-#%_kde_libdir/kde4/libkarbonepsimport.so
-#%_kde_libdir/kde4/libwmfexport.so
-#%_kde_libdir/kde4/libwmfimport.so
-#%_kde_libdir/kde4/libkarbon1ximport.so
+%_kde_libdir/kde4/libkarbonpngexport.so
+%_kde_libdir/kde4/libkarbonsvgexport.so
+%_kde_libdir/kde4/libkarbonepsimport.so
+%_kde_libdir/kde4/libkarbonsvgimport.so
+%_kde_libdir/kde4/libwmfexport.so
+%_kde_libdir/kde4/libwmfimport.so
+%_kde_libdir/kde4/libkarbon1ximport.so
 %_kde_libdir/kde4/karbon_refinepathplugin.so
 %_kde_libdir/kde4/karbon_roundcornersplugin.so
 %_kde_libdir/kde4/karbondockersplugin.so
 %_kde_libdir/libkdeinit4_karbon.so
 %_kde_datadir/applications/kde4/karbon.desktop
+%_kde_configdir/karbonrc
 %_kde_appsdir/karbon
 %_kde_datadir/kde4/services/ServiceMenus/karbon_konqi.desktop
-#%_kde_docdir/HTML/en/karbon
+%_kde_docdir/HTML/en/karbon
 %_kde_datadir/kde4/services/karbon*.desktop
 %_kde_datadir/kde4/servicetypes/karbon_module.desktop
 %_kde_datadir/templates/.source/Illustration.karbon
@@ -1397,7 +1397,6 @@ Koffice 2 core library.
 %prep
 
 %setup -q -n %name-%version
-%patch0 -p0 -b .wv2
 
 %build
 %cmake_kde4 \
