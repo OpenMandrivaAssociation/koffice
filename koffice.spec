@@ -11,9 +11,10 @@ Name: koffice
 URL: http://www.koffice.org/
 Summary: Set of office applications for KDE
 Version: 1.9.99.0
-Release: %mkrel 1
+Release: %mkrel 2
 Epoch: 11
 Source: http://fr2.rpmfind.net/linux/KDE/unstable/koffice-%version/src/%name-%version.tar.bz2
+Patch100: koffice-1.9.99.0-rev954447.patch
 Group: Office
 License: GPL
 BuildRoot: %_tmppath/%name-%version-%release-root
@@ -1397,6 +1398,7 @@ Koffice 2 core library.
 %prep
 
 %setup -q -n %name-%version
+%patch100 -p1
 
 %build
 %cmake_kde4 \
