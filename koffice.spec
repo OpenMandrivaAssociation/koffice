@@ -10,11 +10,10 @@
 Name: koffice
 URL: http://www.koffice.org/
 Summary: Set of office applications for KDE
-Version: 1.9.99.0
-Release: %mkrel 2
+Version: 2.0.0
+Release: %mkrel 1
 Epoch: 11
 Source: http://fr2.rpmfind.net/linux/KDE/unstable/koffice-%version/src/%name-%version.tar.bz2
-Patch100: koffice-1.9.99.0-rev954447.patch
 Group: Office
 License: GPL
 BuildRoot: %_tmppath/%name-%version-%release-root
@@ -130,7 +129,6 @@ Common files for Koffice
 #%_kde_libdir/kde4/libkarbonsvgimport.so
 %dir %_kde_appsdir/koffice
 %_kde_appsdir/koffice/autocorrect
-%_kde_appsdir/koffice/hyphdicts
 %_kde_appsdir/koffice/koffice_shell.rc
 %_kde_appsdir/koffice/icons/*/*/*/*
 %_kde_appsdir/koffice/icons/*.png
@@ -217,6 +215,7 @@ Common files for Koffice
 %_kde_libdir/kde4/textshape.so
 %_kde_libdir/kde4/textvariables.so
 #%_kde_libdir/kde4/libmswordimport.so
+%_kde_libdir/kde4/libwpgimport.so
 %_kde_libdir/kde4/artistictextshape.so
 %_kde_libdir/kde4/libFilterkpr2odf.so
 %_kde_libdir/kde4/libmswordodf_import.so
@@ -233,8 +232,6 @@ Common files for Koffice
 # Those files conflict with oxygen-icon-theme
 %exclude %_kde_iconsdir/oxygen/16x16/actions/object-order-*.png
 # Those are installed despite their parent packages are available
-%exclude %_kde_docdir/HTML/en/kivio
-%exclude %_kde_docdir/HTML/en/kformula
 %exclude %_kde_datadir/kde4/services/ServiceMenus/kivio_konqi.desktop
 
 #--------------------------------------------------------------------
@@ -1397,7 +1394,6 @@ Koffice 2 core library.
 %prep
 
 %setup -q -n %name-%version
-%patch100 -p1
 
 %build
 %cmake_kde4 \
