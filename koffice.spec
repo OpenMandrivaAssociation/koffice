@@ -215,7 +215,7 @@ Common files for Koffice
 %_kde_libdir/kde4/textshape.so
 %_kde_libdir/kde4/textvariables.so
 #%_kde_libdir/kde4/libmswordimport.so
-%_kde_libdir/kde4/libwpgimport.so
+#%_kde_libdir/kde4/libwpgimport.so
 %_kde_libdir/kde4/artistictextshape.so
 %_kde_libdir/kde4/libFilterkpr2odf.so
 %_kde_libdir/kde4/libmswordodf_import.so
