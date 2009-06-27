@@ -11,7 +11,7 @@ Name: koffice
 URL: http://www.koffice.org/
 Summary: Set of office applications for KDE
 Version: 2.0.1
-Release: %mkrel 1
+Release: %mkrel 2
 Epoch: 11
 Source: http://fr2.rpmfind.net/linux/KDE/unstable/koffice-%version/src/%name-%version.tar.bz2
 Group: Office
@@ -509,73 +509,6 @@ Koffice 2 core library.
 %defattr(-,root,root)
 %_kde_libdir/libkofficegrayau8colorspace.so.%libkofficegrayau8colorspace_major
 %_kde_libdir/libkofficegrayau8colorspace.so.%libkofficegrayau8colorspace_major.0.0
-
-#--------------------------------------------------------------------
-
-%package devel
-Group: Development/KDE and Qt
-Summary: Header files for developing koffice2 applications
-Requires: %name-core = %{epoch}:%{version}-%{release}
-Provides: %name-devel = %{epoch}:%{version}-%{release}
-Obsoletes: %lib_name-devel
-Conflicts: koffice2-kchart < 1.9.95-0.738534.3
-Conflicts: karbon < 11:1.9.95.8-3
-Conflicts: kchart < 11:1.9.95.8-3
-Conflicts: kivio < 11:1.9.95.8-3
-Conflicts: kplato < 11:1.9.95.8-3
-Conflicts: kpresenter < 11:1.9.95.8-3
-Conflicts: krita < 11:1.9.95.8-3
-Conflicts: kspread < 11:1.9.95.8-3
-Conflicts: koffice-core < 11:1.9.98.5-3
-Conflicts: kword < 11:1.9.95.8-3
-Obsoletes: koffice2-devel < 1:1.9.95.3-0.766453.6
-Provides: koffice2-devel = %epoch:%version-%release
-
-%description devel
-Header files needed for developing koffice2 applications.
-
-%files devel
-%defattr(-,root,root)
-%_kde_appsdir/cmake/*/*
-%_kde_includedir/*
-%_kde_libdir/libchartshapelib.so
-%_kde_libdir/libflake.so
-%_kde_libdir/libkarboncommon.so
-%_kde_libdir/libkarbonui.so
-%_kde_libdir/libkchartcommon.so
-%_kde_libdir/libkdchart.so
-%_kde_libdir/libkochart.so
-%_kde_libdir/libkoffice_graya_u16.so
-%_kde_libdir/libkofficegrayau8colorspace.so
-%_kde_libdir/libkoguiutils.so
-%_kde_libdir/libkokross.so
-%_kde_libdir/libkomain.so
-%_kde_libdir/libkoodf.so
-%_kde_libdir/libkopageapp.so
-%_kde_libdir/libkoresources.so
-%_kde_libdir/libkotext.so
-%_kde_libdir/libkowmf.so
-%_kde_libdir/libkplatokernel.so
-%_kde_libdir/libkplatomodels.so
-%_kde_libdir/libkplatoprivate.so
-%_kde_libdir/libkplatoui.so
-%_kde_libdir/libkpresenterprivate.so
-%_kde_libdir/libkrita_xyz_u16.so
-%_kde_libdir/libkritagrayscale.so
-%_kde_libdir/libkritaimage.so
-%_kde_libdir/libkritaui.so
-%_kde_libdir/libkspreadcommon.so
-%_kde_libdir/libkwmf.so
-%_kde_libdir/libkwordexportfilters.so
-%_kde_libdir/libkwordprivate.so
-%_kde_libdir/libpigmentcms.so
-%_kde_libdir/libkostore.so
-%_kde_libdir/libkritalibpaintop.so
-%_kde_libdir/libKritaRulerAssistantCommon.so
-%_kde_libdir/libkritabasicdynamiccoloringprogram.so
-%_kde_libdir/libkritabasicdynamicshapeprogram.so
-%_kde_libdir/libkritadynamicbrush.so
-%_kde_libdir/libkritalibbrush.so
 
 #--------------------------------------------------------------------
 
@@ -1136,17 +1069,17 @@ Krita is a pixel-based image manipulation program.
 %_kde_datadir/color/icc/pigment/*.icm
 %_kde_datadir/kde4/servicetypes/pigment.desktop
 %_kde_datadir/mime/packages/krita_ora.xml
-
 %_kde_docdir/HTML/en/krita
 
 #--------------------------------------------------------------------
 
 %define  libkrita_xyz_u16_major 5
-%define  libkrita_xyz_u16 %mklibname krita_xyz_u16  %libkrita_xyz_u16_major
+%define  libkrita_xyz_u16 %mklibname krita_xyz_u16_  %libkrita_xyz_u16_major
 
 %package -n %libkrita_xyz_u16
 Summary: Koffice 2 core library
 Group: System/Libraries
+Obsoletes: %{_lib}krita_xyz_u165 < 11:2.0.1
 
 %description -n %libkrita_xyz_u16
 Koffice 2 core library.
@@ -1388,11 +1321,114 @@ Koffice 2 core library.
 %_kde_libdir/libkarbonui.so.%karbonui_major
 %_kde_libdir/libkarbonui.so.%karbonui_major.0.0
 
+#--------------------------------------------------------------------
+
+%package devel
+Group: Development/KDE and Qt
+Summary: Header files for developing koffice2 applications
+Requires: %libkoguiutils = %{epoch}:%{version}-%{release}
+Requires: %libkokross = %{epoch}:%{version}-%{release}
+Requires: %libkomain = %{epoch}:%{version}-%{release}
+Requires: %libkopageapp = %{epoch}:%{version}-%{release}
+Requires: %libkoresources = %{epoch}:%{version}-%{release}
+Requires: %libkotext = %{epoch}:%{version}-%{release}
+Requires: %libkowmf = %{epoch}:%{version}-%{release}
+Requires: %libkoodf = %{epoch}:%{version}-%{release}
+Requires: %libkostore = %{epoch}:%{version}-%{release}
+Requires: %libkwmf = %{epoch}:%{version}-%{release}
+Requires: %libflake = %{epoch}:%{version}-%{release}
+Requires: %libpigmentcms = %{epoch}:%{version}-%{release}
+Requires: %libkochart = %{epoch}:%{version}-%{release}
+Requires: %libkoffice_graya_u16 = %{epoch}:%{version}-%{release}
+Requires: %libkofficegrayau8colorspace = %{epoch}:%{version}-%{release}
+Requires: %libkwordexportfilters = %{epoch}:%{version}-%{release}
+Requires: %libkwordprivate = %{epoch}:%{version}-%{release}
+Requires: %libchartshapelib = %{epoch}:%{version}-%{release}
+Requires: %libkplatomodels = %{epoch}:%{version}-%{release}
+Requires: %libkplatokernel = %{epoch}:%{version}-%{release}
+Requires: %libkplatoprivate = %{epoch}:%{version}-%{release}
+Requires: %libkplatoui = %{epoch}:%{version}-%{release}
+Requires: %libkspreadcommon = %{epoch}:%{version}-%{release}
+Requires: %libkpresenterprivate = %{epoch}:%{version}-%{release}
+Requires: %libkdchart = %{epoch}:%{version}-%{release}
+Requires: %libkchartcommon = %{epoch}:%{version}-%{release}
+Requires: %libkrita_xyz_u16 = %{epoch}:%{version}-%{release}
+Requires: %libkritaui = %{epoch}:%{version}-%{release}
+Requires: %libkritagrayscale = %{epoch}:%{version}-%{release}
+Requires: %libkritaimage = %{epoch}:%{version}-%{release}
+Requires: %libkritalibbrush = %{epoch}:%{version}-%{release}
+Requires: %libkritalibpaintop = %{epoch}:%{version}-%{release}
+Requires: %libkritabasicdynamiccoloringprogram = %{epoch}:%{version}-%{release}
+Requires: %libkritabasicdynamicshapeprogram = %{epoch}:%{version}-%{release}
+Requires: %libkritadynamicbrush = %{epoch}:%{version}-%{release}
+Requires: %libkritarulerassistantcommon = %{epoch}:%{version}-%{release}
+Requires: %libkarboncommon = %{epoch}:%{version}-%{release}
+Requires: %libkarbonui = %{epoch}:%{version}-%{release}
+Requires: %name-core = %{epoch}:%{version}-%{release}
+Provides: %name-devel = %{epoch}:%{version}-%{release}
+Obsoletes: %lib_name-devel
+Conflicts: koffice2-kchart < 1.9.95-0.738534.3
+Conflicts: karbon < 11:1.9.95.8-3
+Conflicts: kchart < 11:1.9.95.8-3
+Conflicts: kivio < 11:1.9.95.8-3
+Conflicts: kplato < 11:1.9.95.8-3
+Conflicts: kpresenter < 11:1.9.95.8-3
+Conflicts: krita < 11:1.9.95.8-3
+Conflicts: kspread < 11:1.9.95.8-3
+Conflicts: koffice-core < 11:1.9.98.5-3
+Conflicts: kword < 11:1.9.95.8-3
+Obsoletes: koffice2-devel < 1:1.9.95.3-0.766453.6
+Provides: koffice2-devel = %epoch:%version-%release
+
+%description devel
+Header files needed for developing koffice2 applications.
+
+%files devel
+%defattr(-,root,root)
+%_kde_appsdir/cmake/*/*
+%_kde_includedir/*
+%_kde_libdir/libchartshapelib.so
+%_kde_libdir/libflake.so
+%_kde_libdir/libkarboncommon.so
+%_kde_libdir/libkarbonui.so
+%_kde_libdir/libkchartcommon.so
+%_kde_libdir/libkdchart.so
+%_kde_libdir/libkochart.so
+%_kde_libdir/libkoffice_graya_u16.so
+%_kde_libdir/libkofficegrayau8colorspace.so
+%_kde_libdir/libkoguiutils.so
+%_kde_libdir/libkokross.so
+%_kde_libdir/libkomain.so
+%_kde_libdir/libkoodf.so
+%_kde_libdir/libkopageapp.so
+%_kde_libdir/libkoresources.so
+%_kde_libdir/libkotext.so
+%_kde_libdir/libkowmf.so
+%_kde_libdir/libkplatokernel.so
+%_kde_libdir/libkplatomodels.so
+%_kde_libdir/libkplatoprivate.so
+%_kde_libdir/libkplatoui.so
+%_kde_libdir/libkpresenterprivate.so
+%_kde_libdir/libkrita_xyz_u16.so
+%_kde_libdir/libkritagrayscale.so
+%_kde_libdir/libkritaimage.so
+%_kde_libdir/libkritaui.so
+%_kde_libdir/libkspreadcommon.so
+%_kde_libdir/libkwmf.so
+%_kde_libdir/libkwordexportfilters.so
+%_kde_libdir/libkwordprivate.so
+%_kde_libdir/libpigmentcms.so
+%_kde_libdir/libkostore.so
+%_kde_libdir/libkritalibpaintop.so
+%_kde_libdir/libKritaRulerAssistantCommon.so
+%_kde_libdir/libkritabasicdynamiccoloringprogram.so
+%_kde_libdir/libkritabasicdynamicshapeprogram.so
+%_kde_libdir/libkritadynamicbrush.so
+%_kde_libdir/libkritalibbrush.so
 
 #--------------------------------------------------------------------
 
 %prep
-
 %setup -q -n %name-%version
 
 %build
