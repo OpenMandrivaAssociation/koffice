@@ -1057,6 +1057,7 @@ Krita is a pixel-based image manipulation program.
 %_kde_datadir/applications/kde4/krita_ora.desktop
 %_kde_datadir/applications/kde4/krita_pdf.desktop
 %_kde_datadir/applications/kde4/krita_tiff.desktop
+%_kde_datadir/applications/kde4/krita_openexr.desktop
 %_kde_datadir/applications/kde4/krita_raw.desktop
 %_kde_datadir/applications/kde4/krita_magick.desktop
 %_kde_datadir/kde4/services/ServiceMenus/krita_konqi.desktop
@@ -1065,6 +1066,7 @@ Krita is a pixel-based image manipulation program.
 %_kde_iconsdir/hicolor/*/apps/krita.png
 %_kde_appsdir/krita
 %_kde_appsdir/kritaplugins
+%_kde_appsdir/pigmentcms
 %_kde_configdir/kritarc
 %_kde_datadir/color/icc/krita/*.icm
 %_kde_datadir/color/icc/pigment/*.icm
