@@ -126,7 +126,12 @@ Common files for Koffice
 %_kde_datadir/kde4/services/spellcheck.desktop
 %_kde_libdir/kde4/kofficesimpletextedit.so
 %_kde_libdir/kde4/spellcheck.so
-#%_kde_libdir/kde4/libkarbonsvgimport.so
+%_kde_libdir/kde4/libkarbonpdfimport.so
+%_kde_libdir/kde4/karbonfiltereffects.so
+%_kde_libdir/kde4/libicalendarexport.so
+%_kde_libdir/kde4/libpowerpointimport.so
+%_kde_libdir/kde4/libwpgimport.so
+%_kde_libdir/kde4/paragraphtool.so
 %dir %_kde_appsdir/koffice
 %_kde_appsdir/koffice/autocorrect
 %_kde_appsdir/koffice/koffice_shell.rc
@@ -150,6 +155,9 @@ Common files for Koffice
 %_kde_iconsdir/oxygen/16x16/actions/object-align-vertical-top-koffice.png
 %_kde_iconsdir/oxygen/16x16/actions/object-group-koffice.png
 %_kde_iconsdir/oxygen/16x16/actions/object-ungroup-koffice.png
+%_kde_iconsdir/hicolor/16x16/actions/black.png
+%_kde_iconsdir/hicolor/16x16/actions/highlight.png
+%_kde_iconsdir/hicolor/16x16/actions/pen.png
 %_kde_datadir/kde4/services/ServiceMenus/kchart_konqi.desktop
 %_kde_appsdir/musicshape
 %_kde_datadir/kde4/services/autocorrect.desktop
@@ -173,6 +181,8 @@ Common files for Koffice
 %_kde_datadir/kde4/services/artistictextshape.desktop
 %_kde_datadir/kde4/services/Filterkpr2odf.desktop
 %_kde_datadir/kde4/services/kopabackgroundtool.desktop
+%_kde_datadir/kde4/services/paragraphtool.desktop
+%_kde_datadir/kde4/servicetypes/filtereffect.desktop
 %_kde_datadir/kde4/servicetypes/scripteventaction.desktop
 %_kde_datadir/kde4/servicetypes/flakedevice.desktop
 %_kde_datadir/kde4/servicetypes/pigmentextension.desktop
@@ -214,11 +224,8 @@ Common files for Koffice
 %_kde_libdir/kde4/pictureshape.so
 %_kde_libdir/kde4/textshape.so
 %_kde_libdir/kde4/textvariables.so
-#%_kde_libdir/kde4/libmswordimport.so
-#%_kde_libdir/kde4/libwpgimport.so
 %_kde_libdir/kde4/artistictextshape.so
 %_kde_libdir/kde4/libFilterkpr2odf.so
-#%_kde_libdir/kde4/libmswordodf_import.so
 %_kde_libdir/kde4/kopabackgroundtool.so
 %_kde_bindir/kthesaurus
 %_kde_datadir/applications/kde4/KThesaurus.desktop
@@ -237,22 +244,22 @@ Common files for Koffice
 %exclude %_kde_datadir/kde4/services/ServiceMenus/kivio_konqi.desktop
 
 #--------------------------------------------------------------------
-#
-#define libkoguiutils_major 5
-#define libkoguiutils %mklibname koguiutils %libkoguiutils_major
-#
-#%package -n %libkoguiutils
-#Summary: Koffice 2 core library
-#Group: System/Libraries
-#
-#%description -n %libkoguiutils
-#Koffice 2 core library.
-#
-#%files -n %libkoguiutils
-#%defattr(-,root,root)
-#%_kde_libdir/libkoguiutils.so.%libkoguiutils_major
-#%_kde_libdir/libkoguiutils.so.%libkoguiutils_major.0.0
-#
+
+%define libkoaction_major 6
+%define libkoaction %mklibname koaction %libkoaction_major
+
+%package -n %libkoaction
+Summary: Koffice 2 core library
+Group: System/Libraries
+
+%description -n %libkoaction
+Koffice 2 core library.
+
+%files -n %libkoaction
+%defattr(-,root,root)
+%_kde_libdir/libkoaction.so.%libkoaction_major
+%_kde_libdir/libkoaction.so.%libkoaction_major.0.0
+
 #--------------------------------------------------------------------
 
 %define libkokross_major 6
@@ -559,8 +566,6 @@ Kword is a word processor for kde project
 %_kde_libdir/kde4/libamiproimport.so
 %_kde_libdir/kde4/libapplixspreadimport.so
 %_kde_libdir/kde4/libapplixwordimport.so
-#%_kde_libdir/kde4/libasciiexport.so
-#%_kde_libdir/kde4/libasciiimport.so
 %_kde_libdir/kde4/libcsvexport.so
 %_kde_libdir/kde4/libcsvimport.so
 %_kde_libdir/kde4/libdbaseimport.so
@@ -591,7 +596,6 @@ Kword is a word processor for kde project
 %_kde_libdir/kde4/libxsltexport.so
 %_kde_libdir/kde4/libxsltimport.so
 %_kde_libdir/libkdeinit4_kword.so
-#%_kde_docdir/HTML/en/kword
 
 #--------------------------------------------------------------------
 
@@ -832,15 +836,12 @@ KSpread is a spreadsheet for kde project
 %_kde_libdir/kde4/kspread*
 %_kde_libdir/kde4/spreadsheetshape.so
 %_kde_libdir/libkdeinit4_kspread.so
-
 %_kde_iconsdir/hicolor/*/apps/kspread.png
-
 %_kde_datadir/applications/kde4/kspread.desktop
 %_kde_datadir/kde4/services/ServiceMenus/kspread_konqi.desktop
 %_kde_appsdir/kspread
 %_kde_datadir/config.kcfg/kspread.kcfg
 %_kde_docdir/HTML/en/kspread
-
 %_kde_datadir/kde4/services/krossmodulekspread.desktop
 %_kde_datadir/kde4/services/kspread*.desktop
 %_kde_datadir/kde4/servicetypes/kspread_plugin.desktop
@@ -1070,7 +1071,6 @@ Krita is a pixel-based image manipulation program.
 %_kde_datadir/applications/kde4/krita_ora.desktop
 %_kde_datadir/applications/kde4/krita_pdf.desktop
 %_kde_datadir/applications/kde4/krita_tiff.desktop
-#%_kde_datadir/applications/kde4/krita_openexr.desktop
 %_kde_datadir/applications/kde4/krita_raw.desktop
 %_kde_datadir/applications/kde4/krita_magick.desktop
 %_kde_datadir/kde4/services/ServiceMenus/krita_konqi.desktop
@@ -1079,7 +1079,6 @@ Krita is a pixel-based image manipulation program.
 %_kde_iconsdir/hicolor/*/apps/krita.png
 %_kde_appsdir/krita
 %_kde_appsdir/kritaplugins
-#%_kde_appsdir/pigmentcms
 %_kde_configdir/kritarc
 %_kde_datadir/color/icc/krita/*.icm
 %_kde_datadir/color/icc/pigment/*.icm
@@ -1189,71 +1188,118 @@ Koffice 2 core library.
 %_kde_libdir/libkritalibpaintop.so.%{libkritalibpaintop_major}*
 
 #--------------------------------------------------------------------
-#
-#define  libkritabasicdynamiccoloringprogram_major 6
-#define  libkritabasicdynamiccoloringprogram %mklibname kritabasicdynamiccoloringprogram  %libkritabasicdynamiccoloringprogram_major
-#%
-#%package -n %libkritabasicdynamiccoloringprogram
-#Summary: Koffice 2 core library
-#Group: System/Libraries
-#
-#%description -n %libkritabasicdynamiccoloringprogram
-#Koffice 2 core library.
-#
-#%files -n %libkritabasicdynamiccoloringprogram
-#%defattr(-,root,root)
-#%_kde_libdir/libkritabasicdynamiccoloringprogram.so.%{libkritabasicdynamiccoloringprogram_major}*
-#
+
+%define  libkobase_major 6
+%define  libkobase %mklibname kobase  %libkobase_major
+
+%package -n %libkobase
+Summary: Koffice 2 core library
+Group: System/Libraries
+
+%description -n %libkobase
+Koffice 2 core library.
+
+%files -n %libkobase
+%defattr(-,root,root)
+%_kde_libdir/libkobase.so.%{libkobase_major}*
+
 #--------------------------------------------------------------------
 
-#define  libkritabasicdynamicshapeprogram_major 6
-#define  libkritabasicdynamicshapeprogram %mklibname kritabasicdynamicshapeprogram  %libkritabasicdynamicshapeprogram_major
-#
-#%package -n %libkritabasicdynamicshapeprogram
-#Summary: Koffice 2 core library
-#Group: System/Libraries
-#
-#%description -n %libkritabasicdynamicshapeprogram
-#Koffice 2 core library.
-#
-#%files -n %libkritabasicdynamicshapeprogram
-#%defattr(-,root,root)
-#%_kde_libdir/libkritabasicdynamicshapeprogram.so.%{libkritabasicdynamicshapeprogram_major}*
-#
-#--------------------------------------------------------------------
-#
-#define  libkritadynamicbrush_major 6
-#define  libkritadynamicbrush %mklibname kritadynamicbrush  %libkritadynamicbrush_major
-#
-#%package -n %libkritadynamicbrush
-#Summary: Koffice 2 core library
-#Group: System/Libraries
-#
-#%description -n %libkritadynamicbrush
-#Koffice 2 core library.
-#
-#%files -n %libkritadynamicbrush
-#%defattr(-,root,root)
-#%_kde_libdir/libkritadynamicbrush.so.%{libkritadynamicbrush_major}*
-#
-#--------------------------------------------------------------------
-#
-#define  libKritaRulerAssistantCommon_major 6
-#define  libkritarulerassistantcommon %mklibname kritarulerassistantcommon  %libKritaRulerAssistantCommon_major
-#
-#%package -n %libkritarulerassistantcommon
-#Summary: Koffice 2 core library
-#Group: System/Libraries
-#
-#%description -n %libkritarulerassistantcommon
-#Koffice 2 core library.
-#
-#%files -n %libkritarulerassistantcommon
-#%defattr(-,root,root)
-#%_kde_libdir/libKritaRulerAssistantCommon.so.%{libKritaRulerAssistantCommon_major}*
-#
+%define  libkocolorwidgets_major 6
+%define  libkocolorwidgets %mklibname kocolorwidgets  %libkocolorwidgets_major
+
+%package -n %libkocolorwidgets
+Summary: Koffice 2 core library
+Group: System/Libraries
+
+%description -n %libkocolorwidgets
+Koffice 2 core library.
+
+%files -n %libkocolorwidgets
+%defattr(-,root,root)
+%_kde_libdir/libkocolorwidgets.so.%{libkocolorwidgets_major}*
+
 #--------------------------------------------------------------------
 
+%define  libkoplugin_major 6
+%define  libkoplugin %mklibname koplugin  %libkoplugin_major
+
+%package -n %libkoplugin
+Summary: Koffice 2 core library
+Group: System/Libraries
+
+%description -n %libkoplugin
+Koffice 2 core library.
+
+%files -n %libkoplugin
+%defattr(-,root,root)
+%_kde_libdir/libkoplugin.so.%{libkoplugin_major}*
+
+#--------------------------------------------------------------------
+#
+%define  libkowidgets_major 6
+%define  libkowidgets %mklibname kowidgets  %libkowidgets_major
+#
+%package -n %libkowidgets
+Summary: Koffice 2 core library
+Group: System/Libraries
+
+%description -n %libkowidgets
+Koffice 2 core library.
+
+%files -n %libkowidgets
+%defattr(-,root,root)
+%_kde_libdir/libkowidgets.so.%{libkowidgets_major}*
+
+#--------------------------------------------------------------------
+#
+%define  libkplatoworkapp_major 6
+%define  libkplatoworkapp %mklibname kplatoworkapp  %libkplatoworkapp_major
+#
+%package -n %libkplatoworkapp
+Summary: Koffice 2 core library
+Group: System/Libraries
+
+%description -n %libkplatoworkapp
+Koffice 2 core library.
+
+%files -n %libkplatoworkapp
+%defattr(-,root,root)
+%_kde_libdir/libkplatoworkapp.so.%{libkplatoworkapp_major}*
+
+#--------------------------------------------------------------------
+
+%define  libkplatoworkfactory_major 6
+%define  libkplatoworkfactory %mklibname kplatoworkfactory  %libkplatoworkfactory_major
+
+%package -n %libkplatoworkfactory
+Summary: Koffice 2 core library
+Group: System/Libraries
+
+%description -n %libkplatoworkfactory
+Koffice 2 core library.
+
+%files -n %libkplatoworkfactory
+%defattr(-,root,root)
+%_kde_libdir/libkplatoworkfactory.so.%{libkplatoworkfactory_major}*
+
+#--------------------------------------------------------------------
+
+%define  libkrossmodulekrita_major 6
+%define  libkrossmodulekrita %mklibname krossmodulekrita  %libkrossmodulekrita_major
+
+%package -n %libkrossmodulekrita
+Summary: Koffice 2 core library
+Group: System/Libraries
+
+%description -n %libkrossmodulekrita
+Koffice 2 core library.
+
+%files -n %libkrossmodulekrita
+%defattr(-,root,root)
+%_kde_libdir/libkrossmodulekrita.so.%{libkrossmodulekrita_major}*
+
+#--------------------------------------------------------------------
 %package -n karbon
 Summary:	Scalable drawing for koffice2
 Group:		Graphical desktop/KDE
@@ -1364,6 +1410,8 @@ Requires: %libkplatomodels = %{epoch}:%{version}-%{release}
 Requires: %libkplatokernel = %{epoch}:%{version}-%{release}
 Requires: %libkplatoprivate = %{epoch}:%{version}-%{release}
 Requires: %libkplatoui = %{epoch}:%{version}-%{release}
+Requires: %libkplatoworkapp = %{epoch}:%{version}-%{release}
+Requires: %libkplatoworkfactory = %{epoch}:%{version}-%{release}
 Requires: %libkspreadcommon = %{epoch}:%{version}-%{release}
 Requires: %libkpresenterprivate = %{epoch}:%{version}-%{release}
 Requires: %libkdchart = %{epoch}:%{version}-%{release}
@@ -1374,12 +1422,14 @@ Requires: %libkritagrayscale = %{epoch}:%{version}-%{release}
 Requires: %libkritaimage = %{epoch}:%{version}-%{release}
 Requires: %libkritalibbrush = %{epoch}:%{version}-%{release}
 Requires: %libkritalibpaintop = %{epoch}:%{version}-%{release}
-#Requires: %libkritabasicdynamiccoloringprogram = %{epoch}:%{version}-%{release}
-#Requires: %libkritabasicdynamicshapeprogram = %{epoch}:%{version}-%{release}
-#Requires: %libkritadynamicbrush = %{epoch}:%{version}-%{release}
-#Requires: %libkritarulerassistantcommon = %{epoch}:%{version}-%{release}
 Requires: %libkarboncommon = %{epoch}:%{version}-%{release}
 Requires: %libkarbonui = %{epoch}:%{version}-%{release}
+Requires: %libkoaction = %{epoch}:%{version}-%{release}
+Requires: %libkobase = %{epoch}:%{version}-%{release}
+Requires: %libkocolorwidgets = %{epoch}:%{version}-%{release}
+Requires: %libkoplugin = %{epoch}:%{version}-%{release}
+Requires: %libkowidgets = %{epoch}:%{version}-%{release}
+Requires: %libkrossmodulekrita = %{epoch}:%{version}-%{release}
 Requires: %name-core = %{epoch}:%{version}-%{release}
 Provides: %name-devel = %{epoch}:%{version}-%{release}
 Obsoletes: %lib_name-devel
@@ -1412,7 +1462,6 @@ Header files needed for developing koffice2 applications.
 %_kde_libdir/libkochart.so
 %_kde_libdir/libkoffice_graya_u16.so
 %_kde_libdir/libkofficegrayau8colorspace.so
-#%_kde_libdir/libkoguiutils.so
 %_kde_libdir/libkokross.so
 %_kde_libdir/libkomain.so
 %_kde_libdir/libkoodf.so
@@ -1436,10 +1485,6 @@ Header files needed for developing koffice2 applications.
 %_kde_libdir/libpigmentcms.so
 %_kde_libdir/libkostore.so
 %_kde_libdir/libkritalibpaintop.so
-#%_kde_libdir/libKritaRulerAssistantCommon.so
-#%_kde_libdir/libkritabasicdynamiccoloringprogram.so
-#%_kde_libdir/libkritabasicdynamicshapeprogram.so
-#%_kde_libdir/libkritadynamicbrush.so
 %_kde_libdir/libkritalibbrush.so
 %_kde_libdir/libkoaction.so
 %_kde_libdir/libkobase.so
