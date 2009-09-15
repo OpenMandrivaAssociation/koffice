@@ -51,7 +51,7 @@ BuildRequires: opengtl-devel
 BuildRequires: mysql-static-devel
 BuildRequires: kdegraphics4-devel
 BuildRequires: libtiff-devel
-BuildRequires: wv2-devel
+BuildRequires: wv2-devel >= 0.4.0
 BuildRequires: getfem++
 BuildRequires: xbase-devel
 BuildRequires: ctemplate-devel
