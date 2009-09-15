@@ -130,7 +130,6 @@ Common files for Koffice
 %_kde_libdir/kde4/karbonfiltereffects.so
 %_kde_libdir/kde4/libicalendarexport.so
 %_kde_libdir/kde4/libpowerpointimport.so
-%_kde_libdir/kde4/libwpgimport.so
 %_kde_libdir/kde4/paragraphtool.so
 %dir %_kde_appsdir/koffice
 %_kde_appsdir/koffice/autocorrect
