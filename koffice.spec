@@ -70,6 +70,7 @@ Requires: kchart
 Obsoletes: koshell
 Obsoletes: kugar
 Obsoletes: kivio
+Obsoletes: koffice-kivio < 1.6.3-20
 Obsoletes: kformula
 Obsoletes: kexi
 Obsoletes: koffice2 < 1:1.9.95.4
