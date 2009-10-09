@@ -11,7 +11,7 @@ Name: koffice
 URL: http://www.koffice.org/
 Summary: Set of office applications for KDE
 Version: 2.0.82
-Release: %mkrel 3
+Release: %mkrel 4
 Epoch: 11
 Source: http://fr2.rpmfind.net/linux/KDE/unstable/koffice-%version/src/%name-%version.tar.bz2
 Group: Office
@@ -22,6 +22,7 @@ BuildRequires: kdepimlibs4-devel
 BuildRequires: lcms-devel
 BuildRequires: qca2-devel
 BuildRequires: libwpd-devel
+BuildRequires: libwpg-devel
 BuildRequires: libOpenEXR-devel
 BuildRequires: libexif-devel
 BuildRequires: libexiv-devel
