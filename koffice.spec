@@ -24,6 +24,7 @@ BuildRequires: qca2-devel
 BuildRequires: libwpd-devel
 BuildRequires: libwpg-devel
 BuildRequires: libOpenEXR-devel
+BuildRequires: QtShiva-devel
 BuildRequires: libexif-devel
 BuildRequires: libexiv-devel
 BuildRequires: libart_lgpl-devel
