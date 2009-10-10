@@ -597,6 +597,8 @@ Kword is a word processor for kde project
 %_kde_libdir/kde4/libwpimport.so
 %_kde_libdir/kde4/libxsltexport.so
 %_kde_libdir/kde4/libxsltimport.so
+%_kde_libdir/kde4/libwpgimport.so
+%_kde_libdir/kde4/libmswordodf_import.so
 %_kde_libdir/libkdeinit4_kword.so
 
 #--------------------------------------------------------------------
@@ -1075,6 +1077,7 @@ Krita is a pixel-based image manipulation program.
 %_kde_datadir/applications/kde4/krita_tiff.desktop
 %_kde_datadir/applications/kde4/krita_raw.desktop
 %_kde_datadir/applications/kde4/krita_magick.desktop
+%_kde_datadir/applications/kde4/krita_openexr.desktop
 %_kde_datadir/kde4/services/ServiceMenus/krita_konqi.desktop
 %_kde_datadir/kde4/services/*krita*.desktop
 %_kde_datadir/kde4/servicetypes/*krita*.desktop
@@ -1085,6 +1088,7 @@ Krita is a pixel-based image manipulation program.
 %_kde_datadir/color/icc/krita/*.icm
 %_kde_datadir/color/icc/pigment/*.icm
 %_kde_datadir/kde4/servicetypes/pigment.desktop
+%_kde_datadir/pigmentcms
 %_kde_datadir/mime/packages/krita_ora.xml
 %_kde_docdir/HTML/en/krita
 
