@@ -85,7 +85,6 @@ KOffice contains:
    * KSpread: spreadsheet
    * KPresenter: presentations
    * KChart: diagram generator
-   * Kexi: an integrated environment for managing data
    * Some filters (Excel 97, Winword 97/2000, etc.)
    * karbon: the scalable vector drawing application for KDE.
    * krita: painting and image editing application.
