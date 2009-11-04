@@ -10,8 +10,8 @@
 Name: koffice
 URL: http://www.koffice.org/
 Summary: Set of office applications for KDE
-Version: 2.0.82
-Release: %mkrel 4
+Version: 2.0.91
+Release: %mkrel 1
 Epoch: 11
 Source: http://fr2.rpmfind.net/linux/KDE/unstable/koffice-%version/src/%name-%version.tar.bz2
 Group: Office
@@ -53,7 +53,7 @@ BuildRequires: opengtl-devel >= 0.9.10
 BuildRequires: mysql-static-devel
 BuildRequires: kdegraphics4-devel
 BuildRequires: libtiff-devel
-BuildRequires: wv2-devel >= 0.4.0
+BuildRequires: wv2-devel >= 0.4.2
 BuildRequires: getfem++
 BuildRequires: xbase-devel
 BuildRequires: ctemplate-devel
@@ -69,11 +69,11 @@ Requires: kpresenter
 Requires: krita
 Requires: kplato
 Requires: kchart
+Requires: kformula
 Obsoletes: koshell
 Obsoletes: kugar
 Obsoletes: kivio
 Obsoletes: koffice-kivio < 1.6.3-20
-Obsoletes: kformula
 Obsoletes: kexi
 Obsoletes: koffice2 < 1:1.9.95.4
 
@@ -108,7 +108,6 @@ Obsoletes: koshell
 Obsoletes: kugar
 Obsoletes: kplatowork
 Obsoletes: kivio
-Obsoletes: kformula
 Obsoletes: kexi
 Conflicts: koffice-kspread < 11:1.6.3-20
 Conflicts: koffice-kpresenter < 11:1.6.3-20
@@ -126,7 +125,7 @@ Common files for Koffice
 %defattr(-,root,root)
 %_kde_datadir/applications/kde4/koffice.desktop
 %_kde_datadir/kde4/services/spellcheck.desktop
-%_kde_libdir/kde4/kofficesimpletextedit.so
+#_kde_libdir/kde4/kofficesimpletextedit.so
 %_kde_libdir/kde4/spellcheck.so
 %_kde_libdir/kde4/libkarbonpdfimport.so
 %_kde_libdir/kde4/karbonfiltereffects.so
@@ -178,7 +177,7 @@ Common files for Koffice
 %_kde_datadir/kde4/services/pictureshape.desktop
 %_kde_datadir/kde4/services/textshape.desktop
 %_kde_datadir/kde4/services/textvariables.desktop
-%_kde_datadir/kde4/services/kofficesimpletextedit.desktop
+#_kde_datadir/kde4/services/kofficesimpletextedit.desktop
 %_kde_datadir/kde4/services/artistictextshape.desktop
 %_kde_datadir/kde4/services/Filterkpr2odf.desktop
 %_kde_datadir/kde4/services/kopabackgroundtool.desktop
@@ -1075,7 +1074,7 @@ Krita is a pixel-based image manipulation program.
 %_kde_datadir/applications/kde4/krita_pdf.desktop
 %_kde_datadir/applications/kde4/krita_tiff.desktop
 %_kde_datadir/applications/kde4/krita_raw.desktop
-%_kde_datadir/applications/kde4/krita_magick.desktop
+#_kde_datadir/applications/kde4/krita_magick.desktop
 %_kde_datadir/applications/kde4/krita_openexr.desktop
 %_kde_datadir/kde4/services/ServiceMenus/krita_konqi.desktop
 %_kde_datadir/kde4/services/*krita*.desktop
@@ -1289,7 +1288,7 @@ Koffice 2 core library.
 %_kde_libdir/libkplatoworkfactory.so.%{libkplatoworkfactory_major}*
 
 #--------------------------------------------------------------------
-
+%if 0
 %define  libkrossmodulekrita_major 6
 %define  libkrossmodulekrita %mklibname krossmodulekrita  %libkrossmodulekrita_major
 
@@ -1303,6 +1302,7 @@ Koffice 2 core library.
 %files -n %libkrossmodulekrita
 %defattr(-,root,root)
 %_kde_libdir/libkrossmodulekrita.so.%{libkrossmodulekrita_major}*
+%endif
 
 #--------------------------------------------------------------------
 %package -n karbon
@@ -1391,6 +1391,67 @@ Koffice 2 core library.
 
 #--------------------------------------------------------------------
 
+%package -n kformula
+Summary:        Formula Editor for koffice2
+Group:          Graphical desktop/KDE
+Requires:       %name-core = %{epoch}:%{version}-%{release}
+URL:            http://www.koffice.org/
+Provides:       %name-kformula = %epoch:%version-%release
+Conflicts:      koffice-core < 11:2.0.91
+
+%description -n kformula
+Kformula is a formula editor for kde project.
+
+%files -n kformula
+%defattr(-,root,root)
+%_kde_bindir/kformula
+%_kde_libdir/kde4/formulashape.so
+%_kde_libdir/kde4/libkformulapart.so
+%_kde_libdir/libkdeinit_kformula.so
+%_kde_datadir/applications/kde4/kformula.desktop
+%_kde_datadir/apps/formulashape
+%_kde_datadir/apps/kformula
+%_kde_iconsdir/*/*/*/kformula.png
+%_kde_datadir/kde4/services/ServiceMenus/kformula_konqi.desktop
+%_kde_datadir/kde4/services/formulashape.desktop
+%_kde_datadir/kde4/services/kformulapart.desktop
+
+#--------------------------------------------------------------------
+
+%define libkformulalib_major 6
+%define libkformulalib %mklibname kformulalib %libkformulalib_major
+
+%package -n %libkformulalib
+Summary: Koffice 2 core library
+Group: System/Libraries
+
+%description -n %libkformulalib
+Koffice 2 core library.
+
+%files -n %libkformulalib
+%defattr(-,root,root)
+%_kde_libdir/libkformulalib.so.%libkformulalib_major
+%_kde_libdir/libkformulalib.so.%libkformulalib_major.0.0
+
+#--------------------------------------------------------------------
+
+%define libkformulaprivate_major 6
+%define libkformulaprivate %mklibname kformulaprivate %libkformulaprivate_major
+
+%package -n %libkformulaprivate
+Summary: Koffice 2 core library
+Group: System/Libraries
+
+%description -n %libkformulaprivate
+Koffice 2 core library.
+
+%files -n %libkformulaprivate
+%defattr(-,root,root)
+%_kde_libdir/libkformulaprivate.so.%libkformulaprivate_major
+%_kde_libdir/libkformulaprivate.so.%libkformulaprivate_major.0.0
+
+#--------------------------------------------------------------------
+
 %package devel
 Group: Development/KDE and Qt
 Summary: Header files for developing koffice2 applications
@@ -1434,7 +1495,8 @@ Requires: %libkobase = %{epoch}:%{version}-%{release}
 Requires: %libkocolorwidgets = %{epoch}:%{version}-%{release}
 Requires: %libkoplugin = %{epoch}:%{version}-%{release}
 Requires: %libkowidgets = %{epoch}:%{version}-%{release}
-Requires: %libkrossmodulekrita = %{epoch}:%{version}-%{release}
+Requires: %libkformulalib = %{epoch}:%{version}-%{release}
+Requires: %libkformulaprivate = %{epoch}:%{version}-%{release}
 Requires: %name-core = %{epoch}:%{version}-%{release}
 Provides: %name-devel = %{epoch}:%{version}-%{release}
 Obsoletes: %lib_name-devel
@@ -1498,7 +1560,9 @@ Header files needed for developing koffice2 applications.
 %_kde_libdir/libkowidgets.so
 %_kde_libdir/libkplatoworkapp.so
 %_kde_libdir/libkplatoworkfactory.so
-%_kde_libdir/libkrossmodulekrita.so
+%_kde_libdir/libkformulalib.so
+%_kde_libdir/libkformulaprivate.so
+#_kde_libdir/libkrossmodulekrita.so
 
 #--------------------------------------------------------------------
 
