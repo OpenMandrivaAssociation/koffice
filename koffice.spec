@@ -237,7 +237,6 @@ Common files for Koffice
 %_kde_docdir/HTML/en/koffice
 %_kde_docdir/HTML/en/thesaurus
 %_kde_docdir/HTML/en/kformula
-%_kde_docdir/HTML/en/kivio
 # Those files conflict with oxygen-icon-theme
 %exclude %_kde_iconsdir/oxygen/16x16/actions/object-order-*.png
 # Those are installed despite their parent packages are available
