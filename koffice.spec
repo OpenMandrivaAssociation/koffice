@@ -49,7 +49,7 @@ BuildRequires: glpk-devel
 BuildRequires: mesaglut-devel
 BuildRequires: glew-devel
 BuildRequires: GraphicsMagick-devel
-BuildRequires: opengtl-devel >= 0.9.10
+BuildRequires: opengtl-devel >= 0.9.12
 BuildRequires: mysql-static-devel
 BuildRequires: kdegraphics4-devel
 BuildRequires: libtiff-devel
