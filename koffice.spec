@@ -11,7 +11,7 @@ Name: koffice
 URL: http://www.koffice.org/
 Summary: Set of office applications for KDE
 Version: 2.1.0
-Release: %mkrel 1
+Release: %mkrel 2
 Epoch: 11
 Source: http://fr2.rpmfind.net/linux/KDE/stable/koffice-%version/src/%name-%version.tar.bz2
 Group: Office
@@ -155,6 +155,10 @@ Common files for Koffice
 %_kde_iconsdir/oxygen/16x16/actions/object-align-vertical-top-koffice.png
 %_kde_iconsdir/oxygen/16x16/actions/object-group-koffice.png
 %_kde_iconsdir/oxygen/16x16/actions/object-ungroup-koffice.png
+%_kde_iconsdir/oxygen/16x16/actions/object-order-back-koffice.png
+%_kde_iconsdir/oxygen/16x16/actions/object-order-front-koffice.png
+%_kde_iconsdir/oxygen/16x16/actions/object-order-lower-koffice.png
+%_kde_iconsdir/oxygen/16x16/actions/object-order-raise-koffice.png
 %_kde_iconsdir/hicolor/16x16/actions/black.png
 %_kde_iconsdir/hicolor/16x16/actions/highlight.png
 %_kde_iconsdir/hicolor/16x16/actions/pen.png
@@ -237,8 +241,6 @@ Common files for Koffice
 %_kde_docdir/HTML/en/koffice
 %_kde_docdir/HTML/en/thesaurus
 %_kde_docdir/HTML/en/kformula
-# Those files conflict with oxygen-icon-theme
-%exclude %_kde_iconsdir/oxygen/16x16/actions/object-order-*.png
 # Those are installed despite their parent packages are available
 %exclude %_kde_datadir/kde4/services/ServiceMenus/kivio_konqi.desktop
 
