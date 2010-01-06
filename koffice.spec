@@ -11,7 +11,7 @@ Name: koffice
 URL: http://www.koffice.org/
 Summary: Set of office applications for KDE
 Version: 2.1.0
-Release: %mkrel 3
+Release: %mkrel 4
 Epoch: 11
 Source: http://fr2.rpmfind.net/linux/KDE/stable/koffice-%version/src/%name-%version.tar.bz2
 Group: Office
@@ -125,7 +125,6 @@ Common files for Koffice
 %defattr(-,root,root)
 %_kde_datadir/applications/kde4/koffice.desktop
 %_kde_datadir/kde4/services/spellcheck.desktop
-#_kde_libdir/kde4/kofficesimpletextedit.so
 %_kde_libdir/kde4/spellcheck.so
 %_kde_libdir/kde4/libkarbonpdfimport.so
 %_kde_libdir/kde4/karbonfiltereffects.so
@@ -181,7 +180,6 @@ Common files for Koffice
 %_kde_datadir/kde4/services/pictureshape.desktop
 %_kde_datadir/kde4/services/textshape.desktop
 %_kde_datadir/kde4/services/textvariables.desktop
-#_kde_datadir/kde4/services/kofficesimpletextedit.desktop
 %_kde_datadir/kde4/services/artistictextshape.desktop
 %_kde_datadir/kde4/services/Filterkpr2odf.desktop
 %_kde_datadir/kde4/services/kopabackgroundtool.desktop
@@ -571,7 +569,6 @@ Kword is a word processor for kde project
 %_kde_libdir/kde4/libcsvimport.so
 %_kde_libdir/kde4/libdbaseimport.so
 %_kde_libdir/kde4/libdocbookexport.so
-%_kde_libdir/kde4/libexcelimport.so
 %_kde_libdir/kde4/libgenerickofilter.so
 %_kde_libdir/kde4/libgnumericexport.so
 %_kde_libdir/kde4/libgnumericimport.so
@@ -817,6 +814,7 @@ Obsoletes:      %name-kspread <= 11:1.9.95.3-0.766453.5
 Provides:       %name-kspread = %epoch:%version-%release
 Obsoletes:      koffice2-kspread < 1:1.9.95.3-0.766453.6
 Provides:       koffice2-kspread = %epoch:%version-%release
+Conflicts:      kword < 11:2.1.0-5
 
 %description -n kspread
 KSpread is a spreadsheet for kde project
@@ -838,6 +836,7 @@ KSpread is a spreadsheet for kde project
 %_kde_libdir/kde4/libkspreadsolver.so
 %_kde_libdir/kde4/kspread*
 %_kde_libdir/kde4/spreadsheetshape.so
+%_kde_libdir/kde4/libexcelimport.so
 %_kde_libdir/libkdeinit4_kspread.so
 %_kde_iconsdir/hicolor/*/apps/kspread.png
 %_kde_datadir/applications/kde4/kspread.desktop
