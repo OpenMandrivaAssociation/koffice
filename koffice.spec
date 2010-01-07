@@ -11,7 +11,7 @@ Name: koffice
 URL: http://www.koffice.org/
 Summary: Set of office applications for KDE
 Version: 2.1.0
-Release: %mkrel 4
+Release: %mkrel 5
 Epoch: 11
 Source: http://fr2.rpmfind.net/linux/KDE/stable/koffice-%version/src/%name-%version.tar.bz2
 Group: Office
@@ -814,7 +814,7 @@ Obsoletes:      %name-kspread <= 11:1.9.95.3-0.766453.5
 Provides:       %name-kspread = %epoch:%version-%release
 Obsoletes:      koffice2-kspread < 1:1.9.95.3-0.766453.6
 Provides:       koffice2-kspread = %epoch:%version-%release
-Conflicts:      kword < 11:2.1.0-5
+Conflicts:      kword < 11:2.1.0-4
 
 %description -n kspread
 KSpread is a spreadsheet for kde project
