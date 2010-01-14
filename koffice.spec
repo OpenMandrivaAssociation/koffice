@@ -1,5 +1,3 @@
-%define _requires_exceptions devel\(libtwopigen\)\\|devel\(libgvrender\)\\|devel\(libcdt\)\\|devel\(libdotgen\)\\|devel\(libcommon\)\\|devel\(libpathplan\)\\|devel\(libneatogen\)\\|devel\(libcircogen\)\\|devel\(libgraph\)\\|devel\(libdotneato\)\\|devel\(libfdpgen\)\\|devel\(libpack\)
-
 %define lib_name_orig %mklibname koffice2
 %define lib_major 2
 %define lib_name %lib_name_orig%lib_major
@@ -1088,7 +1086,6 @@ Krita is a pixel-based image manipulation program.
 %_kde_datadir/kde4/servicetypes/pigment.desktop
 %_kde_appsdir/pigmentcms
 %_kde_datadir/mime/packages/krita_ora.xml
-%_kde_docdir/HTML/en/krita
 
 #--------------------------------------------------------------------
 
@@ -1404,10 +1401,8 @@ Kformula is a formula editor for kde project.
 
 %files -n kformula
 %defattr(-,root,root)
-%_kde_bindir/kformula
 %_kde_libdir/kde4/formulashape.so
 %_kde_libdir/kde4/libkformulapart.so
-%_kde_libdir/libkdeinit_kformula.so
 %_kde_datadir/applications/kde4/kformula.desktop
 %_kde_datadir/apps/formulashape
 %_kde_datadir/apps/kformula
