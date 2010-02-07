@@ -9,7 +9,7 @@ Name: koffice
 URL: http://www.koffice.org/
 Summary: Set of office applications for KDE
 Version: 2.1.1
-Release: %mkrel 1
+Release: %mkrel 2
 Epoch: 11
 Source: http://fr2.rpmfind.net/linux/KDE/stable/koffice-%version/src/%name-%version.tar.bz2
 Group: Office
@@ -198,13 +198,13 @@ Common files for Koffice
 %_kde_datadir/kde4/servicetypes/koplugin.desktop
 %_kde_datadir/kde4/servicetypes/texteditingplugin.desktop
 %_kde_datadir/kde4/servicetypes/textvariableplugin.desktop
-%_kde_datadir/templates/.source/Presentation.kpt
-%_kde_datadir/templates/.source/SpreadSheet.kst
-%_kde_datadir/templates/.source/TextDocument.kwt
-%_kde_datadir/templates/Illustration.desktop
-%_kde_datadir/templates/Presentation.desktop
-%_kde_datadir/templates/SpreadSheet.desktop
-%_kde_datadir/templates/TextDocument.desktop
+%exclude %_kde_datadir/templates/.source/Presentation.kpt
+%exclude %_kde_datadir/templates/.source/SpreadSheet.kst
+%exclude %_kde_datadir/templates/.source/TextDocument.kwt
+%exclude %_kde_datadir/templates/Illustration.desktop
+%exclude %_kde_datadir/templates/Presentation.desktop
+%exclude %_kde_datadir/templates/SpreadSheet.desktop
+%exclude %_kde_datadir/templates/TextDocument.desktop
 %_kde_libdir/kde4/autocorrect.so
 %_kde_libdir/kde4/libasciiexport.so
 %_kde_libdir/kde4/libasciiimport.so
@@ -1350,7 +1350,7 @@ Karbon is a scalable drawing for kde project.
 %_kde_docdir/HTML/en/karbon
 %_kde_datadir/kde4/services/karbon*.desktop
 %_kde_datadir/kde4/servicetypes/karbon_module.desktop
-%_kde_datadir/templates/.source/Illustration.karbon
+%exclude %_kde_datadir/templates/.source/Illustration.karbon
 
 #--------------------------------------------------------------------
 
