@@ -95,7 +95,7 @@ KOffice contains:
 %package core
 Group: Office
 Summary: Set of office applications for KDE
-Requires: wordnet
+Suggests: wordnet
 Requires(post): desktop-file-utils
 Requires(postun): desktop-file-utils
 Provides: koffice2-core = %epoch:%version-%release
