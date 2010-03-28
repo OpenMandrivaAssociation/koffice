@@ -13,6 +13,9 @@ Release: %mkrel 2
 Epoch: 11
 Source: http://fr2.rpmfind.net/linux/KDE/stable/koffice-%version/src/%name-%version.tar.bz2
 Patch0: koffice-2.1.81-fix-build.patch
+Patch1: koffice-2.1.81-krita_disable_painterlyframework.patch
+Patch2: koffice-2.1.81-dsolinking.patch
+Patch3: koffice-2.1.81-ascii_import_crash.patch
 Group: Office
 License: GPL
 BuildRoot: %_tmppath/%name-%version-%release-root
@@ -1735,6 +1738,9 @@ Header files needed for developing koffice2 applications.
 %prep
 %setup -q -n %name-%version
 %patch0 -p0
+%patch1 -p1 -b .krita_disable_painterlyframework
+%patch2 -p1 -b .dsolinking
+%patch3 -p2 -b .ascii_import_crash
 
 %build
 %cmake_kde4 \
