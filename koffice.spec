@@ -9,7 +9,7 @@ Name: koffice
 URL: http://www.koffice.org/
 Summary: Set of office applications for KDE
 Version: 2.1.81
-Release: %mkrel 2
+Release: %mkrel 3
 Epoch: 11
 Source: http://fr2.rpmfind.net/linux/KDE/stable/koffice-%version/src/%name-%version.tar.bz2
 Patch0: koffice-2.1.81-fix-build.patch
@@ -1326,7 +1326,6 @@ Requires:   koffice-core = %epoch:%version-%release
 Conflicts:  koffice <= %epoch:1.2.1-9mdk
 Obsoletes:  kexi <= 0.1-0.beta5.5mdk    
 Provides:   %name-apps
-Requires:   keximdb 
 
 %description -n kexi
 Kexi is an integrated environment for managing data.
@@ -1380,6 +1379,7 @@ Kexi is an integrated environment for managing data.
 %{_kde_libdir}/kde4/kexirelationdesignshape.so
 %{_kde_libdir}/kde4/krossmodulekexidb.so
 %{_kde_libdir}/kde4/kexihandler_report.so
+
 #--------------------------------------------------------------------
    
 %define libkexicore_major 6
