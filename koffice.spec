@@ -9,7 +9,7 @@ Name: koffice
 URL: http://www.koffice.org/
 Summary: Set of office applications for KDE
 Version: 2.1.81
-Release: %mkrel 3
+Release: %mkrel 4
 Epoch: 11
 Source: http://fr2.rpmfind.net/linux/KDE/stable/koffice-%version/src/%name-%version.tar.bz2
 Patch0: koffice-2.1.81-fix-build.patch
@@ -60,6 +60,7 @@ BuildRequires: getfem++
 BuildRequires: xbase-devel
 BuildRequires: ctemplate-devel
 BuildRequires: freetds-devel
+BuildRequires: sqlite-devel
 %if %compile_apidox
 BuildRequires: graphviz
 BuildRequires: doxygen
@@ -1364,6 +1365,7 @@ Kexi is an integrated environment for managing data.
 %{_kde_libdir}/kde4/kexidb_mysqldriver.so
 %{_kde_libdir}/kde4/kexidb_pqxxsqldriver.so
 %{_kde_libdir}/kde4/kexidb_xbasedriver.so
+%{_kde_libdir}/kde4/kexidb_sqlite3driver.so
 %{_kde_libdir}/kde4/kexihandler_csv_importexport.so
 %{_kde_libdir}/kde4/kexihandler_form.so
 %{_kde_libdir}/kde4/kexihandler_migration.so
