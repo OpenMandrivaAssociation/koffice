@@ -57,6 +57,7 @@ BuildRequires: xbase-devel
 BuildRequires: ctemplate-devel
 BuildRequires: freetds-devel
 BuildRequires: sqlite-devel
+BuildRequires: fftw3-devel >= 3.2
 %if %compile_apidox
 BuildRequires: graphviz
 BuildRequires: doxygen
