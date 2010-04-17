@@ -1006,7 +1006,6 @@ Krita is a pixel-based image manipulation program.
 %_kde_datadir/applications/kde4/krita_gif.desktop
 %_kde_datadir/applications/kde4/krita_jp2.desktop
 %_kde_datadir/applications/kde4/krita_ppm.desktop
-%_kde_datadir/applications/kde4/krita_psd.desktop
 %_kde_datadir/applications/kde4/krita_xcf.desktop
 %_kde_datadir/kde4/services/ServiceMenus/krita_konqi.desktop
 %_kde_datadir/kde4/services/*krita*.desktop
@@ -1488,21 +1487,37 @@ Koffice 2 core library.
 %defattr(-,root,root)
 %_kde_libdir/libkexiutils.so.%{libkexiutils_major}*
 
+#--------------------------------------------------------------------
+
+%define libkexiguiutils_major 7
+%define libkexiguiutils %mklibname kexiguiutils %libkexiguiutils_major
+
+%package -n %libkexiguiutils
+Summary: Koffice 2 core library
+Group: System/Libraries
+
+%description -n %libkexiguiutils
+Koffice 2 core library.
+
+%files -n %libkexiguiutils
+%defattr(-,root,root)
+%_kde_libdir/libkexiguiutils.so.%{libkexiguiutils_major}*
+
 #-------------------------------------------------------------------- 
 
-%define libwv2_major 4
-%define libwv2 %mklibname wv2 %libwv2_major
+%define libkowv2_major 4
+%define libkowv2 %mklibname kowv2_ %libkowv2_major
    
-%package -n %libwv2
+%package -n %libkowv2
 Summary: Koffice 2 core library
 Group: System/Libraries
    
-%description -n %libwv2
+%description -n %libkowv2
 Koffice 2 core library.
    
-%files -n %libwv2
+%files -n %libkowv2
 %defattr(-,root,root)
-%_kde_libdir/libwv2.so.%{libwv2_major}*
+%_kde_libdir/libkowv2.so.%{libkowv2_major}*
 
 #--------------------------------------------------------------------
 
@@ -1537,7 +1552,7 @@ Koffice 2 core library.
 %_kde_libdir/libkoproperty.so.%{libkoproperty_major}*
 
 #--------------------------------------------------------------------
-
+%if 0
 %package -n f-office
 Summary:    Fremantle Office viewer
 Group:      Graphical desktop/KDE
@@ -1554,6 +1569,7 @@ Fremantle Office viewer
 %{_kde_datadir}/dbus-1/services/com.nokia.FreOffice.service
 %{_kde_iconsdir}/hicolor/*/hildon
 %{_kde_iconsdir}/hicolor/*/apps/freoffice.png
+%endif
 
 #--------------------------------------------------------------------
 
@@ -1613,9 +1629,7 @@ Header files needed for developing koffice2 applications.
 
 %files devel
 %defattr(-,root,root)
-%_kde_bindir/wv2-config
 %_kde_appsdir/cmake/*/*
-%_kde_libdir/wvWare
 %_kde_includedir/*
 %_kde_libdir/libchartshapelib.so
 %_kde_libdir/libflake.so
@@ -1657,8 +1671,6 @@ Header files needed for developing koffice2 applications.
 %_kde_libdir/libkexiextendedwidgets.so
 %_kde_libdir/libkexiformutils.so
 %_kde_libdir/libkexiguiutils.so
-%_kde_libdir/libkexiguiutils.so.6
-%_kde_libdir/libkexiguiutils.so.6.0.0
 %_kde_libdir/libkeximain.so
 %_kde_libdir/libkeximigrate.so
 %_kde_libdir/libkexirelationsview.so
@@ -1667,8 +1679,7 @@ Header files needed for developing koffice2 applications.
 %_kde_libdir/libkoproperty.so
 %_kde_libdir/libkrossmodulekrita.so
 %_kde_libdir/libmsooxml.so
-%_kde_libdir/libwv2.la
-%_kde_libdir/libwv2.so
+%_kde_libdir/libkowv2.so
 #--------------------------------------------------------------------
 
 %prep
