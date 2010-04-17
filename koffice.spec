@@ -245,7 +245,7 @@ Common files for Koffice
 
 #--------------------------------------------------------------------
 
-%define libkoreport_major 6
+%define libkoreport_major 7
 %define libkoreport %mklibname koreport %libkoreport_major
 
 %package -n %libkoreport
@@ -261,7 +261,7 @@ Koffice 2 core library.
 
 #--------------------------------------------------------------------
 
-%define libkokross_major 6
+%define libkokross_major 7
 %define libkokross %mklibname kokross %libkokross_major
 
 %package -n %libkokross
@@ -278,7 +278,7 @@ Koffice 2 core library.
 
 #--------------------------------------------------------------------
 
-%define libkomain_major 6
+%define libkomain_major 7
 %define libkomain %mklibname komain %libkomain_major
 
 %package -n %libkomain
@@ -296,7 +296,7 @@ Koffice 2 core library.
 
 #--------------------------------------------------------------------
 
-%define libkopageapp_major 6
+%define libkopageapp_major 7
 %define libkopageapp %mklibname kopageapp %libkopageapp_major
 
 %package -n %libkopageapp
@@ -313,7 +313,7 @@ Koffice 2 core library.
 
 #--------------------------------------------------------------------
 
-%define libkotext_major 6
+%define libkotext_major 7
 %define libkotext %mklibname kotext %libkotext_major
 
 %package -n %libkotext
@@ -330,7 +330,7 @@ Koffice 2 core library.
 
 #--------------------------------------------------------------------
 
-%define libkowmf_major 6
+%define libkowmf_major 7
 %define libkowmf %mklibname kowmf %libkowmf_major
 
 %package -n %libkowmf
@@ -347,7 +347,7 @@ Koffice 2 core library.
 
 #--------------------------------------------------------------------
 
-%define libkoodf_major 6
+%define libkoodf_major 7
 %define libkoodf %mklibname koodf %libkoodf_major
 
 %package -n %libkoodf
@@ -364,7 +364,7 @@ Koffice 2 core library.
 
 #--------------------------------------------------------------------
 
-%define libkwmf_major 6
+%define libkwmf_major 7
 %define libkwmf %mklibname kwmf %libkwmf_major
 
 %package -n %libkwmf
@@ -381,7 +381,7 @@ Koffice 2 core library.
 
 #--------------------------------------------------------------------
 
-%define libflake_major 6
+%define libflake_major 7
 %define libflake %mklibname flake %libflake_major
 
 %package -n %libflake
@@ -397,7 +397,7 @@ Koffice 2 core library.
 %_kde_libdir/libflake.so.%libflake_major.0.0
 
 #--------------------------------------------------------------------
-%define libpigmentcms_major 6
+%define libpigmentcms_major 7
 %define libpigmentcms %mklibname pigmentcms %libpigmentcms_major
 
 %package -n %libpigmentcms
@@ -416,8 +416,7 @@ Koffice 2 core library.
 %_kde_libdir/libpigmentcms.so.%libpigmentcms_major.0.0
 
 #--------------------------------------------------------------------
-%if 0
-%define libkformdesigner_major 6
+%define libkformdesigner_major 7
 %define libkformdesigner %mklibname kformdesigner %libkformdesigner_major
 
 %package -n %libkformdesigner
@@ -431,10 +430,9 @@ Koffice 2 core library.
 %defattr(-,root,root)
 %_kde_libdir/libkformdesigner.so.%libkformdesigner_major
 %_kde_libdir/libkformdesigner.so.%libkformdesigner_major.0.0
-%endif
 #--------------------------------------------------------------------
 
-%define libkochart_major 6
+%define libkochart_major 7
 %define libkochart %mklibname kochart %libkochart_major
 
 %package -n %libkochart
@@ -527,7 +525,7 @@ Kword is a word processor for kde project
 
 #--------------------------------------------------------------------
 
-%define kwordexportfilters_major 6
+%define kwordexportfilters_major 7
 %define libkwordexportfilters %mklibname kwordexportfilters %kwordexportfilters_major
 
 %package -n %libkwordexportfilters
@@ -544,7 +542,7 @@ Koffice 2 core library.
 
 #--------------------------------------------------------------------
 
-%define kwordprivate_major 6
+%define kwordprivate_major 7
 %define libkwordprivate %mklibname kwordprivate %kwordprivate_major
 
 %package -n %libkwordprivate
@@ -610,7 +608,7 @@ A new project management application for koffice2.
 
 #--------------------------------------------------------------------
 
-%define chartshapelib_major 6
+%define chartshapelib_major 7
 %define libchartshapelib %mklibname chartshapelib %chartshapelib_major
 
 %package -n %libchartshapelib
@@ -627,7 +625,7 @@ Koffice 2 core library.
 
 
 #--------------------------------------------------------------------
-%define kplatomodels_major 6
+%define kplatomodels_major 7
 %define  libkplatomodels %mklibname kplatomodels %kplatomodels_major
 
 %package -n %libkplatomodels
@@ -644,7 +642,7 @@ Koffice 2 core library.
 
 #-------------------------------------------------------------------
 
-%define  kplatokernel_major 6
+%define  kplatokernel_major 7
 %define  libkplatokernel %mklibname kplatokernel %kplatokernel_major
 
 %package -n %libkplatokernel
@@ -661,7 +659,7 @@ Koffice 2 core library.
 
 #--------------------------------------------------------------------
 
-%define kplatoprivate_major 6
+%define kplatoprivate_major 7
 %define libkplatoprivate %mklibname kplatoprivate %kplatoprivate_major
 
 %package -n %libkplatoprivate
@@ -678,7 +676,7 @@ Koffice 2 core library.
 
 #--------------------------------------------------------------------
 
-%define kplatoui_major 6
+%define kplatoui_major 7
 %define libkplatoui %mklibname kplatoui %kplatoui_major
 
 %package -n %libkplatoui
@@ -695,7 +693,7 @@ Koffice 2 core library.
 
 #--------------------------------------------------------------------
 
-%define kplatoworkapp_major 6
+%define kplatoworkapp_major 7
 %define libkplatoworkapp %mklibname kplatoworkapp %kplatoworkapp_major
 
 %package -n %libkplatoworkapp
@@ -711,7 +709,7 @@ Koffice 2 core library.
 %_kde_libdir/libkplatoworkapp.so.%kplatoworkapp_major.0.0
 #--------------------------------------------------------------------
 
-%define kplatoworkfactory_major 6
+%define kplatoworkfactory_major 7
 %define libkplatoworkfactory %mklibname kplatoworkfactory %kplatoworkfactory_major
 
 %package -n %libkplatoworkfactory
@@ -778,7 +776,7 @@ KSpread is a spreadsheet for kde project
 
 #--------------------------------------------------------------------
 
-%define kspread_major 6
+%define kspread_major 7
 %define libkspreadcommon %mklibname kspreadcommon %kspread_major
 
 %package -n %libkspreadcommon
@@ -858,7 +856,7 @@ KPresenter is a presentation for kde project.
 
 #--------------------------------------------------------------------
 
-%define kpresenterprivate_major 6
+%define kpresenterprivate_major 7
 %define libkpresenterprivate %mklibname kpresenterprivate %kpresenterprivate_major
 
 %package -n %libkpresenterprivate
@@ -918,7 +916,7 @@ Kchart is a chart and diagram drawing program.
 
 #--------------------------------------------------------------------
 
-%define  kdchart_major 6
+%define  kdchart_major 7
 %define  libkdchart %mklibname kdchart  %kdchart_major
 
 %package -n %libkdchart
@@ -935,7 +933,7 @@ Koffice 2 core library.
 
 #--------------------------------------------------------------------
 
-%define  kchartcommon_major 6
+%define  kchartcommon_major 7
 %define  libkchartcommon %mklibname kchartcommon %kchartcommon_major
 
 %package -n %libkchartcommon
@@ -1025,7 +1023,7 @@ Krita is a pixel-based image manipulation program.
 
 #--------------------------------------------------------------------
 
-%define  libkritaui_major 6
+%define  libkritaui_major 7
 %define  libkritaui %mklibname kritaui  %libkritaui_major
 
 %package -n %libkritaui
@@ -1042,7 +1040,7 @@ Koffice 2 core library.
 
 #--------------------------------------------------------------------
 
-%define  libkritaimage_major 6
+%define  libkritaimage_major 7
 %define  libkritaimage %mklibname kritaimage  %libkritaimage_major
 
 %package -n %libkritaimage
@@ -1059,7 +1057,7 @@ Koffice 2 core library.
 
 #--------------------------------------------------------------------
 
-%define  libkritalibbrush_major 6
+%define  libkritalibbrush_major 7
 %define  libkritalibbrush %mklibname kritalibbrush  %libkritalibbrush_major
 
 %package -n %libkritalibbrush
@@ -1075,7 +1073,7 @@ Koffice 2 core library.
 
 #--------------------------------------------------------------------
 
-%define  libkritalibpaintop_major 6
+%define  libkritalibpaintop_major 7
 %define  libkritalibpaintop %mklibname kritalibpaintop  %libkritalibpaintop_major
 
 %package -n %libkritalibpaintop
@@ -1091,7 +1089,7 @@ Koffice 2 core library.
 
 #--------------------------------------------------------------------
 
-%define  libkoplugin_major 6
+%define  libkoplugin_major 7
 %define  libkoplugin %mklibname koplugin  %libkoplugin_major
 
 %package -n %libkoplugin
@@ -1106,8 +1104,8 @@ Koffice 2 core library.
 %_kde_libdir/libkoplugin.so.%{libkoplugin_major}*
 
 #--------------------------------------------------------------------
-#
-%define  libkowidgets_major 6
+
+%define  libkowidgets_major 7
 %define  libkowidgets %mklibname kowidgets  %libkowidgets_major
 #
 %package -n %libkowidgets
@@ -1122,8 +1120,7 @@ Koffice 2 core library.
 %_kde_libdir/libkowidgets.so.%{libkowidgets_major}*
 
 #--------------------------------------------------------------------
-%if 0
-%define  libkplatoworkapp_major 6
+%define  libkplatoworkapp_major 7
 %define  libkplatoworkapp %mklibname kplatoworkapp  %libkplatoworkapp_major
 
 %package -n %libkplatoworkapp
@@ -1139,7 +1136,7 @@ Koffice 2 core library.
 
 #--------------------------------------------------------------------
 
-%define  libkplatoworkfactory_major 6
+%define  libkplatoworkfactory_major 7
 %define  libkplatoworkfactory %mklibname kplatoworkfactory  %libkplatoworkfactory_major
 
 %package -n %libkplatoworkfactory
@@ -1155,7 +1152,7 @@ Koffice 2 core library.
 
 #--------------------------------------------------------------------
 
-%define  libkrossmodulekrita_major 6
+%define  libkrossmodulekrita_major 7
 %define  libkrossmodulekrita %mklibname krossmodulekrita  %libkrossmodulekrita_major
 
 %package -n %libkrossmodulekrita
@@ -1168,7 +1165,6 @@ Koffice 2 core library.
 %files -n %libkrossmodulekrita
 %defattr(-,root,root)
 %_kde_libdir/libkrossmodulekrita.so.%{libkrossmodulekrita_major}*
-%endif
 
 #--------------------------------------------------------------------
 %package -n karbon
@@ -1222,7 +1218,7 @@ Karbon is a scalable drawing for kde project.
 
 #--------------------------------------------------------------------
 
-%define  karboncommon_major 6
+%define  karboncommon_major 7
 %define  libkarboncommon %mklibname karboncommon  %karboncommon_major
 
 %package -n %libkarboncommon
@@ -1239,7 +1235,7 @@ Koffice 2 core library.
 
 #--------------------------------------------------------------------
 
-%define  karbonui_major 6
+%define  karbonui_major 7
 %define  libkarbonui %mklibname karbonui  %karbonui_major
 
 %package -n %libkarbonui
@@ -1284,7 +1280,7 @@ Kformula is a formula editor for kde project.
 
 #--------------------------------------------------------------------
 
-%define libkformulalib_major 6
+%define libkformulalib_major 7
 %define libkformulalib %mklibname kformulalib %libkformulalib_major
 
 %package -n %libkformulalib
@@ -1301,7 +1297,7 @@ Koffice 2 core library.
 
 #--------------------------------------------------------------------
 
-%define libkformulaprivate_major 6
+%define libkformulaprivate_major 7
 %define libkformulaprivate %mklibname kformulaprivate %libkformulaprivate_major
 
 %package -n %libkformulaprivate
@@ -1381,7 +1377,7 @@ Kexi is an integrated environment for managing data.
 
 #--------------------------------------------------------------------
    
-%define libkexicore_major 6
+%define libkexicore_major 7
 %define libkexicore %mklibname kexicore %libkexicore_major
    
 %package -n %libkexicore
@@ -1397,7 +1393,7 @@ Koffice 2 core library.
 
 #--------------------------------------------------------------------
 
-%define libkexidatatable_major 6 
+%define libkexidatatable_major 7
 %define libkexidatatable %mklibname kexidatatable %libkexidatatable_major
 
 %package -n %libkexidatatable
@@ -1413,7 +1409,7 @@ Koffice 2 core library.
 
 #--------------------------------------------------------------------
 
-%define libkexidb_major 6
+%define libkexidb_major 7
 %define libkexidb %mklibname kexidb %libkexidb_major
 
 %package -n %libkexidb
@@ -1429,7 +1425,7 @@ Koffice 2 core library.
 
 #--------------------------------------------------------------------
 
-%define libkexiextendedwidgets_major 6
+%define libkexiextendedwidgets_major 7
 %define libkexiextendedwidgets %mklibname kexiextendedwidgets %libkexiextendedwidgets_major
 
 %package -n %libkexiextendedwidgets
@@ -1445,7 +1441,7 @@ Koffice 2 core library.
 
 #--------------------------------------------------------------------
 
-%define libkexiformutils_major 6 
+%define libkexiformutils_major 7
 %define libkexiformutils %mklibname kexiformutils %libkexiformutils_major
 
 %package -n %libkexiformutils
@@ -1461,7 +1457,7 @@ Koffice 2 core library.
 
 #--------------------------------------------------------------------
 
-%define libkeximain_major 6
+%define libkeximain_major 7
 %define libkeximain %mklibname keximain %libkeximain_major
 
 %package -n %libkeximain
@@ -1477,7 +1473,7 @@ Koffice 2 core library.
 
 #--------------------------------------------------------------------
 
-%define libkeximigrate_major 6
+%define libkeximigrate_major 7
 %define libkeximigrate %mklibname keximigrate %libkeximigrate_major
 
 %package -n %libkeximigrate
@@ -1493,7 +1489,7 @@ Koffice 2 core library.
 
 #--------------------------------------------------------------------
 
-%define libkexirelationsview_major 6
+%define libkexirelationsview_major 7
 %define libkexirelationsview %mklibname kexirelationsview %libkexirelationsview_major
 
 %package -n %libkexirelationsview
@@ -1509,7 +1505,7 @@ Koffice 2 core library.
 
 #--------------------------------------------------------------------
 
-%define libkexiutils_major 6
+%define libkexiutils_major 7
 %define libkexiutils %mklibname kexiutils %libkexiutils_major
    
 %package -n %libkexiutils
@@ -1541,7 +1537,7 @@ Koffice 2 core library.
 
 #--------------------------------------------------------------------
 
-%define libmsooxml_major 6
+%define libmsooxml_major 7
 %define libmsooxml %mklibname msooxml %libmsooxml_major
    
 %package -n %libmsooxml
@@ -1557,7 +1553,7 @@ Koffice 2 core library.
 
 #--------------------------------------------------------------------
 
-%define libkrossmodulekrita_major 6
+%define libkrossmodulekrita_major 7
 %define libkrossmodulekrita %mklibname krossmodulekrita %libkrossmodulekrita_major
    
 %package -n %libkrossmodulekrita
@@ -1573,7 +1569,7 @@ Koffice 2 core library.
 
 #--------------------------------------------------------------------
 
-%define libkoproperty_major 6
+%define libkoproperty_major 7
 %define libkoproperty %mklibname koproperty %libkoproperty_major
    
 %package -n %libkoproperty
@@ -1589,7 +1585,7 @@ Koffice 2 core library.
 
 #--------------------------------------------------------------------
 
-%define libkformdesigner_major 6
+%define libkformdesigner_major 7
 %define libkformdesigner %mklibname kformdesigner %libkformdesigner_major
    
 %package -n %libkformdesigner
@@ -1636,6 +1632,7 @@ Requires: %libkoodf = %{epoch}:%{version}-%{release}
 Requires: %libkwmf = %{epoch}:%{version}-%{release}
 Requires: %libflake = %{epoch}:%{version}-%{release}
 Requires: %libpigmentcms = %{epoch}:%{version}-%{release}
+Requires: %libkformdesigner = %{epoch}:%{version}-%{release}
 Requires: %libkochart = %{epoch}:%{version}-%{release}
 Requires: %libkwordexportfilters = %{epoch}:%{version}-%{release}
 Requires: %libkwordprivate = %{epoch}:%{version}-%{release}
@@ -1655,6 +1652,9 @@ Requires: %libkoplugin = %{epoch}:%{version}-%{release}
 Requires: %libkowidgets = %{epoch}:%{version}-%{release}
 Requires: %libkformulalib = %{epoch}:%{version}-%{release}
 Requires: %libkformulaprivate = %{epoch}:%{version}-%{release}
+Requires: %libkplatoworkapp = %{epoch}:%{version}-%{release}
+Requires: %libkplatoworkfactory = %{epoch}:%{version}-%{release}
+Requires: %libkrossmodulekrita = %{epoch}:%{version}-%{release}
 Requires: %name-core = %{epoch}:%{version}-%{release}
 Provides: %name-devel = %{epoch}:%{version}-%{release}
 Obsoletes: %lib_name-devel
