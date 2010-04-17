@@ -128,6 +128,7 @@ Common files for Koffice
 %_kde_libdir/kde4/karbonfiltereffects.so
 %_kde_libdir/kde4/libicalendarexport.so
 %_kde_libdir/kde4/libpowerpointimport.so
+%_kde_libdir/kde4/libwpgimport.so
 %_kde_libdir/kde4/paragraphtool.so
 %dir %_kde_appsdir/koffice
 %_kde_appsdir/koffice/autocorrect
@@ -1176,6 +1177,7 @@ Karbon is a scalable drawing for kde project.
 %_kde_libdir/kde4/karbon_roundcornersplugin.so
 %_kde_libdir/libkdeinit4_karbon.so
 %_kde_datadir/applications/kde4/karbon.desktop
+%_kde_iconsdir/*/*/apps/karbon.*
 %_kde_configdir/karbonrc
 %_kde_appsdir/karbon
 %_kde_datadir/kde4/services/ServiceMenus/karbon_konqi.desktop
@@ -1303,10 +1305,12 @@ Kexi is an integrated environment for managing data.
 %{_kde_bindir}/kexi
 %{_kde_appsdir}/kexi
 %{_kde_datadir}/config/kexirc
+%_kde_docdir/HTML/en/kexi
 %{_kde_services}/kexi
 %{_kde_services}/kexidb_mysqldriver.desktop
 %{_kde_services}/kexidb_pqxxsqldriver.desktop
 %{_kde_services}/kexidb_xbasedriver.desktop
+%{_kde_services}/kexidb_sqlite3driver.desktop
 %{_kde_services}/keximigrate_kspread.desktop
 %{_kde_services}/keximigrate_mdb.desktop
 %{_kde_services}/keximigrate_mysql.desktop
