@@ -1120,37 +1120,6 @@ Koffice 2 core library.
 %_kde_libdir/libkowidgets.so.%{libkowidgets_major}*
 
 #--------------------------------------------------------------------
-%define  libkplatoworkapp_major 7
-%define  libkplatoworkapp %mklibname kplatoworkapp  %libkplatoworkapp_major
-
-%package -n %libkplatoworkapp
-Summary: Koffice 2 core library
-Group: System/Libraries
-
-%description -n %libkplatoworkapp
-Koffice 2 core library.
-
-%files -n %libkplatoworkapp
-%defattr(-,root,root)
-%_kde_libdir/libkplatoworkapp.so.%{libkplatoworkapp_major}*
-
-#--------------------------------------------------------------------
-
-%define  libkplatoworkfactory_major 7
-%define  libkplatoworkfactory %mklibname kplatoworkfactory  %libkplatoworkfactory_major
-
-%package -n %libkplatoworkfactory
-Summary: Koffice 2 core library
-Group: System/Libraries
-
-%description -n %libkplatoworkfactory
-Koffice 2 core library.
-
-%files -n %libkplatoworkfactory
-%defattr(-,root,root)
-%_kde_libdir/libkplatoworkfactory.so.%{libkplatoworkfactory_major}*
-
-#--------------------------------------------------------------------
 
 %define  libkrossmodulekrita_major 7
 %define  libkrossmodulekrita %mklibname krossmodulekrita  %libkrossmodulekrita_major
@@ -1553,22 +1522,6 @@ Koffice 2 core library.
 
 #--------------------------------------------------------------------
 
-%define libkrossmodulekrita_major 7
-%define libkrossmodulekrita %mklibname krossmodulekrita %libkrossmodulekrita_major
-   
-%package -n %libkrossmodulekrita
-Summary: Koffice 2 core library
-Group: System/Libraries
-   
-%description -n %libkrossmodulekrita
-Koffice 2 core library.
-   
-%files -n %libkrossmodulekrita
-%defattr(-,root,root)
-%_kde_libdir/libkrossmodulekrita.so.%{libkrossmodulekrita_major}*
-
-#--------------------------------------------------------------------
-
 %define libkoproperty_major 7
 %define libkoproperty %mklibname koproperty %libkoproperty_major
    
@@ -1582,22 +1535,6 @@ Koffice 2 core library.
 %files -n %libkoproperty
 %defattr(-,root,root)
 %_kde_libdir/libkoproperty.so.%{libkoproperty_major}*
-
-#--------------------------------------------------------------------
-
-%define libkformdesigner_major 7
-%define libkformdesigner %mklibname kformdesigner %libkformdesigner_major
-   
-%package -n %libkformdesigner
-Summary: Koffice 2 core library
-Group: System/Libraries
-   
-%description -n %libkformdesigner
-Koffice 2 core library.
-   
-%files -n %libkformdesigner
-%defattr(-,root,root)
-%_kde_libdir/libkformdesigner.so.%{libkformdesigner_major}*
 
 #--------------------------------------------------------------------
 
