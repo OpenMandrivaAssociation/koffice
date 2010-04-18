@@ -62,14 +62,15 @@ BuildRequires: fftw3-devel >= 3.2
 BuildRequires: graphviz
 BuildRequires: doxygen
 %endif
-Requires: kword
-Requires: kspread
-Requires: karbon
-Requires: kpresenter
-Requires: krita
-Requires: kplato
-Requires: kchart
-Requires: kformula
+Suggests: kword
+Suggests: kspread
+Suggests: karbon
+Suggests: kpresenter
+Suggests: krita
+Suggests: kplato
+Suggests: kchart
+Suggests: kformula
+Suggests: f-office
 Obsoletes: koshell
 Obsoletes: kugar
 Obsoletes: kivio
@@ -92,7 +93,6 @@ KOffice contains:
 %files
 
 #--------------------------------------------------------------------
-
 %package core
 Group: Office
 Summary: Set of office applications for KDE
@@ -243,6 +243,509 @@ Common files for Koffice
 %_kde_docdir/HTML/en/kivio
 # Those are installed despite their parent packages are available
 %exclude %_kde_datadir/kde4/services/ServiceMenus/kivio_konqi.desktop
+
+#--------------------------------------------------------------------
+
+%package -n kword
+Summary:	Word processor for koffice2
+Group:		Graphical desktop/KDE
+Requires:	%name-core = %{epoch}:%{version}-%{release}
+URL:            http://www.koffice.org/
+Requires:	wordnet
+Provides:	%name-apps
+Provides:       kword2
+Obsoletes:      %name-kword <= 11:1.9.95.3-0.766453.5
+Provides:       %name-kword = %epoch:%version-%release
+Obsoletes:      koffice2-kword < 1:1.9.95.3-0.766453.6
+Provides:       koffice2-kword = %epoch:%version-%release
+Conflicts:	koffice-common < 11:1.6.3-20
+
+%description -n kword
+Kword is a word processor for kde project
+
+%post -n kword
+%{update_desktop_database}
+
+%postun -n kword
+%{clean_desktop_database}
+
+%files -n kword
+%defattr(-,root,root)
+%_kde_bindir/kword
+%_kde_iconsdir/*/*/apps/kword.png
+%_kde_datadir/applications/kde4/kword.desktop
+%_kde_datadir/kde4/services/ServiceMenus/kword_konqi.desktop
+%_kde_configdir/kwordrc
+%_kde_appsdir/kword
+%_kde_appsdir/xsltfilter/export/kword/xslfo/*
+%_kde_datadir/kde4/services/kword_*
+%_kde_datadir/kde4/services/krossmodulekword.desktop
+%_kde_datadir/kde4/services/kwordpart.desktop
+%_kde_datadir/kde4/services/xslt_export.desktop
+%_kde_datadir/kde4/services/xslt_import.desktop
+%_kde_libdir/kde4/krossmodulekword.so
+%_kde_libdir/kde4/libkwordkword1dot3import.so
+%_kde_libdir/kde4/libkwordpart.so
+%_kde_libdir/kde4/libabiwordimport.so
+%_kde_libdir/kde4/libamiproexport.so
+%_kde_libdir/kde4/libamiproimport.so
+%_kde_libdir/kde4/libapplixspreadimport.so
+%_kde_libdir/kde4/libapplixwordimport.so
+%_kde_libdir/kde4/libcsvexport.so
+%_kde_libdir/kde4/libcsvimport.so
+%_kde_libdir/kde4/libdbaseimport.so
+%_kde_libdir/kde4/libdocbookexport.so
+%_kde_libdir/kde4/libgenerickofilter.so
+%_kde_libdir/kde4/libgnumericexport.so
+%_kde_libdir/kde4/libgnumericimport.so
+%_kde_libdir/kde4/libhancomwordimport.so
+%_kde_libdir/kde4/libhtmlexport.so
+%_kde_libdir/kde4/libhtmlimport.so
+%_kde_libdir/kde4/libkounavailpart.so
+%_kde_libdir/kde4/liboowriterexport.so
+%_kde_libdir/kde4/liboowriterimport.so
+%_kde_libdir/kde4/libopencalcexport.so
+%_kde_libdir/kde4/libopencalcimport.so
+%_kde_libdir/kde4/libpalmdocexport.so
+%_kde_libdir/kde4/libpalmdocimport.so
+%_kde_libdir/kde4/libqproimport.so
+%_kde_libdir/kde4/librtfexport.so
+%_kde_libdir/kde4/librtfimport.so
+%_kde_libdir/kde4/libwmlexport.so
+%_kde_libdir/kde4/libwmlimport.so
+%_kde_libdir/kde4/libwpexport.so
+%_kde_libdir/kde4/libwpimport.so
+%_kde_libdir/kde4/libxsltexport.so
+%_kde_libdir/kde4/libxsltimport.so
+%_kde_libdir/kde4/libmswordodf_import.so
+%_kde_libdir/libkdeinit4_kword.so
+
+#--------------------------------------------------------------------
+
+%package -n kplato
+Summary:	A new project management application for koffice2
+Group:		Graphical desktop/KDE
+Requires:	%name-core = %{epoch}:%{version}-%{release}
+URL:            http://www.koffice.org/
+Provides:       %name-apps
+Provides:       kplato2
+Obsoletes:      kplatowork
+Obsoletes:      %{_lib}kplatoworkprivat5 < 1:1.9.95.3-1
+Obsoletes:      %name-kplato <= 11:1.9.95.3-0.766453.5
+Provides:       %name-kplato = %epoch:%version-%release
+Obsoletes:      koffice2-kplato < 1:1.9.95.3-0.766453.6
+Provides:       koffice2-kplato = %epoch:%version-%release
+
+%description -n kplato
+A new project management application for koffice2.
+
+%post -n kplato
+%{update_desktop_database}
+
+%postun -n kplato
+%{update_desktop_database}
+
+
+%files -n kplato
+%defattr(-,root,root)
+%_kde_bindir/kplato
+%_kde_bindir/kplatowork
+%_kde_datadir/applications/kde4/kplato.desktop
+%_kde_datadir/applications/kde4/kplatowork.desktop
+%_kde_appsdir/kplatowork
+%_kde_appsdir/kplato
+%_kde_datadir/config/kplatorc
+%_kde_libdir/libkdeinit4_kplato.so
+%_kde_libdir/libkdeinit4_kplatowork.so
+%_kde_libdir/kde4/krossmodulekplato.so
+%_kde_libdir/kde4/libkplatopart.so
+%_kde_libdir/kde4/libkplatoworkpart.so
+%_kde_datadir/kde4/services/kplatopart.desktop
+%_kde_datadir/kde4/services/krossmodulekplato.desktop
+%_kde_datadir/kde4/services/kplato_icalendar_export.desktop
+%_kde_datadir/kde4/services/kplatoworkpart.desktop
+%_kde_datadir/kde4/servicetypes/kplato_schedulerplugin.desktop
+%_kde_iconsdir/hicolor/*/*/*kplato*
+%_kde_datadir/config.kcfg/kplatosettings.kcfg                                   
+%_kde_datadir/config/kplatoworkrc
+
+#--------------------------------------------------------------------
+
+%package -n kspread
+Summary:	SpreadSheet for koffice2
+Group:		Graphical desktop/KDE
+Requires:	%name-core = %{epoch}:%{version}-%{release}
+URL:            http://www.koffice.org/
+Provides:       %name-apps
+Provides:       kspread2
+Obsoletes:      %name-kspread <= 11:1.9.95.3-0.766453.5
+Provides:       %name-kspread = %epoch:%version-%release
+Obsoletes:      koffice2-kspread < 1:1.9.95.3-0.766453.6
+Provides:       koffice2-kspread = %epoch:%version-%release
+Conflicts:      kword < 11:2.1.0-4
+
+%description -n kspread
+KSpread is a spreadsheet for kde project
+
+%post -n kspread
+%{update_desktop_database}
+
+
+%postun -n kspread
+%{clean_desktop_database}
+
+%files -n kspread
+%defattr(-,root,root)
+%_kde_bindir/kspread
+%_kde_libdir/kde4/krossmodulekspread.so
+%_kde_libdir/kde4/libkspreadhtmlexport.so
+%_kde_libdir/kde4/libkspreadlatexexport.so
+%_kde_libdir/kde4/libkspreadpart.so
+%_kde_libdir/kde4/libkspreadsolver.so
+%_kde_libdir/kde4/kspread*
+%_kde_libdir/kde4/spreadsheetshape.so
+%_kde_libdir/kde4/libexcelimport.so
+%_kde_libdir/libkdeinit4_kspread.so
+%_kde_iconsdir/hicolor/*/apps/kspread.png
+%_kde_datadir/applications/kde4/kspread.desktop
+%_kde_datadir/kde4/services/ServiceMenus/kspread_konqi.desktop
+%_kde_appsdir/kspread
+%_kde_datadir/config/kspreadrc
+%_kde_datadir/config.kcfg/kspread.kcfg
+%_kde_docdir/HTML/en/kspread
+%_kde_datadir/kde4/services/krossmodulekspread.desktop
+%_kde_datadir/kde4/services/kspread*.desktop
+%_kde_datadir/kde4/servicetypes/kspread_plugin.desktop
+%_kde_datadir/kde4/services/spreadsheetshape.desktop
+
+#--------------------------------------------------------------------
+
+%package -n kpresenter
+Summary:	Presentation for koffice2
+Group:		Graphical desktop/KDE
+Requires:	%name-core = %{epoch}:%{version}-%{release}
+URL:            http://www.koffice.org/
+Requires:	xdg-utils
+Provides:       %name-apps
+Provides:       kpresenter2
+Obsoletes:      %name-kpresenter <= 11:1.9.95.3-0.766453.5
+Provides:       %name-kpresenter = %epoch:%version-%release
+Obsoletes:      koffice2-kpresenter < 1:1.9.95.3-0.766453.6
+Provides:       koffice2-kpresenter = %epoch:%version-%release
+
+%description -n kpresenter
+KPresenter is a presentation for kde project.
+
+%post -n kpresenter
+%{update_desktop_database}
+
+%postun -n kpresenter
+%{clean_desktop_database}
+
+
+%files -n kpresenter
+%defattr(-,root,root)
+%_kde_bindir/kpresenter
+%_kde_libdir/kde4/libkpresenterpart.so
+%_kde_libdir/kde4/kpr_pageeffect_barwipe.so
+%_kde_libdir/kde4/kpr_pageeffect_clockwipe.so
+%_kde_libdir/kde4/kpr_pageeffect_edgewipe.so
+%_kde_libdir/kde4/kpr_pageeffect_iriswipe.so
+%_kde_libdir/kde4/kpr_pageeffect_matrixwipe.so
+%_kde_libdir/kde4/kpr_pageeffect_slidewipe.so
+%_kde_libdir/kde4/kpr_shapeanimation_example.so
+%_kde_libdir/kde4/kpresentereventactions.so 
+%_kde_libdir/kde4/kpresentertoolanimation.so
+%_kde_libdir/kde4/kprvariables.so
+%_kde_libdir/libkdeinit4_kpresenter.so
+%_kde_datadir/applications/kde4/kpresenter.desktop
+%_kde_datadir/kde4/services/ServiceMenus/kpresenter_konqi.desktop
+%_kde_appsdir/kpresenter
+%_kde_datadir/config/kpresenterrc
+%_kde_iconsdir/hicolor/*/apps/kpresenter.png
+%_kde_datadir/kde4/services/kpresenterpart.desktop
+%_kde_datadir/kde4/services/kpresentereventactions.desktop
+%_kde_datadir/kde4/servicetypes/presentationeventaction.desktop
+%_kde_datadir/kde4/services/kpr_pageeffect_barwipe.desktop
+%_kde_datadir/kde4/services/kpr_pageeffect_clockwipe.desktop
+%_kde_datadir/kde4/services/kpr_pageeffect_edgewipe.desktop
+%_kde_datadir/kde4/services/kpr_pageeffect_iriswipe.desktop
+%_kde_datadir/kde4/services/kpr_pageeffect_matrixwipe.desktop
+%_kde_datadir/kde4/services/kpr_pageeffect_slidewipe.desktop
+%_kde_datadir/kde4/services/kpr_shapeanimation_example.desktop
+%_kde_datadir/kde4/services/kpresentertoolanimation.desktop
+%_kde_datadir/kde4/services/kpresenter_powerpoint_import.desktop
+%_kde_datadir/kde4/services/kpresenter_pptx_import.desktop
+%_kde_datadir/kde4/services/kprvariables.desktop
+%_kde_datadir/kde4/servicetypes/kpr_pageeffect.desktop
+%_kde_datadir/kde4/servicetypes/kpr_shapeanimation.desktop
+%_kde_docdir/HTML/en/kpresenter
+
+#--------------------------------------------------------------------
+
+%package -n kchart
+Summary:        Chart and diagram drawing
+Group:          Graphical desktop/KDE
+Requires:       %name-core = %{epoch}:%{version}-%{release}
+URL:            http://www.koffice.org/
+Provides:       %name-apps
+Provides:       kchart2
+Obsoletes:      %name-kchart <= 11:1.9.95.3-0.766453.5
+Provides:       %name-kchart = %epoch:%version-%release
+Obsoletes:      koffice2-kchart < 1:1.9.95.3-0.766453.6
+Provides:       koffice2-kchart = %epoch:%version-%release
+Conflicts:	%name-core < 11:1.9.98.2-4
+
+%description -n kchart
+Kchart is a chart and diagram drawing program.
+
+%post -n kchart
+%{update_desktop_database}
+
+
+%postun -n kchart
+%{update_desktop_database}
+
+%files -n kchart
+%defattr(-,root,root)
+%_kde_libdir/kde4/chartshape.so
+%_kde_libdir/kde4/libkchartgenericimageexport.so
+%_kde_libdir/kde4/libkchartsvgexport.so
+%{_kde_datadir}/kde4/services/chartshape.desktop
+%{_kde_datadir}/kde4/services/kchartpart.desktop
+%{_kde_datadir}/kde4/services/kchart_bmp_export.desktop
+%{_kde_datadir}/kde4/services/kchart_jpeg_export.desktop
+%{_kde_datadir}/kde4/services/kchart_mng_export.desktop
+%{_kde_datadir}/kde4/services/kchart_png_export.desktop
+%{_kde_datadir}/kde4/services/kchart_svg_export.desktop
+%{_kde_datadir}/kde4/services/kchart_xbm_export.desktop
+%{_kde_datadir}/kde4/services/kchart_xpm_export.desktop
+%{_kde_appsdir}/kchart
+%{_kde_iconsdir}/hicolor/*/apps/kchart.png
+%_kde_docdir/HTML/en/kchart
+
+#--------------------------------------------------------------------
+
+%package -n krita
+Summary:        A pixel-based image manipulation program
+Group:          Graphical desktop/KDE
+URL:            http://www.koffice.org/
+Requires:	    %name-core = %{epoch}:%{version}-%{release}
+Provides:       %name-apps
+Provides:       krita2
+Obsoletes:      %name-krita < 11:1.9.95.4-1
+Provides:       %name-krita = %epoch:%version-%release
+Obsoletes:      koffice2-krita < 11:1.9.95.4-1
+Provides:       koffice2-krita = %epoch:%version-%release
+
+Obsoletes:      %{_lib}kritafilterslistdynamicprogram5 < 1:1.9.92-0.710350.1
+Obsoletes:      %{_lib}krita_gray_u165 < 1:1.9.92-0.710350.1
+Obsoletes:      %{_lib}kritargbf32hdr5 < 11:1.9.95.4-1
+
+%description -n krita
+Krita is a pixel-based image manipulation program.
+
+%post -n krita
+%{update_desktop_database}
+
+%postun -n krita
+%{update_desktop_database}
+
+%files -n krita
+%defattr(-,root,root)
+%_kde_bindir/krita
+%_kde_libdir/kde4/*krita*
+%_kde_libdir/libkdeinit4_krita.so
+%_kde_datadir/applications/kde4/krita.desktop
+%_kde_datadir/applications/kde4/krita_jpeg.desktop
+%_kde_datadir/applications/kde4/krita_png.desktop
+%_kde_datadir/applications/kde4/krita_bmp.desktop
+%_kde_datadir/applications/kde4/krita_ora.desktop
+%_kde_datadir/applications/kde4/krita_pdf.desktop
+%_kde_datadir/applications/kde4/krita_tiff.desktop
+%_kde_datadir/applications/kde4/krita_raw.desktop
+%_kde_datadir/applications/kde4/krita_exr.desktop
+%_kde_datadir/applications/kde4/krita_gif.desktop
+%_kde_datadir/applications/kde4/krita_jp2.desktop
+%_kde_datadir/applications/kde4/krita_ppm.desktop
+%_kde_datadir/applications/kde4/krita_xcf.desktop
+%_kde_datadir/kde4/services/ServiceMenus/krita_konqi.desktop
+%_kde_datadir/kde4/services/*krita*.desktop
+%_kde_datadir/kde4/servicetypes/*krita*.desktop
+%_kde_iconsdir/hicolor/*/apps/krita.png
+%_kde_appsdir/krita
+%_kde_appsdir/kritaplugins
+%_kde_configdir/kritarc
+%_kde_datadir/color/icc/krita/*.icm
+%_kde_datadir/color/icc/pigment/*.icm
+%_kde_datadir/kde4/servicetypes/pigment.desktop
+%_kde_appsdir/pigmentcms
+%_kde_datadir/mime/packages/krita_ora.xml
+
+#--------------------------------------------------------------------
+
+%package -n karbon
+Summary:	Scalable drawing for koffice2
+Group:		Graphical desktop/KDE
+Requires:	%name-core = %{epoch}:%{version}-%{release}
+URL:            http://www.koffice.org/
+Provides:       %name-apps
+Provides:       karbon2
+Obsoletes:      %name-karbon <= 11:1.9.95.3-0.766453.5
+Provides:       %name-karbon = %epoch:%version-%release
+Obsoletes:      koffice2-karbon < 1:1.9.95.3-0.766453.6
+Provides:       koffice2-karbon = %epoch:%version-%release
+
+%description -n karbon
+Karbon is a scalable drawing for kde project.
+
+%post -n karbon
+%{update_desktop_database}
+
+
+%postun -n karbon
+%{update_desktop_database}
+
+
+%files -n karbon
+%defattr(-,root,root)
+%_kde_bindir/karbon
+%_kde_libdir/kde4/karbon_flattenpathplugin.so
+%_kde_libdir/kde4/karbon_whirlpinchplugin.so
+%_kde_libdir/kde4/karbontools.so
+%_kde_libdir/kde4/libkarbonpart.so
+%_kde_libdir/kde4/libkarbonpngexport.so
+%_kde_libdir/kde4/libkarbonsvgexport.so
+%_kde_libdir/kde4/libkarbonepsimport.so
+%_kde_libdir/kde4/libkarbonsvgimport.so
+%_kde_libdir/kde4/libwmfexport.so
+%_kde_libdir/kde4/libwmfimport.so
+%_kde_libdir/kde4/libkarbon1ximport.so
+%_kde_libdir/kde4/karbon_refinepathplugin.so
+%_kde_libdir/kde4/karbon_roundcornersplugin.so
+%_kde_libdir/libkdeinit4_karbon.so
+%_kde_datadir/applications/kde4/karbon.desktop
+%_kde_iconsdir/*/*/apps/karbon.*
+%_kde_configdir/karbonrc
+%_kde_appsdir/karbon
+%_kde_datadir/kde4/services/ServiceMenus/karbon_konqi.desktop
+%_kde_docdir/HTML/en/karbon
+%_kde_datadir/kde4/services/karbon*.desktop
+%_kde_datadir/kde4/servicetypes/karbon_module.desktop
+%exclude %_kde_datadir/templates/.source/Illustration.karbon
+
+#--------------------------------------------------------------------
+
+%package -n kformula
+Summary:        Formula Editor for koffice2
+Group:          Graphical desktop/KDE
+Requires:       %name-core = %{epoch}:%{version}-%{release}
+URL:            http://www.koffice.org/
+Provides:       %name-kformula = %epoch:%version-%release
+Conflicts:      koffice-core < 11:2.0.91
+
+%description -n kformula
+Kformula is a formula editor for kde project.
+
+%files -n kformula
+%defattr(-,root,root)
+%_kde_bindir/kformula
+%_kde_libdir/libkdeinit_kformula.so
+%_kde_libdir/kde4/formulashape.so
+%_kde_libdir/kde4/libkformulapart.so
+%_kde_datadir/applications/kde4/kformula.desktop
+%_kde_datadir/apps/formulashape
+%_kde_datadir/apps/kformula
+%_kde_iconsdir/*/*/*/kformula.png
+%_kde_datadir/kde4/services/ServiceMenus/kformula_konqi.desktop
+%_kde_datadir/kde4/services/formulashape.desktop
+%_kde_datadir/kde4/services/kformulapart.desktop
+%_kde_docdir/HTML/en/kformula
+
+#--------------------------------------------------------------------
+
+%package -n kexi
+Summary:    An integrated environment for managing data
+Group:      Graphical desktop/KDE
+Requires:   koffice-core = %epoch:%version-%release
+Conflicts:  koffice <= %epoch:1.2.1-9mdk
+Obsoletes:  kexi <= 0.1-0.beta5.5mdk    
+Provides:   %name-apps
+
+%description -n kexi
+Kexi is an integrated environment for managing data.
+
+%post -n kexi
+%{update_desktop_database}
+
+%postun -n kexi
+%{update_desktop_database}
+
+%files -n kexi
+%defattr(-,root,root)
+%{_kde_bindir}/kexi
+%{_kde_appsdir}/kexi
+%{_kde_datadir}/config/kexirc
+%_kde_docdir/HTML/en/kexi
+%{_kde_services}/kexi
+%{_kde_services}/kexidb_mysqldriver.desktop
+%{_kde_services}/kexidb_pqxxsqldriver.desktop
+%{_kde_services}/kexidb_xbasedriver.desktop
+%{_kde_services}/kexidb_sqlite3driver.desktop
+%{_kde_services}/keximigrate_kspread.desktop
+%{_kde_services}/keximigrate_mdb.desktop
+%{_kde_services}/keximigrate_mysql.desktop
+%{_kde_services}/keximigrate_pqxx.desktop
+%{_kde_services}/keximigrate_sybase.desktop
+%{_kde_services}/keximigrate_txt.desktop
+%{_kde_services}/kexirelationdesignshape.desktop
+%{_kde_services}/kformdesigner
+%{_kde_servicetypes}/widgetfactory.desktop
+%{_kde_servicetypes}/kexidb_driver.desktop
+%{_kde_servicetypes}/kexihandler.desktop
+%{_kde_servicetypes}/keximigration_driver.desktop
+%{_kde_applicationsdir}/kexi.desktop
+%{_kde_libdir}/kde4/kformdesigner_containers.so
+%{_kde_libdir}/kde4/kformdesigner_kexidbwidgets.so
+%{_kde_libdir}/kde4/kformdesigner_stdwidgets.so
+%{_kde_libdir}/kde4/kexidb_mysqldriver.so
+%{_kde_libdir}/kde4/kexidb_pqxxsqldriver.so
+%{_kde_libdir}/kde4/kexidb_xbasedriver.so
+%{_kde_libdir}/kde4/kexidb_sqlite3driver.so
+%{_kde_libdir}/kde4/kexihandler_csv_importexport.so
+%{_kde_libdir}/kde4/kexihandler_form.so
+%{_kde_libdir}/kde4/kexihandler_migration.so
+%{_kde_libdir}/kde4/kexihandler_query.so
+%{_kde_libdir}/kde4/kexihandler_script.so
+%{_kde_libdir}/kde4/kexihandler_table.so
+%{_kde_libdir}/kde4/keximigrate_kspread.so
+%{_kde_libdir}/kde4/keximigrate_mdb.so
+%{_kde_libdir}/kde4/keximigrate_mysql.so
+%{_kde_libdir}/kde4/keximigrate_pqxx.so
+%{_kde_libdir}/kde4/keximigrate_sybase.so
+%{_kde_libdir}/kde4/keximigrate_txt.so
+%{_kde_libdir}/kde4/kexirelationdesignshape.so
+%{_kde_libdir}/kde4/krossmodulekexidb.so
+%{_kde_libdir}/kde4/kexihandler_report.so
+
+#--------------------------------------------------------------------
+
+%package -n f-office
+Summary:    Fremantle Office viewer
+Group:      Graphical desktop/KDE
+Requires:   koffice-core = %epoch:%version-%release
+Provides:   %name-apps
+
+%description -n f-office
+Fremantle Office viewer
+
+%files -n f-office
+%defattr(-,root,root)
+%{_kde_bindir}/FreOffice
+%{_kde_datadir}/applications/hildon/FreOffice.desktop
+%{_kde_datadir}/dbus-1/services/com.nokia.FreOffice.service
+%{_kde_iconsdir}/hicolor/*/hildon
+%{_kde_iconsdir}/hicolor/*/apps/freoffice.png
 
 #--------------------------------------------------------------------
 
@@ -398,6 +901,7 @@ Koffice 2 core library.
 %_kde_libdir/libflake.so.%libflake_major.0.0
 
 #--------------------------------------------------------------------
+
 %define libpigmentcms_major 7
 %define libpigmentcms %mklibname pigmentcms %libpigmentcms_major
 
@@ -417,6 +921,7 @@ Koffice 2 core library.
 %_kde_libdir/libpigmentcms.so.%libpigmentcms_major.0.0
 
 #--------------------------------------------------------------------
+
 %define libkformdesigner_major 7
 %define libkformdesigner %mklibname kformdesigner %libkformdesigner_major
 
@@ -431,6 +936,7 @@ Koffice 2 core library.
 %defattr(-,root,root)
 %_kde_libdir/libkformdesigner.so.%libkformdesigner_major
 %_kde_libdir/libkformdesigner.so.%libkformdesigner_major.0.0
+
 #--------------------------------------------------------------------
 
 %define libkochart_major 7
@@ -448,81 +954,6 @@ Koffice 2 core library.
 %_kde_libdir/libkochart.so.%libkochart_major
 %_kde_libdir/libkochart.so.%libkochart_major.0.0
 
-#--------------------------------------------------------------------
-
-%package -n kword
-Summary:	Word processor for koffice2
-Group:		Graphical desktop/KDE
-Requires:	%name-core = %{epoch}:%{version}-%{release}
-URL:            http://www.koffice.org/
-Requires:	wordnet
-Provides:	%name-apps
-Provides:       kword2
-Obsoletes:      %name-kword <= 11:1.9.95.3-0.766453.5
-Provides:       %name-kword = %epoch:%version-%release
-Obsoletes:      koffice2-kword < 1:1.9.95.3-0.766453.6
-Provides:       koffice2-kword = %epoch:%version-%release
-Conflicts:	koffice-common < 11:1.6.3-20
-
-%description -n kword
-Kword is a word processor for kde project
-
-%post -n kword
-%{update_desktop_database}
-
-%postun -n kword
-%{clean_desktop_database}
-
-%files -n kword
-%defattr(-,root,root)
-%_kde_bindir/kword
-%_kde_iconsdir/*/*/apps/kword.png
-%_kde_datadir/applications/kde4/kword.desktop
-%_kde_datadir/kde4/services/ServiceMenus/kword_konqi.desktop
-%_kde_configdir/kwordrc
-%_kde_appsdir/kword
-%_kde_appsdir/xsltfilter/export/kword/xslfo/*
-%_kde_datadir/kde4/services/kword_*
-%_kde_datadir/kde4/services/krossmodulekword.desktop
-%_kde_datadir/kde4/services/kwordpart.desktop
-%_kde_datadir/kde4/services/xslt_export.desktop
-%_kde_datadir/kde4/services/xslt_import.desktop
-%_kde_libdir/kde4/krossmodulekword.so
-%_kde_libdir/kde4/libkwordkword1dot3import.so
-%_kde_libdir/kde4/libkwordpart.so
-%_kde_libdir/kde4/libabiwordimport.so
-%_kde_libdir/kde4/libamiproexport.so
-%_kde_libdir/kde4/libamiproimport.so
-%_kde_libdir/kde4/libapplixspreadimport.so
-%_kde_libdir/kde4/libapplixwordimport.so
-%_kde_libdir/kde4/libcsvexport.so
-%_kde_libdir/kde4/libcsvimport.so
-%_kde_libdir/kde4/libdbaseimport.so
-%_kde_libdir/kde4/libdocbookexport.so
-%_kde_libdir/kde4/libgenerickofilter.so
-%_kde_libdir/kde4/libgnumericexport.so
-%_kde_libdir/kde4/libgnumericimport.so
-%_kde_libdir/kde4/libhancomwordimport.so
-%_kde_libdir/kde4/libhtmlexport.so
-%_kde_libdir/kde4/libhtmlimport.so
-%_kde_libdir/kde4/libkounavailpart.so
-%_kde_libdir/kde4/liboowriterexport.so
-%_kde_libdir/kde4/liboowriterimport.so
-%_kde_libdir/kde4/libopencalcexport.so
-%_kde_libdir/kde4/libopencalcimport.so
-%_kde_libdir/kde4/libpalmdocexport.so
-%_kde_libdir/kde4/libpalmdocimport.so
-%_kde_libdir/kde4/libqproimport.so
-%_kde_libdir/kde4/librtfexport.so
-%_kde_libdir/kde4/librtfimport.so
-%_kde_libdir/kde4/libwmlexport.so
-%_kde_libdir/kde4/libwmlimport.so
-%_kde_libdir/kde4/libwpexport.so
-%_kde_libdir/kde4/libwpimport.so
-%_kde_libdir/kde4/libxsltexport.so
-%_kde_libdir/kde4/libxsltimport.so
-%_kde_libdir/kde4/libmswordodf_import.so
-%_kde_libdir/libkdeinit4_kword.so
 
 #--------------------------------------------------------------------
 
@@ -560,54 +991,7 @@ Koffice 2 core library.
 
 #--------------------------------------------------------------------
 
-%package -n kplato
-Summary:	A new project management application for koffice2
-Group:		Graphical desktop/KDE
-Requires:	%name-core = %{epoch}:%{version}-%{release}
-URL:            http://www.koffice.org/
-Provides:       %name-apps
-Provides:       kplato2
-Obsoletes:      kplatowork
-Obsoletes:      %{_lib}kplatoworkprivat5 < 1:1.9.95.3-1
-Obsoletes:      %name-kplato <= 11:1.9.95.3-0.766453.5
-Provides:       %name-kplato = %epoch:%version-%release
-Obsoletes:      koffice2-kplato < 1:1.9.95.3-0.766453.6
-Provides:       koffice2-kplato = %epoch:%version-%release
 
-%description -n kplato
-A new project management application for koffice2.
-
-%post -n kplato
-%{update_desktop_database}
-
-%postun -n kplato
-%{update_desktop_database}
-
-
-%files -n kplato
-%defattr(-,root,root)
-%_kde_bindir/kplato
-%_kde_bindir/kplatowork
-%_kde_datadir/applications/kde4/kplato.desktop
-%_kde_datadir/applications/kde4/kplatowork.desktop
-%_kde_appsdir/kplatowork
-%_kde_appsdir/kplato
-%_kde_datadir/config/kplatorc
-%_kde_libdir/libkdeinit4_kplato.so
-%_kde_libdir/libkdeinit4_kplatowork.so
-%_kde_libdir/kde4/krossmodulekplato.so
-%_kde_libdir/kde4/libkplatopart.so
-%_kde_libdir/kde4/libkplatoworkpart.so
-%_kde_datadir/kde4/services/kplatopart.desktop
-%_kde_datadir/kde4/services/krossmodulekplato.desktop
-%_kde_datadir/kde4/services/kplato_icalendar_export.desktop
-%_kde_datadir/kde4/services/kplatoworkpart.desktop
-%_kde_datadir/kde4/servicetypes/kplato_schedulerplugin.desktop
-%_kde_iconsdir/hicolor/*/*/*kplato*
-%_kde_datadir/config.kcfg/kplatosettings.kcfg                                   
-%_kde_datadir/config/kplatoworkrc
-
-#--------------------------------------------------------------------
 
 %define chartshapelib_major 7
 %define libchartshapelib %mklibname chartshapelib %chartshapelib_major
@@ -728,54 +1112,7 @@ Koffice 2 core library.
 #--------------------------------------------------------------------
 
 
-%package -n kspread
-Summary:	SpreadSheet for koffice2
-Group:		Graphical desktop/KDE
-Requires:	%name-core = %{epoch}:%{version}-%{release}
-URL:            http://www.koffice.org/
-Provides:       %name-apps
-Provides:       kspread2
-Obsoletes:      %name-kspread <= 11:1.9.95.3-0.766453.5
-Provides:       %name-kspread = %epoch:%version-%release
-Obsoletes:      koffice2-kspread < 1:1.9.95.3-0.766453.6
-Provides:       koffice2-kspread = %epoch:%version-%release
-Conflicts:      kword < 11:2.1.0-4
 
-%description -n kspread
-KSpread is a spreadsheet for kde project
-
-%post -n kspread
-%{update_desktop_database}
-
-
-%postun -n kspread
-%{clean_desktop_database}
-
-%files -n kspread
-%defattr(-,root,root)
-%_kde_bindir/kspread
-%_kde_libdir/kde4/krossmodulekspread.so
-%_kde_libdir/kde4/libkspreadhtmlexport.so
-%_kde_libdir/kde4/libkspreadlatexexport.so
-%_kde_libdir/kde4/libkspreadpart.so
-%_kde_libdir/kde4/libkspreadsolver.so
-%_kde_libdir/kde4/kspread*
-%_kde_libdir/kde4/spreadsheetshape.so
-%_kde_libdir/kde4/libexcelimport.so
-%_kde_libdir/libkdeinit4_kspread.so
-%_kde_iconsdir/hicolor/*/apps/kspread.png
-%_kde_datadir/applications/kde4/kspread.desktop
-%_kde_datadir/kde4/services/ServiceMenus/kspread_konqi.desktop
-%_kde_appsdir/kspread
-%_kde_datadir/config/kspreadrc
-%_kde_datadir/config.kcfg/kspread.kcfg
-%_kde_docdir/HTML/en/kspread
-%_kde_datadir/kde4/services/krossmodulekspread.desktop
-%_kde_datadir/kde4/services/kspread*.desktop
-%_kde_datadir/kde4/servicetypes/kspread_plugin.desktop
-%_kde_datadir/kde4/services/spreadsheetshape.desktop
-
-#--------------------------------------------------------------------
 
 %define kspread_major 7
 %define libkspreadcommon %mklibname kspreadcommon %kspread_major
@@ -794,68 +1131,7 @@ Koffice 2 core library.
 
 #--------------------------------------------------------------------
 
-%package -n kpresenter
-Summary:	Presentation for koffice2
-Group:		Graphical desktop/KDE
-Requires:	%name-core = %{epoch}:%{version}-%{release}
-URL:            http://www.koffice.org/
-Requires:	xdg-utils
-Provides:       %name-apps
-Provides:       kpresenter2
-Obsoletes:      %name-kpresenter <= 11:1.9.95.3-0.766453.5
-Provides:       %name-kpresenter = %epoch:%version-%release
-Obsoletes:      koffice2-kpresenter < 1:1.9.95.3-0.766453.6
-Provides:       koffice2-kpresenter = %epoch:%version-%release
 
-%description -n kpresenter
-KPresenter is a presentation for kde project.
-
-%post -n kpresenter
-%{update_desktop_database}
-
-%postun -n kpresenter
-%{clean_desktop_database}
-
-
-%files -n kpresenter
-%defattr(-,root,root)
-%_kde_bindir/kpresenter
-%_kde_libdir/kde4/libkpresenterpart.so
-%_kde_libdir/kde4/kpr_pageeffect_barwipe.so
-%_kde_libdir/kde4/kpr_pageeffect_clockwipe.so
-%_kde_libdir/kde4/kpr_pageeffect_edgewipe.so
-%_kde_libdir/kde4/kpr_pageeffect_iriswipe.so
-%_kde_libdir/kde4/kpr_pageeffect_matrixwipe.so
-%_kde_libdir/kde4/kpr_pageeffect_slidewipe.so
-%_kde_libdir/kde4/kpr_shapeanimation_example.so
-%_kde_libdir/kde4/kpresentereventactions.so 
-%_kde_libdir/kde4/kpresentertoolanimation.so
-%_kde_libdir/kde4/kprvariables.so
-%_kde_libdir/libkdeinit4_kpresenter.so
-%_kde_datadir/applications/kde4/kpresenter.desktop
-%_kde_datadir/kde4/services/ServiceMenus/kpresenter_konqi.desktop
-%_kde_appsdir/kpresenter
-%_kde_datadir/config/kpresenterrc
-%_kde_iconsdir/hicolor/*/apps/kpresenter.png
-%_kde_datadir/kde4/services/kpresenterpart.desktop
-%_kde_datadir/kde4/services/kpresentereventactions.desktop
-%_kde_datadir/kde4/servicetypes/presentationeventaction.desktop
-%_kde_datadir/kde4/services/kpr_pageeffect_barwipe.desktop
-%_kde_datadir/kde4/services/kpr_pageeffect_clockwipe.desktop
-%_kde_datadir/kde4/services/kpr_pageeffect_edgewipe.desktop
-%_kde_datadir/kde4/services/kpr_pageeffect_iriswipe.desktop
-%_kde_datadir/kde4/services/kpr_pageeffect_matrixwipe.desktop
-%_kde_datadir/kde4/services/kpr_pageeffect_slidewipe.desktop
-%_kde_datadir/kde4/services/kpr_shapeanimation_example.desktop
-%_kde_datadir/kde4/services/kpresentertoolanimation.desktop
-%_kde_datadir/kde4/services/kpresenter_powerpoint_import.desktop
-%_kde_datadir/kde4/services/kpresenter_pptx_import.desktop
-%_kde_datadir/kde4/services/kprvariables.desktop
-%_kde_datadir/kde4/servicetypes/kpr_pageeffect.desktop
-%_kde_datadir/kde4/servicetypes/kpr_shapeanimation.desktop
-%_kde_docdir/HTML/en/kpresenter
-
-#--------------------------------------------------------------------
 
 %define kpresenterprivate_major 7
 %define libkpresenterprivate %mklibname kpresenterprivate %kpresenterprivate_major
@@ -874,48 +1150,6 @@ Koffice 2 core library.
 
 #--------------------------------------------------------------------
 
-%package -n kchart
-Summary:        Chart and diagram drawing
-Group:          Graphical desktop/KDE
-Requires:       %name-core = %{epoch}:%{version}-%{release}
-URL:            http://www.koffice.org/
-Provides:       %name-apps
-Provides:       kchart2
-Obsoletes:      %name-kchart <= 11:1.9.95.3-0.766453.5
-Provides:       %name-kchart = %epoch:%version-%release
-Obsoletes:      koffice2-kchart < 1:1.9.95.3-0.766453.6
-Provides:       koffice2-kchart = %epoch:%version-%release
-Conflicts:	%name-core < 11:1.9.98.2-4
-
-%description -n kchart
-Kchart is a chart and diagram drawing program.
-
-%post -n kchart
-%{update_desktop_database}
-
-
-%postun -n kchart
-%{update_desktop_database}
-
-%files -n kchart
-%defattr(-,root,root)
-%_kde_libdir/kde4/chartshape.so
-%_kde_libdir/kde4/libkchartgenericimageexport.so
-%_kde_libdir/kde4/libkchartsvgexport.so
-%{_kde_datadir}/kde4/services/chartshape.desktop
-%{_kde_datadir}/kde4/services/kchartpart.desktop
-%{_kde_datadir}/kde4/services/kchart_bmp_export.desktop
-%{_kde_datadir}/kde4/services/kchart_jpeg_export.desktop
-%{_kde_datadir}/kde4/services/kchart_mng_export.desktop
-%{_kde_datadir}/kde4/services/kchart_png_export.desktop
-%{_kde_datadir}/kde4/services/kchart_svg_export.desktop
-%{_kde_datadir}/kde4/services/kchart_xbm_export.desktop
-%{_kde_datadir}/kde4/services/kchart_xpm_export.desktop
-%{_kde_appsdir}/kchart
-%{_kde_iconsdir}/hicolor/*/apps/kchart.png
-%_kde_docdir/HTML/en/kchart
-
-#--------------------------------------------------------------------
 
 %define  kdchart_major 7
 %define  libkdchart %mklibname kdchart  %kdchart_major
@@ -965,63 +1199,7 @@ Krita and karbon meta package
 
 #--------------------------------------------------------------------
 
-%package -n krita
-Summary:        A pixel-based image manipulation program
-Group:          Graphical desktop/KDE
-URL:            http://www.koffice.org/
-Requires:	    %name-core = %{epoch}:%{version}-%{release}
-Provides:       %name-apps
-Provides:       krita2
-Obsoletes:      %name-krita < 11:1.9.95.4-1
-Provides:       %name-krita = %epoch:%version-%release
-Obsoletes:      koffice2-krita < 11:1.9.95.4-1
-Provides:       koffice2-krita = %epoch:%version-%release
 
-Obsoletes:      %{_lib}kritafilterslistdynamicprogram5 < 1:1.9.92-0.710350.1
-Obsoletes:      %{_lib}krita_gray_u165 < 1:1.9.92-0.710350.1
-Obsoletes:      %{_lib}kritargbf32hdr5 < 11:1.9.95.4-1
-
-%description -n krita
-Krita is a pixel-based image manipulation program.
-
-%post -n krita
-%{update_desktop_database}
-
-%postun -n krita
-%{update_desktop_database}
-
-%files -n krita
-%defattr(-,root,root)
-%_kde_bindir/krita
-%_kde_libdir/kde4/*krita*
-%_kde_libdir/libkdeinit4_krita.so
-%_kde_datadir/applications/kde4/krita.desktop
-%_kde_datadir/applications/kde4/krita_jpeg.desktop
-%_kde_datadir/applications/kde4/krita_png.desktop
-%_kde_datadir/applications/kde4/krita_bmp.desktop
-%_kde_datadir/applications/kde4/krita_ora.desktop
-%_kde_datadir/applications/kde4/krita_pdf.desktop
-%_kde_datadir/applications/kde4/krita_tiff.desktop
-%_kde_datadir/applications/kde4/krita_raw.desktop
-%_kde_datadir/applications/kde4/krita_exr.desktop
-%_kde_datadir/applications/kde4/krita_gif.desktop
-%_kde_datadir/applications/kde4/krita_jp2.desktop
-%_kde_datadir/applications/kde4/krita_ppm.desktop
-%_kde_datadir/applications/kde4/krita_xcf.desktop
-%_kde_datadir/kde4/services/ServiceMenus/krita_konqi.desktop
-%_kde_datadir/kde4/services/*krita*.desktop
-%_kde_datadir/kde4/servicetypes/*krita*.desktop
-%_kde_iconsdir/hicolor/*/apps/krita.png
-%_kde_appsdir/krita
-%_kde_appsdir/kritaplugins
-%_kde_configdir/kritarc
-%_kde_datadir/color/icc/krita/*.icm
-%_kde_datadir/color/icc/pigment/*.icm
-%_kde_datadir/kde4/servicetypes/pigment.desktop
-%_kde_appsdir/pigmentcms
-%_kde_datadir/mime/packages/krita_ora.xml
-
-#--------------------------------------------------------------------
 
 %define  libkritaui_major 7
 %define  libkritaui %mklibname kritaui  %libkritaui_major
@@ -1136,57 +1314,7 @@ Koffice 2 core library.
 %_kde_libdir/libkrossmodulekrita.so.%{libkrossmodulekrita_major}*
 
 #--------------------------------------------------------------------
-%package -n karbon
-Summary:	Scalable drawing for koffice2
-Group:		Graphical desktop/KDE
-Requires:	%name-core = %{epoch}:%{version}-%{release}
-URL:            http://www.koffice.org/
-Provides:       %name-apps
-Provides:       karbon2
-Obsoletes:      %name-karbon <= 11:1.9.95.3-0.766453.5
-Provides:       %name-karbon = %epoch:%version-%release
-Obsoletes:      koffice2-karbon < 1:1.9.95.3-0.766453.6
-Provides:       koffice2-karbon = %epoch:%version-%release
 
-%description -n karbon
-Karbon is a scalable drawing for kde project.
-
-%post -n karbon
-%{update_desktop_database}
-
-
-%postun -n karbon
-%{update_desktop_database}
-
-
-%files -n karbon
-%defattr(-,root,root)
-%_kde_bindir/karbon
-%_kde_libdir/kde4/karbon_flattenpathplugin.so
-%_kde_libdir/kde4/karbon_whirlpinchplugin.so
-%_kde_libdir/kde4/karbontools.so
-%_kde_libdir/kde4/libkarbonpart.so
-%_kde_libdir/kde4/libkarbonpngexport.so
-%_kde_libdir/kde4/libkarbonsvgexport.so
-%_kde_libdir/kde4/libkarbonepsimport.so
-%_kde_libdir/kde4/libkarbonsvgimport.so
-%_kde_libdir/kde4/libwmfexport.so
-%_kde_libdir/kde4/libwmfimport.so
-%_kde_libdir/kde4/libkarbon1ximport.so
-%_kde_libdir/kde4/karbon_refinepathplugin.so
-%_kde_libdir/kde4/karbon_roundcornersplugin.so
-%_kde_libdir/libkdeinit4_karbon.so
-%_kde_datadir/applications/kde4/karbon.desktop
-%_kde_iconsdir/*/*/apps/karbon.*
-%_kde_configdir/karbonrc
-%_kde_appsdir/karbon
-%_kde_datadir/kde4/services/ServiceMenus/karbon_konqi.desktop
-%_kde_docdir/HTML/en/karbon
-%_kde_datadir/kde4/services/karbon*.desktop
-%_kde_datadir/kde4/servicetypes/karbon_module.desktop
-%exclude %_kde_datadir/templates/.source/Illustration.karbon
-
-#--------------------------------------------------------------------
 
 %define  karboncommon_major 7
 %define  libkarboncommon %mklibname karboncommon  %karboncommon_major
@@ -1222,33 +1350,7 @@ Koffice 2 core library.
 
 #--------------------------------------------------------------------
 
-%package -n kformula
-Summary:        Formula Editor for koffice2
-Group:          Graphical desktop/KDE
-Requires:       %name-core = %{epoch}:%{version}-%{release}
-URL:            http://www.koffice.org/
-Provides:       %name-kformula = %epoch:%version-%release
-Conflicts:      koffice-core < 11:2.0.91
 
-%description -n kformula
-Kformula is a formula editor for kde project.
-
-%files -n kformula
-%defattr(-,root,root)
-%_kde_bindir/kformula
-%_kde_libdir/libkdeinit_kformula.so
-%_kde_libdir/kde4/formulashape.so
-%_kde_libdir/kde4/libkformulapart.so
-%_kde_datadir/applications/kde4/kformula.desktop
-%_kde_datadir/apps/formulashape
-%_kde_datadir/apps/kformula
-%_kde_iconsdir/*/*/*/kformula.png
-%_kde_datadir/kde4/services/ServiceMenus/kformula_konqi.desktop
-%_kde_datadir/kde4/services/formulashape.desktop
-%_kde_datadir/kde4/services/kformulapart.desktop
-%_kde_docdir/HTML/en/kformula
-
-#--------------------------------------------------------------------
 
 %define libkformulalib_major 7
 %define libkformulalib %mklibname kformulalib %libkformulalib_major
@@ -1283,71 +1385,7 @@ Koffice 2 core library.
 
 #--------------------------------------------------------------------
 
-%package -n kexi
-Summary:    An integrated environment for managing data
-Group:      Graphical desktop/KDE
-Requires:   koffice-core = %epoch:%version-%release
-Conflicts:  koffice <= %epoch:1.2.1-9mdk
-Obsoletes:  kexi <= 0.1-0.beta5.5mdk    
-Provides:   %name-apps
 
-%description -n kexi
-Kexi is an integrated environment for managing data.
-
-%post -n kexi
-%{update_desktop_database}
-
-%postun -n kexi
-%{update_desktop_database}
-
-%files -n kexi
-%defattr(-,root,root)
-%{_kde_bindir}/kexi
-%{_kde_appsdir}/kexi
-%{_kde_datadir}/config/kexirc
-%_kde_docdir/HTML/en/kexi
-%{_kde_services}/kexi
-%{_kde_services}/kexidb_mysqldriver.desktop
-%{_kde_services}/kexidb_pqxxsqldriver.desktop
-%{_kde_services}/kexidb_xbasedriver.desktop
-%{_kde_services}/kexidb_sqlite3driver.desktop
-%{_kde_services}/keximigrate_kspread.desktop
-%{_kde_services}/keximigrate_mdb.desktop
-%{_kde_services}/keximigrate_mysql.desktop
-%{_kde_services}/keximigrate_pqxx.desktop
-%{_kde_services}/keximigrate_sybase.desktop
-%{_kde_services}/keximigrate_txt.desktop
-%{_kde_services}/kexirelationdesignshape.desktop
-%{_kde_services}/kformdesigner
-%{_kde_servicetypes}/widgetfactory.desktop
-%{_kde_servicetypes}/kexidb_driver.desktop
-%{_kde_servicetypes}/kexihandler.desktop
-%{_kde_servicetypes}/keximigration_driver.desktop
-%{_kde_applicationsdir}/kexi.desktop
-%{_kde_libdir}/kde4/kformdesigner_containers.so
-%{_kde_libdir}/kde4/kformdesigner_kexidbwidgets.so
-%{_kde_libdir}/kde4/kformdesigner_stdwidgets.so
-%{_kde_libdir}/kde4/kexidb_mysqldriver.so
-%{_kde_libdir}/kde4/kexidb_pqxxsqldriver.so
-%{_kde_libdir}/kde4/kexidb_xbasedriver.so
-%{_kde_libdir}/kde4/kexidb_sqlite3driver.so
-%{_kde_libdir}/kde4/kexihandler_csv_importexport.so
-%{_kde_libdir}/kde4/kexihandler_form.so
-%{_kde_libdir}/kde4/kexihandler_migration.so
-%{_kde_libdir}/kde4/kexihandler_query.so
-%{_kde_libdir}/kde4/kexihandler_script.so
-%{_kde_libdir}/kde4/kexihandler_table.so
-%{_kde_libdir}/kde4/keximigrate_kspread.so
-%{_kde_libdir}/kde4/keximigrate_mdb.so
-%{_kde_libdir}/kde4/keximigrate_mysql.so
-%{_kde_libdir}/kde4/keximigrate_pqxx.so
-%{_kde_libdir}/kde4/keximigrate_sybase.so
-%{_kde_libdir}/kde4/keximigrate_txt.so
-%{_kde_libdir}/kde4/kexirelationdesignshape.so
-%{_kde_libdir}/kde4/krossmodulekexidb.so
-%{_kde_libdir}/kde4/kexihandler_report.so
-
-#--------------------------------------------------------------------
    
 %define libkexicore_major 7
 %define libkexicore %mklibname kexicore %libkexicore_major
@@ -1554,26 +1592,6 @@ Koffice 2 core library.
 %files -n %libkoproperty
 %defattr(-,root,root)
 %_kde_libdir/libkoproperty.so.%{libkoproperty_major}*
-
-#--------------------------------------------------------------------
-%if 0
-%package -n f-office
-Summary:    Fremantle Office viewer
-Group:      Graphical desktop/KDE
-Requires:   koffice-core = %epoch:%version-%release
-Provides:   %name-apps
-
-%description -n f-office
-Fremantle Office viewer
-
-%files -n f-office
-%defattr(-,root,root)
-%{_kde_bindir}/FreOffice
-%{_kde_datadir}/applications/hildon/FreOffice.desktop
-%{_kde_datadir}/dbus-1/services/com.nokia.FreOffice.service
-%{_kde_iconsdir}/hicolor/*/hildon
-%{_kde_iconsdir}/hicolor/*/apps/freoffice.png
-%endif
 
 #--------------------------------------------------------------------
 
