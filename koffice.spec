@@ -70,7 +70,7 @@ Suggests: krita
 Suggests: kplato
 Suggests: kchart
 Suggests: kformula
-Suggests: f-office
+Obsoletes: f-office
 Obsoletes: koshell
 Obsoletes: kugar
 Obsoletes: kivio
@@ -727,25 +727,6 @@ Kexi is an integrated environment for managing data.
 %{_kde_libdir}/kde4/kexirelationdesignshape.so
 %{_kde_libdir}/kde4/krossmodulekexidb.so
 %{_kde_libdir}/kde4/kexihandler_report.so
-
-#--------------------------------------------------------------------
-
-%package -n f-office
-Summary:    Fremantle Office viewer
-Group:      Graphical desktop/KDE
-Requires:   koffice-core = %epoch:%version-%release
-Provides:   %name-apps
-
-%description -n f-office
-Fremantle Office viewer
-
-%files -n f-office
-%defattr(-,root,root)
-%{_kde_bindir}/FreOffice
-%{_kde_datadir}/applications/hildon/FreOffice.desktop
-%{_kde_datadir}/dbus-1/services/com.nokia.FreOffice.service
-%{_kde_iconsdir}/hicolor/*/hildon
-%{_kde_iconsdir}/hicolor/*/apps/freoffice.png
 
 #--------------------------------------------------------------------
 
