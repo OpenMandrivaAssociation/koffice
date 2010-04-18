@@ -758,8 +758,7 @@ Koffice 2 core library.
 
 %files -n %libkokross
 %defattr(-,root,root)
-%_kde_libdir/libkokross.so.%libkokross_major
-%_kde_libdir/libkokross.so.%libkokross_major.0.0
+%_kde_libdir/libkokross.so.%{libkokross_major}*
 
 #--------------------------------------------------------------------
 
@@ -776,8 +775,7 @@ Koffice 2 core library.
 
 %files -n %libkomain
 %defattr(-,root,root)
-%_kde_libdir/libkomain.so.%libkomain_major
-%_kde_libdir/libkomain.so.%libkomain_major.0.0
+%_kde_libdir/libkomain.so.%{libkomain_major}*
 
 #--------------------------------------------------------------------
 
@@ -793,8 +791,7 @@ Koffice 2 core library.
 
 %files -n %libkopageapp
 %defattr(-,root,root)
-%_kde_libdir/libkopageapp.so.%libkopageapp_major
-%_kde_libdir/libkopageapp.so.%libkopageapp_major.0.0
+%_kde_libdir/libkopageapp.so.%{libkopageapp_major}*
 
 #--------------------------------------------------------------------
 
@@ -810,8 +807,7 @@ Koffice 2 core library.
 
 %files -n %libkotext
 %defattr(-,root,root)
-%_kde_libdir/libkotext.so.%libkotext_major
-%_kde_libdir/libkotext.so.%libkotext_major.0.0
+%_kde_libdir/libkotext.so.%{libkotext_major}*
 
 #--------------------------------------------------------------------
 
@@ -827,8 +823,7 @@ Koffice 2 core library.
 
 %files -n %libkowmf
 %defattr(-,root,root)
-%_kde_libdir/libkowmf.so.%libkowmf_major
-%_kde_libdir/libkowmf.so.%libkowmf_major.0.0
+%_kde_libdir/libkowmf.so.%{libkowmf_major}*
 
 #--------------------------------------------------------------------
 
@@ -844,8 +839,7 @@ Koffice 2 core library.
 
 %files -n %libkoodf
 %defattr(-,root,root)
-%_kde_libdir/libkoodf.so.%libkoodf_major
-%_kde_libdir/libkoodf.so.%libkoodf_major.0.0
+%_kde_libdir/libkoodf.so.%{libkoodf_major}*
 
 #--------------------------------------------------------------------
 
@@ -861,8 +855,7 @@ Koffice 2 core library.
 
 %files -n %libkwmf
 %defattr(-,root,root)
-%_kde_libdir/libkwmf.so.%libkwmf_major
-%_kde_libdir/libkwmf.so.%libkwmf_major.0.0
+%_kde_libdir/libkwmf.so.%{libkwmf_major}*
 
 #--------------------------------------------------------------------
 
@@ -878,8 +871,7 @@ Koffice 2 core library.
 
 %files -n %libflake
 %defattr(-,root,root)
-%_kde_libdir/libflake.so.%libflake_major
-%_kde_libdir/libflake.so.%libflake_major.0.0
+%_kde_libdir/libflake.so.%{libflake_major}*
 
 #--------------------------------------------------------------------
 
@@ -898,8 +890,7 @@ Koffice 2 core library.
 
 %files -n %libpigmentcms
 %defattr(-,root,root)
-%_kde_libdir/libpigmentcms.so.%libpigmentcms_major
-%_kde_libdir/libpigmentcms.so.%libpigmentcms_major.0.0
+%_kde_libdir/libpigmentcms.so.%{libpigmentcms_major}*
 
 #--------------------------------------------------------------------
 
@@ -915,8 +906,7 @@ Koffice 2 core library.
 
 %files -n %libkformdesigner
 %defattr(-,root,root)
-%_kde_libdir/libkformdesigner.so.%libkformdesigner_major
-%_kde_libdir/libkformdesigner.so.%libkformdesigner_major.0.0
+%_kde_libdir/libkformdesigner.so.%{libkformdesigner_major}*
 
 #--------------------------------------------------------------------
 
@@ -932,9 +922,7 @@ Koffice 2 core library.
 
 %files -n %libkochart
 %defattr(-,root,root)
-%_kde_libdir/libkochart.so.%libkochart_major
-%_kde_libdir/libkochart.so.%libkochart_major.0.0
-
+%_kde_libdir/libkochart.so.%{libkochart_major}*
 
 #--------------------------------------------------------------------
 
@@ -950,8 +938,7 @@ Koffice 2 core library.
 
 %files -n %libkwordexportfilters
 %defattr(-,root,root)
-%_kde_libdir/libkwordexportfilters.so.%kwordexportfilters_major
-%_kde_libdir/libkwordexportfilters.so.%kwordexportfilters_major.0.0
+%_kde_libdir/libkwordexportfilters.so.%{kwordexportfilters_major}*
 
 #--------------------------------------------------------------------
 
@@ -967,12 +954,9 @@ Koffice 2 core library.
 
 %files -n %libkwordprivate
 %defattr(-,root,root)
-%_kde_libdir/libkwordprivate.so.%kwordprivate_major
-%_kde_libdir/libkwordprivate.so.%kwordprivate_major.0.0
+%_kde_libdir/libkwordprivate.so.%{kwordprivate_major}*
 
 #--------------------------------------------------------------------
-
-
 
 %define chartshapelib_major 7
 %define libchartshapelib %mklibname chartshapelib %chartshapelib_major
@@ -986,9 +970,7 @@ Koffice 2 core library.
 
 %files -n %libchartshapelib
 %defattr(-,root,root)
-%_kde_libdir/libchartshapelib.so.%chartshapelib_major
-%_kde_libdir/libchartshapelib.so.%chartshapelib_major.0.0
-
+%_kde_libdir/libchartshapelib.so.%{chartshapelib_major}*
 
 #--------------------------------------------------------------------
 %define kplatomodels_major 7
@@ -1003,8 +985,7 @@ Koffice 2 core library.
 
 %files -n %libkplatomodels
 %defattr(-,root,root)
-%_kde_libdir/libkplatomodels.so.%kplatomodels_major
-%_kde_libdir/libkplatomodels.so.%kplatomodels_major.0.0
+%_kde_libdir/libkplatomodels.so.%{kplatomodels_major}*
 
 #-------------------------------------------------------------------
 
@@ -1020,8 +1001,7 @@ Koffice 2 core library.
 
 %files -n %libkplatokernel
 %defattr(-,root,root)
-%_kde_libdir/libkplatokernel.so.%kplatokernel_major
-%_kde_libdir/libkplatokernel.so.%kplatokernel_major.0.0
+%_kde_libdir/libkplatokernel.so.%{kplatokernel_major}*
 
 #--------------------------------------------------------------------
 
@@ -1037,8 +1017,7 @@ Koffice 2 core library.
 
 %files -n %libkplatoprivate
 %defattr(-,root,root)
-%_kde_libdir/libkplatoprivate.so.%kplatoprivate_major
-%_kde_libdir/libkplatoprivate.so.%kplatoprivate_major.0.0
+%_kde_libdir/libkplatoprivate.so.%{kplatoprivate_major}*
 
 #--------------------------------------------------------------------
 
@@ -1054,8 +1033,7 @@ Koffice 2 core library.
 
 %files -n %libkplatoui
 %defattr(-,root,root)
-%_kde_libdir/libkplatoui.so.%kplatoui_major
-%_kde_libdir/libkplatoui.so.%kplatoui_major.0.0
+%_kde_libdir/libkplatoui.so.%{kplatoui_major}*
 
 #--------------------------------------------------------------------
 
@@ -1071,8 +1049,8 @@ Koffice 2 core library.
 
 %files -n %libkplatoworkapp
 %defattr(-,root,root)
-%_kde_libdir/libkplatoworkapp.so.%kplatoworkapp_major
-%_kde_libdir/libkplatoworkapp.so.%kplatoworkapp_major.0.0
+%_kde_libdir/libkplatoworkapp.so.%{kplatoworkapp_major}*
+
 #--------------------------------------------------------------------
 
 %define kplatoworkfactory_major 7
@@ -1087,13 +1065,9 @@ Koffice 2 core library.
 
 %files -n %libkplatoworkfactory
 %defattr(-,root,root)
-%_kde_libdir/libkplatoworkfactory.so.%kplatoworkfactory_major
-%_kde_libdir/libkplatoworkfactory.so.%kplatoworkfactory_major.0.0
+%_kde_libdir/libkplatoworkfactory.so.%{kplatoworkfactory_major}*
 
 #--------------------------------------------------------------------
-
-
-
 
 %define kspread_major 7
 %define libkspreadcommon %mklibname kspreadcommon %kspread_major
@@ -1107,12 +1081,9 @@ Koffice 2 core library.
 
 %files -n %libkspreadcommon
 %defattr(-,root,root)
-%_kde_libdir/libkspreadcommon.so.%kspread_major
-%_kde_libdir/libkspreadcommon.so.%kspread_major.0.0
+%_kde_libdir/libkspreadcommon.so.%{kspread_major}*
 
 #--------------------------------------------------------------------
-
-
 
 %define kpresenterprivate_major 7
 %define libkpresenterprivate %mklibname kpresenterprivate %kpresenterprivate_major
@@ -1126,11 +1097,9 @@ Koffice 2 core library.
 
 %files -n %libkpresenterprivate
 %defattr(-,root,root)
-%_kde_libdir/libkpresenterprivate.so.%kpresenterprivate_major
-%_kde_libdir/libkpresenterprivate.so.%kpresenterprivate_major.0.0
+%_kde_libdir/libkpresenterprivate.so.%{kpresenterprivate_major}*
 
 #--------------------------------------------------------------------
-
 
 %define  kdchart_major 7
 %define  libkdchart %mklibname kdchart  %kdchart_major
@@ -1144,8 +1113,7 @@ Koffice 2 core library.
 
 %files -n %libkdchart
 %defattr(-,root,root)
-%_kde_libdir/libkdchart.so.%kdchart_major
-%_kde_libdir/libkdchart.so.%kdchart_major.0.0
+%_kde_libdir/libkdchart.so.%{kdchart_major}*
 
 #--------------------------------------------------------------------
 
@@ -1162,7 +1130,7 @@ Koffice 2 core library.
 %files -n %libkchartcommon
 %defattr(-,root,root)
 %_kde_libdir/libkchartcommon.so.%kchartcommon_major
-%_kde_libdir/libkchartcommon.so.%kchartcommon_major.0.0
+%_kde_libdir/libkchartcommon.so.%{kchartcommon_major}*
 
 #--------------------------------------------------------------------
 
@@ -1194,8 +1162,7 @@ Koffice 2 core library.
 
 %files -n %libkritaui
 %defattr(-,root,root)
-%_kde_libdir/libkritaui.so.%libkritaui_major
-%_kde_libdir/libkritaui.so.%libkritaui_major.0.0
+%_kde_libdir/libkritaui.so.%{libkritaui_major}*
 
 #--------------------------------------------------------------------
 
@@ -1211,8 +1178,7 @@ Koffice 2 core library.
 
 %files -n %libkritaimage
 %defattr(-,root,root)
-%_kde_libdir/libkritaimage.so.%libkritaimage_major
-%_kde_libdir/libkritaimage.so.%libkritaimage_major.0.0
+%_kde_libdir/libkritaimage.so.%{libkritaimage_major}*
 
 #--------------------------------------------------------------------
 
@@ -1309,8 +1275,7 @@ Koffice 2 core library.
 
 %files -n %libkarboncommon
 %defattr(-,root,root)
-%_kde_libdir/libkarboncommon.so.%karboncommon_major
-%_kde_libdir/libkarboncommon.so.%karboncommon_major.0.0
+%_kde_libdir/libkarboncommon.so.%{karboncommon_major}*
 
 #--------------------------------------------------------------------
 
@@ -1326,8 +1291,7 @@ Koffice 2 core library.
 
 %files -n %libkarbonui
 %defattr(-,root,root)
-%_kde_libdir/libkarbonui.so.%karbonui_major
-%_kde_libdir/libkarbonui.so.%karbonui_major.0.0
+%_kde_libdir/libkarbonui.so.%{karbonui_major}*
 
 #--------------------------------------------------------------------
 
@@ -1345,8 +1309,7 @@ Koffice 2 core library.
 
 %files -n %libkformulalib
 %defattr(-,root,root)
-%_kde_libdir/libkformulalib.so.%libkformulalib_major
-%_kde_libdir/libkformulalib.so.%libkformulalib_major.0.0
+%_kde_libdir/libkformulalib.so.%{libkformulalib_major}*
 
 #--------------------------------------------------------------------
 
