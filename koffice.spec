@@ -70,6 +70,7 @@ Suggests: krita
 Suggests: kplato
 Suggests: kchart
 Suggests: kformula
+Suggests: kexi
 Obsoletes: f-office
 Obsoletes: koshell
 Obsoletes: kugar
