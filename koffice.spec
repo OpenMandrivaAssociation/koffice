@@ -9,7 +9,7 @@ Name: koffice
 URL: http://www.koffice.org/
 Summary: Set of office applications for KDE
 Version: 2.1.82
-Release: %mkrel 1
+Release: %mkrel 2
 Epoch: 11
 Source: http://fr2.rpmfind.net/linux/KDE/stable/koffice-%version/src/%name-%version.tar.bz2
 Group: Office
@@ -1531,7 +1531,7 @@ Koffice 2 core library.
 %package -n %libmsooxml
 Summary: Koffice 2 core library
 Group: System/Libraries
-   
+
 %description -n %libmsooxml
 Koffice 2 core library.
    
@@ -1580,38 +1580,55 @@ Fremantle Office viewer
 %package devel
 Group: Development/KDE and Qt
 Summary: Header files for developing koffice2 applications
+Requires: %libchartshapelib = %{epoch}:%{version}-%{release}
+Requires: %libflake = %{epoch}:%{version}-%{release}
+Requires: %libkarboncommon = %{epoch}:%{version}-%{release}
+Requires: %libkarbonui = %{epoch}:%{version}-%{release}
+Requires: %libkchartcommon = %{epoch}:%{version}-%{release}
+Requires: %libkdchart = %{epoch}:%{version}-%{release}
+Requires: %libkexicore = %{epoch}:%{version}-%{release}
+Requires: %libkexidatatable = %{epoch}:%{version}-%{release}
+Requires: %libkexidb = %{epoch}:%{version}-%{release}
+Requires: %libkexiextendedwidgets = %{epoch}:%{version}-%{release}
+Requires: %libkexiformutils = %{epoch}:%{version}-%{release}
+Requires: %libkexiguiutils = %{epoch}:%{version}-%{release}
+Requires: %libkeximain = %{epoch}:%{version}-%{release}
+Requires: %libkeximigrate = %{epoch}:%{version}-%{release}
+Requires: %libkexirelationsview = %{epoch}:%{version}-%{release}
+Requires: %libkexiutils = %{epoch}:%{version}-%{release}
+Requires: %libkformdesigner = %{epoch}:%{version}-%{release}
+Requires: %libkformulalib = %{epoch}:%{version}-%{release}
+Requires: %libkformulaprivate = %{epoch}:%{version}-%{release}
+Requires: %libkochart = %{epoch}:%{version}-%{release}
 Requires: %libkokross = %{epoch}:%{version}-%{release}
 Requires: %libkomain = %{epoch}:%{version}-%{release}
-Requires: %libkopageapp = %{epoch}:%{version}-%{release}
-Requires: %libkotext = %{epoch}:%{version}-%{release}
-Requires: %libkowmf = %{epoch}:%{version}-%{release}
 Requires: %libkoodf = %{epoch}:%{version}-%{release}
-Requires: %libkwmf = %{epoch}:%{version}-%{release}
-Requires: %libflake = %{epoch}:%{version}-%{release}
-Requires: %libpigmentcms = %{epoch}:%{version}-%{release}
-Requires: %libkformdesigner = %{epoch}:%{version}-%{release}
-Requires: %libkochart = %{epoch}:%{version}-%{release}
-Requires: %libkwordexportfilters = %{epoch}:%{version}-%{release}
-Requires: %libkwordprivate = %{epoch}:%{version}-%{release}
-Requires: %libchartshapelib = %{epoch}:%{version}-%{release}
-Requires: %libkspreadcommon = %{epoch}:%{version}-%{release}
+Requires: %libkopageapp = %{epoch}:%{version}-%{release}
+Requires: %libkoplugin = %{epoch}:%{version}-%{release}
+Requires: %libkoproperty = %{epoch}:%{version}-%{release}
+Requires: %libkoreport = %{epoch}:%{version}-%{release}
+Requires: %libkotext = %{epoch}:%{version}-%{release}
+Requires: %libkowidgets = %{epoch}:%{version}-%{release}
+Requires: %libkowmf = %{epoch}:%{version}-%{release}
+Requires: %libkowv2 = %{epoch}:%{version}-%{release}
+Requires: %libkplatokernel = %{epoch}:%{version}-%{release}
+Requires: %libkplatomodels = %{epoch}:%{version}-%{release}
+Requires: %libkplatoprivate = %{epoch}:%{version}-%{release}
+Requires: %libkplatoui = %{epoch}:%{version}-%{release}
+Requires: %libkplatoworkapp = %{epoch}:%{version}-%{release}
+Requires: %libkplatoworkfactory = %{epoch}:%{version}-%{release}
 Requires: %libkpresenterprivate = %{epoch}:%{version}-%{release}
-Requires: %libkdchart = %{epoch}:%{version}-%{release}
-Requires: %libkchartcommon = %{epoch}:%{version}-%{release}
-Requires: %libkritaui = %{epoch}:%{version}-%{release}
 Requires: %libkritaimage = %{epoch}:%{version}-%{release}
 Requires: %libkritalibbrush = %{epoch}:%{version}-%{release}
 Requires: %libkritalibpaintop = %{epoch}:%{version}-%{release}
-Requires: %libkarboncommon = %{epoch}:%{version}-%{release}
-Requires: %libkarbonui = %{epoch}:%{version}-%{release}
-Requires: %libkoreport = %{epoch}:%{version}-%{release}
-Requires: %libkoplugin = %{epoch}:%{version}-%{release}
-Requires: %libkowidgets = %{epoch}:%{version}-%{release}
-Requires: %libkformulalib = %{epoch}:%{version}-%{release}
-Requires: %libkformulaprivate = %{epoch}:%{version}-%{release}
-Requires: %libkplatoworkapp = %{epoch}:%{version}-%{release}
-Requires: %libkplatoworkfactory = %{epoch}:%{version}-%{release}
+Requires: %libkritaui = %{epoch}:%{version}-%{release}
 Requires: %libkrossmodulekrita = %{epoch}:%{version}-%{release}
+Requires: %libkspreadcommon = %{epoch}:%{version}-%{release}
+Requires: %libkwmf = %{epoch}:%{version}-%{release}
+Requires: %libkwordexportfilters = %{epoch}:%{version}-%{release}
+Requires: %libkwordprivate = %{epoch}:%{version}-%{release}
+Requires: %libmsooxml = %{epoch}:%{version}-%{release}
+Requires: %libpigmentcms = %{epoch}:%{version}-%{release}
 Requires: %name-core = %{epoch}:%{version}-%{release}
 Provides: %name-devel = %{epoch}:%{version}-%{release}
 Obsoletes: %lib_name-devel
