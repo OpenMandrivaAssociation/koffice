@@ -9,7 +9,7 @@ Name: koffice
 URL: http://www.koffice.org/
 Summary: Set of office applications for KDE
 Version: 2.1.82
-Release: %mkrel 2
+Release: %mkrel 3
 Epoch: 11
 Source: http://fr2.rpmfind.net/linux/KDE/stable/koffice-%version/src/%name-%version.tar.bz2
 Group: Office
@@ -595,6 +595,7 @@ Obsoletes:      %name-karbon <= 11:1.9.95.3-0.766453.5
 Provides:       %name-karbon = %epoch:%version-%release
 Obsoletes:      koffice2-karbon < 1:1.9.95.3-0.766453.6
 Provides:       koffice2-karbon = %epoch:%version-%release
+Conflicts:      oxygen-icon-theme < 1:4.4.2-2
 
 %description -n karbon
 Karbon is a scalable drawing for kde project.
