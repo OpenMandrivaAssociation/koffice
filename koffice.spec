@@ -90,6 +90,7 @@ KOffice contains:
    * karbon: the scalable vector drawing application for KDE.
    * krita: painting and image editing application.
    * kplato: a project management.
+   * kexi: an integrated data management application.
 
 %files
 
@@ -671,7 +672,8 @@ Summary:    An integrated environment for managing data
 Group:      Graphical desktop/KDE
 Requires:   koffice-core = %epoch:%version-%release
 Conflicts:  koffice <= %epoch:1.2.1-9mdk
-Obsoletes:  kexi <= 0.1-0.beta5.5mdk    
+Obsoletes:  kexi <= 0.1-0.beta5.5mdk
+Obsoletes:  keximdb
 Provides:   %name-apps
 
 %description -n kexi
