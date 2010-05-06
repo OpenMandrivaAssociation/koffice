@@ -9,7 +9,7 @@ Name: koffice
 URL: http://www.koffice.org/
 Summary: Set of office applications for KDE
 Version: 2.1.91
-Release: %mkrel 1
+Release: %mkrel 2
 Epoch: 11
 Source: http://fr2.rpmfind.net/linux/KDE/stable/koffice-%version/src/%name-%version.tar.bz2
 Group: Office
@@ -230,7 +230,6 @@ Common files for Koffice
 %_kde_libdir/kde4/libdocximport.so
 %_kde_libdir/kde4/libkspreadhtmlimport.so
 %_kde_libdir/kde4/libpptximport.so
-%_kde_libdir/kde4/libxlsximport.so
 %_kde_libdir/kde4/vectorshape.so
 %_kde_libdir/kde4/videoshape.so
 %_kde_bindir/kthesaurus
@@ -291,26 +290,16 @@ Kword is a word processor for kde project
 %_kde_libdir/kde4/libabiwordimport.so
 %_kde_libdir/kde4/libamiproexport.so
 %_kde_libdir/kde4/libamiproimport.so
-%_kde_libdir/kde4/libapplixspreadimport.so
-%_kde_libdir/kde4/libapplixwordimport.so
-%_kde_libdir/kde4/libcsvexport.so
-%_kde_libdir/kde4/libcsvimport.so
-%_kde_libdir/kde4/libdbaseimport.so
 %_kde_libdir/kde4/libdocbookexport.so
 %_kde_libdir/kde4/libgenerickofilter.so
-%_kde_libdir/kde4/libgnumericexport.so
-%_kde_libdir/kde4/libgnumericimport.so
 %_kde_libdir/kde4/libhancomwordimport.so
 %_kde_libdir/kde4/libhtmlexport.so
 %_kde_libdir/kde4/libhtmlimport.so
 %_kde_libdir/kde4/libkounavailpart.so
 %_kde_libdir/kde4/liboowriterexport.so
 %_kde_libdir/kde4/liboowriterimport.so
-%_kde_libdir/kde4/libopencalcexport.so
-%_kde_libdir/kde4/libopencalcimport.so
 %_kde_libdir/kde4/libpalmdocexport.so
 %_kde_libdir/kde4/libpalmdocimport.so
-%_kde_libdir/kde4/libqproimport.so
 %_kde_libdir/kde4/librtfexport.so
 %_kde_libdir/kde4/librtfimport.so
 %_kde_libdir/kde4/libwmlexport.so
@@ -384,7 +373,8 @@ Obsoletes:      %name-kspread <= 11:1.9.95.3-0.766453.5
 Provides:       %name-kspread = %epoch:%version-%release
 Obsoletes:      koffice2-kspread < 1:1.9.95.3-0.766453.6
 Provides:       koffice2-kspread = %epoch:%version-%release
-Conflicts:      kword < 11:2.1.0-4
+Conflicts:      kword < 11:2.1.91-2
+Conflicts:	koffice-core < 11:2.1.91-2
 
 %description -n kspread
 KSpread is a spreadsheet for kde project
@@ -407,6 +397,17 @@ KSpread is a spreadsheet for kde project
 %_kde_libdir/kde4/kspread*
 %_kde_libdir/kde4/spreadsheetshape.so
 %_kde_libdir/kde4/libexcelimport.so
+%_kde_libdir/kde4/libcsvexport.so
+%_kde_libdir/kde4/libcsvimport.so
+%_kde_libdir/kde4/libapplixspreadimport.so
+%_kde_libdir/kde4/libapplixwordimport.so
+%_kde_libdir/kde4/libdbaseimport.so
+%_kde_libdir/kde4/libgnumericexport.so
+%_kde_libdir/kde4/libgnumericimport.so
+%_kde_libdir/kde4/libopencalcexport.so
+%_kde_libdir/kde4/libopencalcimport.so
+%_kde_libdir/kde4/libqproimport.so
+%_kde_libdir/kde4/libxlsximport.so
 %_kde_libdir/libkdeinit4_kspread.so
 %_kde_iconsdir/hicolor/*/apps/kspread.png
 %_kde_datadir/applications/kde4/kspread.desktop
