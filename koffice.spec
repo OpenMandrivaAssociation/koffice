@@ -207,6 +207,7 @@ Common files for Koffice
 %_kde_libdir/kde4/changecase.so
 %_kde_libdir/kde4/defaulttools.so
 %_kde_libdir/kde4/divineproportionshape.so
+%_kde_libdir/kde4/libgenerickofilter.so
 %_kde_libdir/kde4/kofficedockers.so
 %_kde_libdir/kde4/kofficescan.so
 %_kde_libdir/kde4/kofficethumbnail.so
@@ -286,7 +287,6 @@ Kword is a word processor for kde project
 %_kde_libdir/kde4/libasciiimport.so
 %_kde_libdir/kde4/libdocbookexport.so
 %_kde_libdir/kde4/libdocximport.so
-%_kde_libdir/kde4/libgenerickofilter.so
 %_kde_libdir/kde4/libhancomwordimport.so
 %_kde_libdir/kde4/libhtmlexport.so
 %_kde_libdir/kde4/libhtmlimport.so
