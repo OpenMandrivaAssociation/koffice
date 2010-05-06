@@ -126,11 +126,7 @@ Common files for Koffice
 %_kde_datadir/applications/kde4/koffice.desktop
 %_kde_datadir/kde4/services/spellcheck.desktop
 %_kde_libdir/kde4/spellcheck.so
-%_kde_libdir/kde4/libkarbonpdfimport.so
 %_kde_libdir/kde4/karbonfiltereffects.so
-%_kde_libdir/kde4/libicalendarexport.so
-%_kde_libdir/kde4/libpowerpointimport.so
-%_kde_libdir/kde4/libwpgimport.so
 %_kde_libdir/kde4/paragraphtool.so
 %dir %_kde_appsdir/koffice
 %_kde_appsdir/koffice/autocorrect
@@ -179,7 +175,6 @@ Common files for Koffice
 %_kde_datadir/kde4/services/textshape.desktop
 %_kde_datadir/kde4/services/textvariables.desktop
 %_kde_datadir/kde4/services/artistictextshape.desktop
-%_kde_datadir/kde4/services/Filterkpr2odf.desktop
 %_kde_datadir/kde4/services/kopabackgroundtool.desktop
 %_kde_datadir/kde4/services/paragraphtool.desktop
 %_kde_datadir/kde4/services/kolcmsengine.desktop
@@ -224,12 +219,10 @@ Common files for Koffice
 %_kde_libdir/kde4/textshape.so
 %_kde_libdir/kde4/textvariables.so
 %_kde_libdir/kde4/artistictextshape.so
-%_kde_libdir/kde4/libFilterkpr2odf.so
 %_kde_libdir/kde4/kopabackgroundtool.so
 %_kde_libdir/kde4/kolcmsengine.so
 %_kde_libdir/kde4/libdocximport.so
 %_kde_libdir/kde4/libkspreadhtmlimport.so
-%_kde_libdir/kde4/libpptximport.so
 %_kde_libdir/kde4/vectorshape.so
 %_kde_libdir/kde4/videoshape.so
 %_kde_bindir/kthesaurus
@@ -326,6 +319,7 @@ Obsoletes:      %name-kplato <= 11:1.9.95.3-0.766453.5
 Provides:       %name-kplato = %epoch:%version-%release
 Obsoletes:      koffice2-kplato < 1:1.9.95.3-0.766453.6
 Provides:       koffice2-kplato = %epoch:%version-%release
+Conflicts:	koffice-core < 11:2.1.91-2
 
 %description -n kplato
 A new project management application for koffice2.
@@ -351,6 +345,7 @@ A new project management application for koffice2.
 %_kde_libdir/kde4/krossmodulekplato.so
 %_kde_libdir/kde4/libkplatopart.so
 %_kde_libdir/kde4/libkplatoworkpart.so
+%_kde_libdir/kde4/libicalendarexport.so
 %_kde_datadir/kde4/services/kplatopart.desktop
 %_kde_datadir/kde4/services/krossmodulekplato.desktop
 %_kde_datadir/kde4/services/kplato_icalendar_export.desktop
@@ -435,6 +430,7 @@ Obsoletes:      %name-kpresenter <= 11:1.9.95.3-0.766453.5
 Provides:       %name-kpresenter = %epoch:%version-%release
 Obsoletes:      koffice2-kpresenter < 1:1.9.95.3-0.766453.6
 Provides:       koffice2-kpresenter = %epoch:%version-%release
+Conflicts:	%name-core < 11:2.1.91-2
 
 %description -n kpresenter
 KPresenter is a presentation for kde project.
@@ -460,6 +456,9 @@ KPresenter is a presentation for kde project.
 %_kde_libdir/kde4/kpresentereventactions.so 
 %_kde_libdir/kde4/kpresentertoolanimation.so
 %_kde_libdir/kde4/kprvariables.so
+%_kde_libdir/kde4/libpowerpointimport.so
+%_kde_libdir/kde4/libFilterkpr2odf.so
+%_kde_libdir/kde4/libpptximport.so
 %_kde_libdir/libkdeinit4_kpresenter.so
 %_kde_datadir/applications/kde4/kpresenter.desktop
 %_kde_datadir/kde4/services/ServiceMenus/kpresenter_konqi.desktop
@@ -480,6 +479,7 @@ KPresenter is a presentation for kde project.
 %_kde_datadir/kde4/services/kpresenter_powerpoint_import.desktop
 %_kde_datadir/kde4/services/kpresenter_pptx_import.desktop
 %_kde_datadir/kde4/services/kprvariables.desktop
+%_kde_datadir/kde4/services/Filterkpr2odf.desktop
 %_kde_datadir/kde4/servicetypes/kpr_pageeffect.desktop
 %_kde_datadir/kde4/servicetypes/kpr_shapeanimation.desktop
 %_kde_docdir/HTML/en/kpresenter
@@ -599,6 +599,7 @@ Provides:       %name-karbon = %epoch:%version-%release
 Obsoletes:      koffice2-karbon < 1:1.9.95.3-0.766453.6
 Provides:       koffice2-karbon = %epoch:%version-%release
 Conflicts:      oxygen-icon-theme < 1:4.4.2-2
+Conflicts:	koffice-core < 11:2.1.91-2
 
 %description -n karbon
 Karbon is a scalable drawing for kde project.
@@ -625,6 +626,8 @@ Karbon is a scalable drawing for kde project.
 %_kde_libdir/kde4/libwmfexport.so
 %_kde_libdir/kde4/libwmfimport.so
 %_kde_libdir/kde4/libkarbon1ximport.so
+%_kde_libdir/kde4/libkarbonpdfimport.so
+%_kde_libdir/kde4/libwpgimport.so
 %_kde_libdir/kde4/karbon_refinepathplugin.so
 %_kde_libdir/kde4/karbon_roundcornersplugin.so
 %_kde_libdir/libkdeinit4_karbon.so
