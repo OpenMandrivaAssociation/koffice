@@ -1,8 +1,3 @@
-%define lib_name_orig %mklibname koffice2
-%define lib_major 2
-%define lib_name %lib_name_orig%lib_major
-
-%define use_python 1
 %define compile_apidox 0
 
 Name: koffice
@@ -1605,7 +1600,7 @@ Requires: %libmsooxml = %{epoch}:%{version}-%{release}
 Requires: %libpigmentcms = %{epoch}:%{version}-%{release}
 Requires: %name-core = %{epoch}:%{version}-%{release}
 Provides: %name-devel = %{epoch}:%{version}-%{release}
-Obsoletes: %lib_name-devel
+Obsoletes: %{_lib}koffice22-devel
 Conflicts: koffice2-kchart < 1.9.95-0.738534.3
 Conflicts: karbon < 11:1.9.95.8-3
 Conflicts: kchart < 11:1.9.95.8-3
