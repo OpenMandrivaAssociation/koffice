@@ -1691,6 +1691,11 @@ rm -fr %buildroot
 
 %makeinstall_std -C build
 
+pushd %buildroot%_kde_appsdir/krita/brushes
+mv -f "A -lucky_star.gbr" "A-lucky_star.gbr"
+mv -f "A -lucky_star.xcf" "A-lucky_star.xcf"
+popd
+
 %if %compile_apidox
 make install-apidox DESTDIR=%buildroot/
 list=`ls -d */ -1`;
