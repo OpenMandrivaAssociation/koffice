@@ -9,7 +9,7 @@ Name: koffice
 URL: http://www.koffice.org/
 Summary: Set of office applications for KDE
 Version: 2.1.91
-Release: %mkrel 2
+Release: %mkrel 3
 Epoch: 11
 Source: http://fr2.rpmfind.net/linux/KDE/stable/koffice-%version/src/%name-%version.tar.bz2
 Group: Office
@@ -116,6 +116,7 @@ Conflicts: koffice-kchart < 11:1.6.3-20
 Conflicts: koffice-kword < 11:1.6.3-20
 Conflicts: koffice-devel < 11:1.9.98.1-3
 Conflicts: kchart < 11:1.9.98.2-4
+Conflicts: krita < 11:2.1.91-3
 Requires: kdebase4-runtime
 
 %description core
@@ -126,7 +127,6 @@ Common files for Koffice
 %_kde_applicationsdir/koffice.desktop
 %_kde_services/spellcheck.desktop
 %_kde_libdir/kde4/spellcheck.so
-%_kde_libdir/kde4/karbonfiltereffects.so
 %_kde_libdir/kde4/paragraphtool.so
 %dir %_kde_appsdir/koffice
 %_kde_appsdir/koffice/autocorrect
@@ -180,7 +180,6 @@ Common files for Koffice
 %_kde_services/kolcmsengine.desktop
 %_kde_services/vectorshape.desktop
 %_kde_services/videoshape.desktop
-%_kde_servicetypes/filtereffect.desktop
 %_kde_servicetypes/scripteventaction.desktop
 %_kde_servicetypes/flakedevice.desktop
 %_kde_servicetypes/pigmentextension.desktop
@@ -203,6 +202,9 @@ Common files for Koffice
 %exclude %_kde_datadir/templates/Presentation.desktop
 %exclude %_kde_datadir/templates/SpreadSheet.desktop
 %exclude %_kde_datadir/templates/TextDocument.desktop
+%_kde_datadir/color/icc/pigment/*.icm
+%_kde_servicetypes/pigment.desktop
+%_kde_appsdir/pigmentcms
 %_kde_libdir/kde4/autocorrect.so
 %_kde_libdir/kde4/changecase.so
 %_kde_libdir/kde4/defaulttools.so
@@ -582,9 +584,6 @@ Krita is a pixel-based image manipulation program.
 %_kde_appsdir/kritaplugins
 %_kde_configdir/kritarc
 %_kde_datadir/color/icc/krita/*.icm
-%_kde_datadir/color/icc/pigment/*.icm
-%_kde_servicetypes/pigment.desktop
-%_kde_appsdir/pigmentcms
 %_kde_datadir/mime/packages/krita_ora.xml
 
 #--------------------------------------------------------------------
@@ -601,7 +600,7 @@ Provides:       %name-karbon = %epoch:%version-%release
 Obsoletes:      koffice2-karbon < 1:1.9.95.3-0.766453.6
 Provides:       koffice2-karbon = %epoch:%version-%release
 Conflicts:      oxygen-icon-theme < 1:4.4.2-2
-Conflicts:	koffice-core < 11:2.1.91-2
+Conflicts:	koffice-core < 11:2.1.91-3
 
 %description -n karbon
 Karbon is a scalable drawing for kde project.
@@ -617,6 +616,7 @@ Karbon is a scalable drawing for kde project.
 %files -n karbon
 %defattr(-,root,root)
 %_kde_bindir/karbon
+%_kde_libdir/kde4/karbonfiltereffects.so
 %_kde_libdir/kde4/karbon_flattenpathplugin.so
 %_kde_libdir/kde4/karbon_whirlpinchplugin.so
 %_kde_libdir/kde4/karbontools.so
@@ -640,6 +640,7 @@ Karbon is a scalable drawing for kde project.
 %_kde_services/ServiceMenus/karbon_konqi.desktop
 %_kde_docdir/HTML/en/karbon
 %_kde_services/karbon*.desktop
+%_kde_servicetypes/filtereffect.desktop
 %_kde_servicetypes/karbon_module.desktop
 %exclude %_kde_datadir/templates/.source/Illustration.karbon
 
