@@ -3,8 +3,8 @@
 Name: koffice
 URL: http://www.koffice.org/
 Summary: Set of office applications for KDE
-Version: 2.1.91
-Release: %mkrel 3
+Version: 2.2.0
+Release: %mkrel 1
 Epoch: 11
 Source: http://fr2.rpmfind.net/linux/KDE/stable/koffice-%version/src/%name-%version.tar.bz2
 Group: Office
@@ -227,7 +227,6 @@ Common files for Koffice
 %_kde_bindir/koconverter
 %_kde_docdir/HTML/en/koffice
 %_kde_docdir/HTML/en/thesaurus
-%_kde_docdir/HTML/en/kivio
 # Those are installed despite their parent packages are available
 %exclude %_kde_services/ServiceMenus/kivio_konqi.desktop
 
@@ -654,7 +653,6 @@ Kformula is a formula editor for kde project.
 
 %files -n kformula
 %defattr(-,root,root)
-%_kde_bindir/kformula
 %_kde_libdir/libkdeinit_kformula.so
 %_kde_libdir/kde4/formulashape.so
 %_kde_libdir/kde4/libkformulapart.so
@@ -1674,6 +1672,10 @@ Header files needed for developing koffice2 applications.
 
 %prep
 %setup -q -n %name-%version
+# as there is no kformula binary any more, we shouldn't promote its desktop item
+cat << EOF >> kformula/kformula.desktop
+NoDisplay=true
+EOF
 
 %build
 %cmake_kde4 \
@@ -1690,11 +1692,6 @@ make apidox
 rm -fr %buildroot
 
 %makeinstall_std -C build
-
-pushd %buildroot%_kde_appsdir/krita/brushes
-mv -f "A -lucky_star.gbr" "A-lucky_star.gbr"
-mv -f "A -lucky_star.xcf" "A-lucky_star.xcf"
-popd
 
 %if %compile_apidox
 make install-apidox DESTDIR=%buildroot/
