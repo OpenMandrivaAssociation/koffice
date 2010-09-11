@@ -3,10 +3,10 @@
 Name: koffice
 URL: http://www.koffice.org/
 Summary: Set of office applications for KDE
-Version: 2.2.2
+Version: 2.2.81
 Release: %mkrel 1
 Epoch: 11
-Source: http://fr2.rpmfind.net/linux/KDE/stable/koffice-%version/src/%name-%version.tar.bz2
+Source: http://fr2.rpmfind.net/linux/KDE/unstable/koffice-%version/src/%name-%version.tar.bz2
 Group: Office
 License: GPL
 BuildRoot: %_tmppath/%name-%version-%release-root
