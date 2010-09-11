@@ -108,7 +108,7 @@ Conflicts: koffice-kspread < 11:1.6.3-20
 Conflicts: koffice-kpresenter < 11:1.6.3-20
 Conflicts: koffice-karbon < 11:1.6.3-20
 Conflicts: koffice-kchart < 11:1.6.3-20
-Conflicts: koffice-kword < 11:1.6.3-20
+Conflicts: koffice-kword < 11:2.2.81
 Conflicts: koffice-devel < 11:1.9.98.1-3
 Conflicts: kchart < 11:1.9.98.2-4
 Conflicts: krita < 11:2.1.91-3
@@ -175,6 +175,15 @@ Common files for Koffice
 %_kde_services/kolcmsengine.desktop
 %_kde_services/vectorshape.desktop
 %_kde_services/videoshape.desktop
+%_kde_services/koreport_barcodeplugin.desktop
+%_kde_services/koreport_chartplugin.desktop
+%_kde_services/koreport_shapeplugin.desktop
+%_kde_services/commentshape.desktop
+%_kde_services/commenttool.desktop
+%_kde_services/treeshape.desktop 
+%_kde_services/pluginshape.desktop
+%_kde_services/xslt_export.desktop
+%_kde_services/xslt_import.desktop
 %_kde_servicetypes/scripteventaction.desktop
 %_kde_servicetypes/flakedevice.desktop
 %_kde_servicetypes/pigmentextension.desktop
@@ -190,6 +199,7 @@ Common files for Koffice
 %_kde_servicetypes/koplugin.desktop
 %_kde_servicetypes/texteditingplugin.desktop
 %_kde_servicetypes/textvariableplugin.desktop
+%_kde_servicetypes/koreport_itemplugin.desktop
 %exclude %_kde_datadir/templates/.source/Presentation.kpt
 %exclude %_kde_datadir/templates/.source/SpreadSheet.kst
 %exclude %_kde_datadir/templates/.source/TextDocument.kwt
@@ -218,6 +228,15 @@ Common files for Koffice
 %_kde_libdir/kde4/kolcmsengine.so
 %_kde_libdir/kde4/vectorshape.so
 %_kde_libdir/kde4/videoshape.so
+%_kde_libdir/kde4/koreport_barcodeplugin.so
+%_kde_libdir/kde4/koreport_chartplugin.so
+%_kde_libdir/kde4/koreport_shapeplugin.so
+%_kde_libdir/kde4/commentshape.so
+%_kde_libdir/kde4/kofficegoogledocs.so
+%_kde_libdir/kde4/treeshape.so
+%_kde_libdir/kde4/pluginshape.so
+%_kde_libdir/kde4/libxsltexport.so
+%_kde_libdir/kde4/libxsltimport.so
 %_kde_bindir/kthesaurus
 %_kde_applicationsdir/KThesaurus.desktop
 %_kde_services/thesaurustool.desktop
@@ -269,8 +288,7 @@ Kword is a word processor for kde project
 %_kde_services/kword_*
 %_kde_services/krossmodulekword.desktop
 %_kde_services/kwordpart.desktop
-%_kde_services/xslt_export.desktop
-%_kde_services/xslt_import.desktop
+%_kde_services/html-odf_export.desktop
 %_kde_libdir/kde4/krossmodulekword.so
 %_kde_libdir/kde4/libkwordkword1dot3import.so
 %_kde_libdir/kde4/libkwordpart.so
@@ -297,9 +315,8 @@ Kword is a word processor for kde project
 %_kde_libdir/kde4/libwmlimport.so
 %_kde_libdir/kde4/libwpexport.so
 %_kde_libdir/kde4/libwpimport.so
-%_kde_libdir/kde4/libxsltexport.so
-%_kde_libdir/kde4/libxsltimport.so
 %_kde_libdir/kde4/libmswordodf_import.so
+%_kde_libdir/kde4/libhtmlodf_export.so
 %_kde_libdir/libkdeinit4_kword.so
 
 #--------------------------------------------------------------------
@@ -383,6 +400,7 @@ KSpread is a spreadsheet for kde project
 %defattr(-,root,root)
 %_kde_bindir/kspread
 %_kde_libdir/kde4/krossmodulekspread.so
+%_kde_libdir/kde4/libexcelimporttodoc.so
 %_kde_libdir/kde4/libkspreadhtmlimport.so
 %_kde_libdir/kde4/libkspreadhtmlexport.so
 %_kde_libdir/kde4/libkspreadlatexexport.so
@@ -450,6 +468,9 @@ KPresenter is a presentation for kde project.
 %_kde_libdir/kde4/kpr_pageeffect_iriswipe.so
 %_kde_libdir/kde4/kpr_pageeffect_matrixwipe.so
 %_kde_libdir/kde4/kpr_pageeffect_slidewipe.so
+%_kde_libdir/kde4/kpr_pageeffect_fade.so
+%_kde_libdir/kde4/kpr_pageeffect_spacerotation.so
+%_kde_libdir/kde4/kpr_pageeffect_swapeffect.so
 %_kde_libdir/kde4/kpr_shapeanimation_example.so
 %_kde_libdir/kde4/kpresentereventactions.so 
 %_kde_libdir/kde4/kpresentertoolanimation.so
@@ -473,6 +494,9 @@ KPresenter is a presentation for kde project.
 %_kde_services/kpr_pageeffect_matrixwipe.desktop
 %_kde_services/kpr_pageeffect_slidewipe.desktop
 %_kde_services/kpr_shapeanimation_example.desktop
+%_kde_services/kpr_pageeffect_fade.desktop
+%_kde_services/kpr_pageeffect_spacerotation.desktop
+%_kde_services/kpr_pageeffect_swapeffect.desktop
 %_kde_services/kpresentertoolanimation.desktop
 %_kde_services/kpresenter_powerpoint_import.desktop
 %_kde_services/kpresenter_pptx_import.desktop
@@ -503,26 +527,14 @@ Kchart is a chart and diagram drawing program.
 %post -n kchart
 %{update_desktop_database}
 
-
 %postun -n kchart
 %{update_desktop_database}
 
 %files -n kchart
 %defattr(-,root,root)
 %_kde_libdir/kde4/chartshape.so
-#%_kde_libdir/kde4/libkchartgenericimageexport.so
-#%_kde_libdir/kde4/libkchartsvgexport.so
 %_kde_services/chartshape.desktop
 %_kde_services/kchartpart.desktop
-#%_kde_services/kchart_bmp_export.desktop
-#%_kde_services/kchart_jpeg_export.desktop
-#%_kde_services/kchart_mng_export.desktop
-#%_kde_services/kchart_png_export.desktop
-#%_kde_services/kchart_svg_export.desktop
-#%_kde_services/kchart_xbm_export.desktop
-#%_kde_services/kchart_xpm_export.desktop
-#%{_kde_appsdir}/kchart
-#%{_kde_iconsdir}/hicolor/*/apps/kchart.png
 %_kde_docdir/HTML/en/kchart
 
 #--------------------------------------------------------------------
@@ -570,6 +582,7 @@ Krita is a pixel-based image manipulation program.
 %_kde_applicationsdir/krita_jp2.desktop
 %_kde_applicationsdir/krita_ppm.desktop
 %_kde_applicationsdir/krita_xcf.desktop
+%_kde_applicationsdir/krita_psd.desktop
 %_kde_services/ServiceMenus/krita_konqi.desktop
 %_kde_services/*krita*.desktop
 %_kde_servicetypes/*krita*.desktop
@@ -577,6 +590,7 @@ Krita is a pixel-based image manipulation program.
 %_kde_appsdir/krita
 %_kde_appsdir/kritaplugins
 %_kde_configdir/kritarc
+%_kde_configdir/krita.knsrc
 %_kde_datadir/color/icc/krita/*.icm
 %_kde_datadir/mime/packages/krita_ora.xml
 
@@ -653,6 +667,9 @@ Kformula is a formula editor for kde project.
 
 %files -n kformula
 %defattr(-,root,root)
+%_kde_bindir/kformula
+%_kde_libdir/libkdeinit_kformula.so
+%_kde_applicationsdir/kformula.desktop
 %_kde_libdir/kde4/formulashape.so
 %_kde_libdir/kde4/libkformulapart.so
 %_kde_datadir/apps/formulashape
@@ -695,6 +712,7 @@ Kexi is an integrated environment for managing data.
 %{_kde_services}/kexidb_pqxxsqldriver.desktop
 %{_kde_services}/kexidb_xbasedriver.desktop
 %{_kde_services}/kexidb_sqlite3driver.desktop
+%{_kde_services}/kexidb_sybasedriver.desktop
 %{_kde_services}/keximigrate_kspread.desktop
 %{_kde_services}/keximigrate_mdb.desktop
 %{_kde_services}/keximigrate_mysql.desktop
@@ -715,6 +733,7 @@ Kexi is an integrated environment for managing data.
 %{_kde_libdir}/kde4/kexidb_pqxxsqldriver.so
 %{_kde_libdir}/kde4/kexidb_xbasedriver.so
 %{_kde_libdir}/kde4/kexidb_sqlite3driver.so
+%{_kde_libdir}/kde4/kexidb_sybasedriver.so
 %{_kde_libdir}/kde4/kexihandler_csv_importexport.so
 %{_kde_libdir}/kde4/kexihandler_form.so
 %{_kde_libdir}/kde4/kexihandler_migration.so
@@ -730,6 +749,24 @@ Kexi is an integrated environment for managing data.
 %{_kde_libdir}/kde4/kexirelationdesignshape.so
 %{_kde_libdir}/kde4/krossmodulekexidb.so
 %{_kde_libdir}/kde4/kexihandler_report.so
+
+#--------------------------------------------------------------------
+
+%package -n okular-odp
+Summary:	ODP file renderer for Okular
+Group:		Graphical desktop/KDE
+Requires:	koffice-core = %epoch:%version-%release
+Requires:	okular
+
+%description -n okular-odp
+ODP file renderer for Okular.
+
+%files -n okular-odp
+%defattr(-,root,root)
+%_kde_libdir/kde4/okularGenerator_odp.so
+%_kde_applicationsdir/okularApplication_odp.desktop
+%_kde_services/libokularGenerator_odp.desktop
+%_kde_services/okularOdp.desktop
 
 #--------------------------------------------------------------------
 
@@ -1088,6 +1125,22 @@ Koffice 2 core library.
 
 #--------------------------------------------------------------------
 
+%define kspreadodf_major 7
+%define libkspreadodf %mklibname kspreadodf %kspreadodf_major
+
+%package -n %libkspreadodf
+Summary: Koffice 2 core library
+Group: System/Libraries
+
+%description -n %libkspreadodf
+Koffice 2 core library.
+
+%files -n %libkspreadodf
+%defattr(-,root,root)
+%_kde_libdir/libkspreadodf.so.%{kspreadodf_major}*
+
+#--------------------------------------------------------------------
+
 %define kpresenterprivate_major 7
 %define libkpresenterprivate %mklibname kpresenterprivate %kpresenterprivate_major
 
@@ -1119,25 +1172,6 @@ Koffice 2 core library.
 %_kde_libdir/libkdchart.so.%{kdchart_major}*
 
 #--------------------------------------------------------------------
-%if 0
-%define  kchartcommon_major 7
-%define  libkchartcommon %mklibname kchartcommon %kchartcommon_major
-
-%package -n %libkchartcommon
-Summary: Koffice 2 core library
-Group: System/Libraries
-
-%description -n %libkchartcommon
-Koffice 2 core library.
-
-%files -n %libkchartcommon
-%defattr(-,root,root)
-%_kde_libdir/libkchartcommon.so.%kchartcommon_major
-%_kde_libdir/libkchartcommon.so.%{kchartcommon_major}*
-
-%endif
-
-#--------------------------------------------------------------------
 
 %package -n katelier
 Summary: Krita and karbon meta package
@@ -1152,8 +1186,6 @@ Krita and karbon meta package
 %defattr(-,root,root,-)
 
 #--------------------------------------------------------------------
-
-
 
 %define  libkritaui_major 7
 %define  libkritaui %mklibname kritaui  %libkritaui_major
@@ -1333,8 +1365,6 @@ Koffice 2 core library.
 %_kde_libdir/libkformulaprivate.so.%{libkformulaprivate_major}*
 
 #--------------------------------------------------------------------
-
-
    
 %define libkexicore_major 7
 %define libkexicore %mklibname kexicore %libkexicore_major
@@ -1551,7 +1581,6 @@ Requires: %libchartshapelib = %{epoch}:%{version}-%{release}
 Requires: %libflake = %{epoch}:%{version}-%{release}
 Requires: %libkarboncommon = %{epoch}:%{version}-%{release}
 Requires: %libkarbonui = %{epoch}:%{version}-%{release}
-#Requires: %libkchartcommon = %{epoch}:%{version}-%{release}
 Requires: %libkdchart = %{epoch}:%{version}-%{release}
 Requires: %libkexicore = %{epoch}:%{version}-%{release}
 Requires: %libkexidatatable = %{epoch}:%{version}-%{release}
@@ -1591,6 +1620,7 @@ Requires: %libkritalibpaintop = %{epoch}:%{version}-%{release}
 Requires: %libkritaui = %{epoch}:%{version}-%{release}
 Requires: %libkrossmodulekrita = %{epoch}:%{version}-%{release}
 Requires: %libkspreadcommon = %{epoch}:%{version}-%{release}
+Requires: %libkspreadodf = %{epoch}:%{version}-%{release}
 Requires: %libkwmf = %{epoch}:%{version}-%{release}
 Requires: %libkwordexportfilters = %{epoch}:%{version}-%{release}
 Requires: %libkwordprivate = %{epoch}:%{version}-%{release}
@@ -1623,7 +1653,6 @@ Header files needed for developing koffice2 applications.
 %_kde_libdir/libflake.so
 %_kde_libdir/libkarboncommon.so
 %_kde_libdir/libkarbonui.so
-%_kde_libdir/libkchartcommon.so
 %_kde_libdir/libkdchart.so
 %_kde_libdir/libkochart.so
 %_kde_libdir/libkokross.so
@@ -1636,6 +1665,7 @@ Header files needed for developing koffice2 applications.
 %_kde_libdir/libkritaimage.so
 %_kde_libdir/libkritaui.so
 %_kde_libdir/libkspreadcommon.so
+%_kde_libdir/libkspreadodf.so
 %_kde_libdir/libkwmf.so
 %_kde_libdir/libkwordexportfilters.so
 %_kde_libdir/libkwordprivate.so
@@ -1672,16 +1702,12 @@ Header files needed for developing koffice2 applications.
 
 %prep
 %setup -q -n %name-%version
-# as there is no kformula binary any more, we shouldn't promote its desktop item
-cat << EOF >> kformula/kformula.desktop
-NoDisplay=true
-EOF
 
 %build
 %cmake_kde4 \
 	-DBUILD_xbase=FALSE \
 	-DFreeTDS_LIBRARIES=-lsybdb \
-    -DBUILD_kchart=TRUE -DBUILD_koreport=TRUE
+	-DBUILD_kchart=TRUE -DBUILD_koreport=TRUE
 
 %make
 %if %compile_apidox
