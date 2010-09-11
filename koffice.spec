@@ -1119,7 +1119,7 @@ Koffice 2 core library.
 %_kde_libdir/libkdchart.so.%{kdchart_major}*
 
 #--------------------------------------------------------------------
-
+%if 0
 %define  kchartcommon_major 7
 %define  libkchartcommon %mklibname kchartcommon %kchartcommon_major
 
@@ -1134,6 +1134,8 @@ Koffice 2 core library.
 %defattr(-,root,root)
 %_kde_libdir/libkchartcommon.so.%kchartcommon_major
 %_kde_libdir/libkchartcommon.so.%{kchartcommon_major}*
+
+%endif
 
 #--------------------------------------------------------------------
 
@@ -1549,7 +1551,7 @@ Requires: %libchartshapelib = %{epoch}:%{version}-%{release}
 Requires: %libflake = %{epoch}:%{version}-%{release}
 Requires: %libkarboncommon = %{epoch}:%{version}-%{release}
 Requires: %libkarbonui = %{epoch}:%{version}-%{release}
-Requires: %libkchartcommon = %{epoch}:%{version}-%{release}
+#Requires: %libkchartcommon = %{epoch}:%{version}-%{release}
 Requires: %libkdchart = %{epoch}:%{version}-%{release}
 Requires: %libkexicore = %{epoch}:%{version}-%{release}
 Requires: %libkexidatatable = %{epoch}:%{version}-%{release}
