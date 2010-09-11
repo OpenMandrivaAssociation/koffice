@@ -510,19 +510,19 @@ Kchart is a chart and diagram drawing program.
 %files -n kchart
 %defattr(-,root,root)
 %_kde_libdir/kde4/chartshape.so
-%_kde_libdir/kde4/libkchartgenericimageexport.so
-%_kde_libdir/kde4/libkchartsvgexport.so
+#%_kde_libdir/kde4/libkchartgenericimageexport.so
+#%_kde_libdir/kde4/libkchartsvgexport.so
 %_kde_services/chartshape.desktop
 %_kde_services/kchartpart.desktop
-%_kde_services/kchart_bmp_export.desktop
-%_kde_services/kchart_jpeg_export.desktop
-%_kde_services/kchart_mng_export.desktop
-%_kde_services/kchart_png_export.desktop
-%_kde_services/kchart_svg_export.desktop
-%_kde_services/kchart_xbm_export.desktop
-%_kde_services/kchart_xpm_export.desktop
-%{_kde_appsdir}/kchart
-%{_kde_iconsdir}/hicolor/*/apps/kchart.png
+#%_kde_services/kchart_bmp_export.desktop
+#%_kde_services/kchart_jpeg_export.desktop
+#%_kde_services/kchart_mng_export.desktop
+#%_kde_services/kchart_png_export.desktop
+#%_kde_services/kchart_svg_export.desktop
+#%_kde_services/kchart_xbm_export.desktop
+#%_kde_services/kchart_xpm_export.desktop
+#%{_kde_appsdir}/kchart
+#%{_kde_iconsdir}/hicolor/*/apps/kchart.png
 %_kde_docdir/HTML/en/kchart
 
 #--------------------------------------------------------------------
