@@ -3,7 +3,7 @@
 Name: koffice
 URL: http://www.koffice.org/
 Summary: Set of office applications for KDE
-Version: 2.2.81
+Version: 2.2.82
 Release: %mkrel 1
 Epoch: 11
 Source: http://fr2.rpmfind.net/linux/KDE/unstable/koffice-%version/src/%name-%version.tar.bz2
@@ -408,7 +408,6 @@ KSpread is a spreadsheet for kde project
 %_kde_libdir/kde4/libkspreadsolver.so
 %_kde_libdir/kde4/kspread*
 %_kde_libdir/kde4/spreadsheetshape.so
-%_kde_libdir/kde4/libexcelimport.so
 %_kde_libdir/kde4/libcsvexport.so
 %_kde_libdir/kde4/libcsvimport.so
 %_kde_libdir/kde4/libapplixspreadimport.so
@@ -582,7 +581,6 @@ Krita is a pixel-based image manipulation program.
 %_kde_applicationsdir/krita_jp2.desktop
 %_kde_applicationsdir/krita_ppm.desktop
 %_kde_applicationsdir/krita_xcf.desktop
-%_kde_applicationsdir/krita_psd.desktop
 %_kde_services/ServiceMenus/krita_konqi.desktop
 %_kde_services/*krita*.desktop
 %_kde_servicetypes/*krita*.desktop
@@ -752,6 +750,7 @@ Kexi is an integrated environment for managing data.
 
 #--------------------------------------------------------------------
 
+%if 0
 %package -n okular-odp
 Summary:	ODP file renderer for Okular
 Group:		Graphical desktop/KDE
@@ -767,6 +766,7 @@ ODP file renderer for Okular.
 %_kde_applicationsdir/okularApplication_odp.desktop
 %_kde_services/libokularGenerator_odp.desktop
 %_kde_services/okularOdp.desktop
+%endif
 
 #--------------------------------------------------------------------
 
