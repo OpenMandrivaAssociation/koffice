@@ -200,13 +200,6 @@ Common files for Koffice
 %_kde_servicetypes/texteditingplugin.desktop
 %_kde_servicetypes/textvariableplugin.desktop
 %_kde_servicetypes/koreport_itemplugin.desktop
-%exclude %_kde_datadir/templates/.source/Presentation.kpt
-%exclude %_kde_datadir/templates/.source/SpreadSheet.kst
-%exclude %_kde_datadir/templates/.source/TextDocument.kwt
-%exclude %_kde_datadir/templates/Illustration.desktop
-%exclude %_kde_datadir/templates/Presentation.desktop
-%exclude %_kde_datadir/templates/SpreadSheet.desktop
-%exclude %_kde_datadir/templates/TextDocument.desktop
 %_kde_datadir/color/icc/pigment/*.icm
 %_kde_servicetypes/pigment.desktop
 %_kde_appsdir/pigmentcms
@@ -246,8 +239,6 @@ Common files for Koffice
 %_kde_bindir/koconverter
 %_kde_docdir/HTML/en/koffice
 %_kde_docdir/HTML/en/thesaurus
-# Those are installed despite their parent packages are available
-%exclude %_kde_services/ServiceMenus/kivio_konqi.desktop
 
 #--------------------------------------------------------------------
 
@@ -284,6 +275,8 @@ Kword is a word processor for kde project
 %_kde_services/ServiceMenus/kword_konqi.desktop
 %_kde_configdir/kwordrc
 %_kde_appsdir/kword
+%_kde_datadir/templates/.source/TextDocument.kwt
+%_kde_datadir/templates/TextDocument.desktop
 %_kde_appsdir/xsltfilter/export/kword/xslfo/*
 %_kde_services/kword_*
 %_kde_services/krossmodulekword.desktop
@@ -423,6 +416,8 @@ KSpread is a spreadsheet for kde project
 %_kde_applicationsdir/kspread.desktop
 %_kde_services/ServiceMenus/kspread_konqi.desktop
 %_kde_appsdir/kspread
+%_kde_datadir/templates/.source/SpreadSheet.kst
+%_kde_datadir/templates/SpreadSheet.desktop
 %_kde_datadir/config/kspreadrc
 %_kde_datadir/config.kcfg/kspread.kcfg
 %_kde_docdir/HTML/en/kspread
@@ -481,6 +476,8 @@ KPresenter is a presentation for kde project.
 %_kde_applicationsdir/kpresenter.desktop
 %_kde_services/ServiceMenus/kpresenter_konqi.desktop
 %_kde_appsdir/kpresenter
+%_kde_datadir/templates/.source/Presentation.kpt
+%_kde_datadir/templates/Presentation.desktop
 %_kde_datadir/config/kpresenterrc
 %_kde_iconsdir/hicolor/*/apps/kpresenter.png
 %_kde_services/kpresenterpart.desktop
@@ -643,12 +640,13 @@ Karbon is a scalable drawing for kde project.
 %_kde_iconsdir/*/*/apps/karbon.*
 %_kde_configdir/karbonrc
 %_kde_appsdir/karbon
+%_kde_datadir/templates/.source/Illustration.karbon
+%_kde_datadir/templates/Illustration.desktop
 %_kde_services/ServiceMenus/karbon_konqi.desktop
 %_kde_docdir/HTML/en/karbon
 %_kde_services/karbon*.desktop
 %_kde_servicetypes/filtereffect.desktop
 %_kde_servicetypes/karbon_module.desktop
-%exclude %_kde_datadir/templates/.source/Illustration.karbon
 
 #--------------------------------------------------------------------
 
@@ -1730,6 +1728,8 @@ for i in $list ; do
 	cd ../;
 done;
 %endif
+
+rm -f %buildroot%_kde_services/ServiceMenus/kivio_konqi.desktop
 
 %clean
 rm -fr %buildroot
