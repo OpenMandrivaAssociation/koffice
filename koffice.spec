@@ -4,7 +4,7 @@ Name: koffice
 URL: http://www.koffice.org/
 Summary: Set of office applications for KDE
 Version: 2.2.82
-Release: %mkrel 1
+Release: %mkrel 2
 Epoch: 11
 Source: http://fr2.rpmfind.net/linux/KDE/unstable/koffice-%version/src/%name-%version.tar.bz2
 Group: Office
@@ -750,7 +750,6 @@ Kexi is an integrated environment for managing data.
 
 #--------------------------------------------------------------------
 
-%if 0
 %package -n okular-odp
 Summary:	ODP file renderer for Okular
 Group:		Graphical desktop/KDE
@@ -766,7 +765,6 @@ ODP file renderer for Okular.
 %_kde_applicationsdir/okularApplication_odp.desktop
 %_kde_services/libokularGenerator_odp.desktop
 %_kde_services/okularOdp.desktop
-%endif
 
 #--------------------------------------------------------------------
 
