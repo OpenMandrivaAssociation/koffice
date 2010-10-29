@@ -7,6 +7,7 @@ Version: 2.2.83
 Release: %mkrel 1
 Epoch: 11
 Source: http://fr2.rpmfind.net/linux/KDE/unstable/koffice-%version/src/%name-%version.tar.bz2
+Patch0: koffice-2.2.83-r1190958.patch
 Group: Office
 License: GPL
 BuildRoot: %_tmppath/%name-%version-%release-root
@@ -1697,6 +1698,7 @@ Header files needed for developing koffice2 applications.
 
 %prep
 %setup -q -n %name-%version
+%patch0 -p0
 
 %build
 %cmake_kde4 \
