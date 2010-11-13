@@ -3,11 +3,11 @@
 Name: koffice
 URL: http://www.koffice.org/
 Summary: Set of office applications for KDE
-Version: 2.2.83
+Version: 2.2.84
 Release: %mkrel 1
 Epoch: 11
 Source: http://fr2.rpmfind.net/linux/KDE/unstable/koffice-%version/src/%name-%version.tar.bz2
-Patch0: koffice-2.2.83-r1190958.patch
+Patch0: koffice-2.2.84-gcc4.5.1.patch
 Group: Office
 License: GPL
 BuildRoot: %_tmppath/%name-%version-%release-root
@@ -49,7 +49,6 @@ BuildRequires: kdegraphics4-devel
 BuildRequires: libtiff-devel
 BuildRequires: wv2-devel >= 0.4.2
 BuildRequires: getfem++
-BuildRequires: xbase-devel
 BuildRequires: ctemplate-devel
 BuildRequires: freetds-devel
 BuildRequires: sqlite-devel
@@ -184,6 +183,7 @@ Common files for Koffice
 %_kde_services/pluginshape.desktop
 %_kde_services/xslt_export.desktop
 %_kde_services/xslt_import.desktop
+%_kde_services/kodocinfopropspage.desktop
 %_kde_servicetypes/scripteventaction.desktop
 %_kde_servicetypes/flakedevice.desktop
 %_kde_servicetypes/pigmentextension.desktop
@@ -207,7 +207,6 @@ Common files for Koffice
 %_kde_libdir/kde4/changecase.so
 %_kde_libdir/kde4/defaulttools.so
 %_kde_libdir/kde4/divineproportionshape.so
-%_kde_libdir/kde4/libgenerickofilter.so
 %_kde_libdir/kde4/kofficedockers.so
 %_kde_libdir/kde4/kofficescan.so
 %_kde_libdir/kde4/kofficethumbnail.so
@@ -228,8 +227,10 @@ Common files for Koffice
 %_kde_libdir/kde4/kofficegoogledocs.so
 %_kde_libdir/kde4/treeshape.so
 %_kde_libdir/kde4/pluginshape.so
-%_kde_libdir/kde4/libxsltexport.so
-%_kde_libdir/kde4/libxsltimport.so
+%_kde_libdir/kde4/generickofilter.so
+%_kde_libdir/kde4/xsltexport.so
+%_kde_libdir/kde4/xsltimport.so
+%_kde_libdir/kde4/kodocinfopropspage.so
 %_kde_bindir/kthesaurus
 %_kde_applicationsdir/KThesaurus.desktop
 %_kde_services/thesaurustool.desktop
@@ -283,33 +284,33 @@ Kword is a word processor for kde project
 %_kde_services/kwordpart.desktop
 %_kde_services/html-odf_export.desktop
 %_kde_libdir/kde4/krossmodulekword.so
-%_kde_libdir/kde4/libkwordkword1dot3import.so
-%_kde_libdir/kde4/libkwordpart.so
-%_kde_libdir/kde4/libabiwordimport.so
-%_kde_libdir/kde4/libabiwordexport.so
-%_kde_libdir/kde4/libamiproexport.so
-%_kde_libdir/kde4/libamiproimport.so
-%_kde_libdir/kde4/libapplixwordimport.so
-%_kde_libdir/kde4/libasciiexport.so
-%_kde_libdir/kde4/libasciiimport.so
-%_kde_libdir/kde4/libdocbookexport.so
-%_kde_libdir/kde4/libdocximport.so
-%_kde_libdir/kde4/libhancomwordimport.so
-%_kde_libdir/kde4/libhtmlexport.so
-%_kde_libdir/kde4/libhtmlimport.so
-%_kde_libdir/kde4/libkounavailpart.so
-%_kde_libdir/kde4/liboowriterexport.so
-%_kde_libdir/kde4/liboowriterimport.so
-%_kde_libdir/kde4/libpalmdocexport.so
-%_kde_libdir/kde4/libpalmdocimport.so
-%_kde_libdir/kde4/librtfexport.so
-%_kde_libdir/kde4/librtfimport.so
-%_kde_libdir/kde4/libwmlexport.so
-%_kde_libdir/kde4/libwmlimport.so
-%_kde_libdir/kde4/libwpexport.so
-%_kde_libdir/kde4/libwpimport.so
-%_kde_libdir/kde4/libmswordodf_import.so
-%_kde_libdir/kde4/libhtmlodf_export.so
+%_kde_libdir/kde4/kwordkword1dot3import.so
+%_kde_libdir/kde4/kwordpart.so
+%_kde_libdir/kde4/abiwordimport.so
+%_kde_libdir/kde4/abiwordexport.so
+%_kde_libdir/kde4/amiproexport.so
+%_kde_libdir/kde4/amiproimport.so
+%_kde_libdir/kde4/applixwordimport.so
+%_kde_libdir/kde4/asciiexport.so
+%_kde_libdir/kde4/asciiimport.so
+%_kde_libdir/kde4/docbookexport.so
+%_kde_libdir/kde4/docximport.so
+%_kde_libdir/kde4/hancomwordimport.so
+%_kde_libdir/kde4/htmlexport.so
+%_kde_libdir/kde4/htmlimport.so
+%_kde_libdir/kde4/kounavailpart.so
+%_kde_libdir/kde4/oowriterexport.so
+%_kde_libdir/kde4/oowriterimport.so
+%_kde_libdir/kde4/palmdocexport.so
+%_kde_libdir/kde4/palmdocimport.so
+%_kde_libdir/kde4/rtfexport.so
+%_kde_libdir/kde4/rtfimport.so
+%_kde_libdir/kde4/wmlexport.so
+%_kde_libdir/kde4/wmlimport.so
+%_kde_libdir/kde4/wpexport.so
+%_kde_libdir/kde4/wpimport.so
+%_kde_libdir/kde4/mswordodf_import.so
+%_kde_libdir/kde4/htmlodf_export.so
 %_kde_libdir/libkdeinit4_kword.so
 
 #--------------------------------------------------------------------
@@ -351,9 +352,9 @@ A new project management application for koffice2.
 %_kde_libdir/libkdeinit4_kplato.so
 %_kde_libdir/libkdeinit4_kplatowork.so
 %_kde_libdir/kde4/krossmodulekplato.so
-%_kde_libdir/kde4/libkplatopart.so
-%_kde_libdir/kde4/libkplatoworkpart.so
-%_kde_libdir/kde4/libicalendarexport.so
+%_kde_libdir/kde4/kplatopart.so
+%_kde_libdir/kde4/kplatoworkpart.so
+%_kde_libdir/kde4/icalendarexport.so
 %_kde_services/kplatopart.desktop
 %_kde_services/krossmodulekplato.desktop
 %_kde_services/kplato_icalendar_export.desktop
@@ -393,24 +394,19 @@ KSpread is a spreadsheet for kde project
 %defattr(-,root,root)
 %_kde_bindir/kspread
 %_kde_libdir/kde4/krossmodulekspread.so
-%_kde_libdir/kde4/libexcelimporttodoc.so
-%_kde_libdir/kde4/libkspreadhtmlimport.so
-%_kde_libdir/kde4/libkspreadhtmlexport.so
-%_kde_libdir/kde4/libkspreadlatexexport.so
-%_kde_libdir/kde4/libkspreadpart.so
-%_kde_libdir/kde4/libkspreadsolver.so
-%_kde_libdir/kde4/kspread*
+%_kde_libdir/kde4/excelimporttodoc.so
+%_kde_libdir/kde4/kspread*.so
 %_kde_libdir/kde4/spreadsheetshape.so
-%_kde_libdir/kde4/libcsvexport.so
-%_kde_libdir/kde4/libcsvimport.so
-%_kde_libdir/kde4/libapplixspreadimport.so
-%_kde_libdir/kde4/libdbaseimport.so
-%_kde_libdir/kde4/libgnumericexport.so
-%_kde_libdir/kde4/libgnumericimport.so
-%_kde_libdir/kde4/libopencalcexport.so
-%_kde_libdir/kde4/libopencalcimport.so
-%_kde_libdir/kde4/libqproimport.so
-%_kde_libdir/kde4/libxlsximport.so
+%_kde_libdir/kde4/csvexport.so
+%_kde_libdir/kde4/csvimport.so
+%_kde_libdir/kde4/applixspreadimport.so
+%_kde_libdir/kde4/dbaseimport.so
+%_kde_libdir/kde4/gnumericexport.so
+%_kde_libdir/kde4/gnumericimport.so
+%_kde_libdir/kde4/opencalcexport.so
+%_kde_libdir/kde4/opencalcimport.so
+%_kde_libdir/kde4/qproimport.so
+%_kde_libdir/kde4/xlsximport.so
 %_kde_libdir/libkdeinit4_kspread.so
 %_kde_iconsdir/hicolor/*/apps/kspread.png
 %_kde_applicationsdir/kspread.desktop
@@ -455,7 +451,7 @@ KPresenter is a presentation for kde project.
 %files -n kpresenter
 %defattr(-,root,root)
 %_kde_bindir/kpresenter
-%_kde_libdir/kde4/libkpresenterpart.so
+%_kde_libdir/kde4/kpresenterpart.so
 %_kde_libdir/kde4/kpr_pageeffect_barwipe.so
 %_kde_libdir/kde4/kpr_pageeffect_clockwipe.so
 %_kde_libdir/kde4/kpr_pageeffect_edgewipe.so
@@ -469,9 +465,9 @@ KPresenter is a presentation for kde project.
 %_kde_libdir/kde4/kpresentereventactions.so 
 %_kde_libdir/kde4/kpresentertoolanimation.so
 %_kde_libdir/kde4/kprvariables.so
-%_kde_libdir/kde4/libpowerpointimport.so
-%_kde_libdir/kde4/libFilterkpr2odf.so
-%_kde_libdir/kde4/libpptximport.so
+%_kde_libdir/kde4/powerpointimport.so
+%_kde_libdir/kde4/Filterkpr2odf.so
+%_kde_libdir/kde4/pptximport.so
 %_kde_libdir/libkdeinit4_kpresenter.so
 %_kde_applicationsdir/kpresenter.desktop
 %_kde_services/ServiceMenus/kpresenter_konqi.desktop
@@ -531,7 +527,6 @@ Kchart is a chart and diagram drawing program.
 %_kde_libdir/kde4/chartshape.so
 %_kde_services/chartshape.desktop
 %_kde_services/kchartpart.desktop
-%_kde_docdir/HTML/en/kchart
 
 #--------------------------------------------------------------------
 
@@ -546,10 +541,10 @@ Obsoletes:      %name-krita < 11:1.9.95.4-1
 Provides:       %name-krita = %epoch:%version-%release
 Obsoletes:      koffice2-krita < 11:1.9.95.4-1
 Provides:       koffice2-krita = %epoch:%version-%release
-
 Obsoletes:      %{_lib}kritafilterslistdynamicprogram5 < 1:1.9.92-0.710350.1
 Obsoletes:      %{_lib}krita_gray_u165 < 1:1.9.92-0.710350.1
 Obsoletes:      %{_lib}kritargbf32hdr5 < 11:1.9.95.4-1
+Obsoletes:	%{_lib}krossmodulekrita8 < 11:2.2.84
 
 %description -n krita
 Krita is a pixel-based image manipulation program.
@@ -623,16 +618,16 @@ Karbon is a scalable drawing for kde project.
 %_kde_libdir/kde4/karbon_flattenpathplugin.so
 %_kde_libdir/kde4/karbon_whirlpinchplugin.so
 %_kde_libdir/kde4/karbontools.so
-%_kde_libdir/kde4/libkarbonpart.so
-%_kde_libdir/kde4/libkarbonpngexport.so
-%_kde_libdir/kde4/libkarbonsvgexport.so
-%_kde_libdir/kde4/libkarbonepsimport.so
-%_kde_libdir/kde4/libkarbonsvgimport.so
-%_kde_libdir/kde4/libwmfexport.so
-%_kde_libdir/kde4/libwmfimport.so
-%_kde_libdir/kde4/libkarbon1ximport.so
-%_kde_libdir/kde4/libkarbonpdfimport.so
-%_kde_libdir/kde4/libwpgimport.so
+%_kde_libdir/kde4/karbonpart.so
+%_kde_libdir/kde4/karbonpngexport.so
+%_kde_libdir/kde4/karbonsvgexport.so
+%_kde_libdir/kde4/karbonepsimport.so
+%_kde_libdir/kde4/karbonsvgimport.so
+%_kde_libdir/kde4/wmfexport.so
+%_kde_libdir/kde4/wmfimport.so
+%_kde_libdir/kde4/karbon1ximport.so
+%_kde_libdir/kde4/karbonpdfimport.so
+%_kde_libdir/kde4/wpgimport.so
 %_kde_libdir/kde4/karbon_refinepathplugin.so
 %_kde_libdir/kde4/karbon_roundcornersplugin.so
 %_kde_libdir/libkdeinit4_karbon.so
@@ -667,7 +662,7 @@ Kformula is a formula editor for kde project.
 %_kde_libdir/libkdeinit_kformula.so
 %_kde_applicationsdir/kformula.desktop
 %_kde_libdir/kde4/formulashape.so
-%_kde_libdir/kde4/libkformulapart.so
+%_kde_libdir/kde4/kformulapart.so
 %_kde_datadir/apps/formulashape
 %_kde_datadir/apps/kformula
 %_kde_iconsdir/*/*/*/kformula.png
@@ -706,7 +701,6 @@ Kexi is an integrated environment for managing data.
 %{_kde_services}/kexi
 %{_kde_services}/kexidb_mysqldriver.desktop
 %{_kde_services}/kexidb_pqxxsqldriver.desktop
-%{_kde_services}/kexidb_xbasedriver.desktop
 %{_kde_services}/kexidb_sqlite3driver.desktop
 %{_kde_services}/kexidb_sybasedriver.desktop
 %{_kde_services}/keximigrate_kspread.desktop
@@ -727,7 +721,6 @@ Kexi is an integrated environment for managing data.
 %{_kde_libdir}/kde4/kformdesigner_stdwidgets.so
 %{_kde_libdir}/kde4/kexidb_mysqldriver.so
 %{_kde_libdir}/kde4/kexidb_pqxxsqldriver.so
-%{_kde_libdir}/kde4/kexidb_xbasedriver.so
 %{_kde_libdir}/kde4/kexidb_sqlite3driver.so
 %{_kde_libdir}/kde4/kexidb_sybasedriver.so
 %{_kde_libdir}/kde4/kexihandler_csv_importexport.so
@@ -1279,22 +1272,6 @@ Koffice 2 core library.
 
 #--------------------------------------------------------------------
 
-%define  libkrossmodulekrita_major 8
-%define  libkrossmodulekrita %mklibname krossmodulekrita  %libkrossmodulekrita_major
-
-%package -n %libkrossmodulekrita
-Summary: Koffice 2 core library
-Group: System/Libraries
-
-%description -n %libkrossmodulekrita
-Koffice 2 core library.
-
-%files -n %libkrossmodulekrita
-%defattr(-,root,root)
-%_kde_libdir/libkrossmodulekrita.so.%{libkrossmodulekrita_major}*
-
-#--------------------------------------------------------------------
-
 
 %define  karboncommon_major 8
 %define  libkarboncommon %mklibname karboncommon  %karboncommon_major
@@ -1614,7 +1591,6 @@ Requires: %libkritaimage = %{epoch}:%{version}-%{release}
 Requires: %libkritalibbrush = %{epoch}:%{version}-%{release}
 Requires: %libkritalibpaintop = %{epoch}:%{version}-%{release}
 Requires: %libkritaui = %{epoch}:%{version}-%{release}
-Requires: %libkrossmodulekrita = %{epoch}:%{version}-%{release}
 Requires: %libkspreadcommon = %{epoch}:%{version}-%{release}
 Requires: %libkspreadodf = %{epoch}:%{version}-%{release}
 Requires: %libkwmf = %{epoch}:%{version}-%{release}
@@ -1691,7 +1667,6 @@ Header files needed for developing koffice2 applications.
 %_kde_libdir/libkexiutils.so
 %_kde_libdir/libkformdesigner.so
 %_kde_libdir/libkoproperty.so
-%_kde_libdir/libkrossmodulekrita.so
 %_kde_libdir/libmsooxml.so
 %_kde_libdir/libkowv2.so
 #--------------------------------------------------------------------
@@ -1701,12 +1676,9 @@ Header files needed for developing koffice2 applications.
 %patch0 -p0
 
 %build
-%cmake_kde4 \
-	-DBUILD_xbase=FALSE \
-	-DFreeTDS_LIBRARIES=-lsybdb \
-	-DBUILD_kchart=TRUE -DBUILD_koreport=TRUE
-
+%cmake_kde4 -DBUILD_xbase=FALSE
 %make
+
 %if %compile_apidox
 make apidox
 %endif
