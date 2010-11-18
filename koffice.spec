@@ -49,6 +49,7 @@ BuildRequires: kdegraphics4-devel
 BuildRequires: libtiff-devel
 BuildRequires: wv2-devel >= 0.4.2
 BuildRequires: getfem++
+BuildRequires: xbase-devel
 BuildRequires: ctemplate-devel
 BuildRequires: freetds-devel
 BuildRequires: sqlite-devel
@@ -697,6 +698,7 @@ Kexi is an integrated environment for managing data.
 %{_kde_services}/kexidb_pqxxsqldriver.desktop
 %{_kde_services}/kexidb_sqlite3driver.desktop
 %{_kde_services}/kexidb_sybasedriver.desktop
+%{_kde_services}/kexidb_xbasedriver.desktop
 %{_kde_services}/keximigrate_kspread.desktop
 %{_kde_services}/keximigrate_mdb.desktop
 %{_kde_services}/keximigrate_mysql.desktop
@@ -717,6 +719,7 @@ Kexi is an integrated environment for managing data.
 %{_kde_libdir}/kde4/kexidb_pqxxsqldriver.so
 %{_kde_libdir}/kde4/kexidb_sqlite3driver.so
 %{_kde_libdir}/kde4/kexidb_sybasedriver.so
+%{_kde_libdir}/kde4/kexidb_xbasedriver.so
 %{_kde_libdir}/kde4/kexihandler_csv_importexport.so
 %{_kde_libdir}/kde4/kexihandler_form.so
 %{_kde_libdir}/kde4/kexihandler_migration.so
