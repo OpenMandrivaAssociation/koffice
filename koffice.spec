@@ -1671,7 +1671,7 @@ Header files needed for developing koffice2 applications.
 %patch0 -p0
 
 %build
-%cmake_kde4 -DBUILD_xbase=FALSE
+%cmake_kde4
 %make
 
 %if %compile_apidox
