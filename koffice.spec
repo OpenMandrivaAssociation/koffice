@@ -3,11 +3,10 @@
 Name: koffice
 URL: http://www.koffice.org/
 Summary: Set of office applications for KDE
-Version: 2.2.84
+Version: 2.2.91
 Release: %mkrel 1
 Epoch: 11
 Source: http://fr2.rpmfind.net/linux/KDE/unstable/koffice-%version/src/%name-%version.tar.bz2
-Patch0: koffice-2.2.84-gcc4.5.1.patch
 Group: Office
 License: GPL
 BuildRoot: %_tmppath/%name-%version-%release-root
@@ -49,7 +48,6 @@ BuildRequires: kdegraphics4-devel
 BuildRequires: libtiff-devel
 BuildRequires: wv2-devel >= 0.4.2
 BuildRequires: getfem++
-BuildRequires: xbase-devel
 BuildRequires: ctemplate-devel
 BuildRequires: freetds-devel
 BuildRequires: sqlite-devel
@@ -133,7 +131,6 @@ Common files for Koffice
 %_kde_libdir/kde4/generickofilter.so
 %_kde_libdir/kde4/kodocinfopropspage.so
 %_kde_libdir/kde4/kofficedockers.so
-%_kde_libdir/kde4/kofficegoogledocs.so
 %_kde_libdir/kde4/kofficescan.so
 %_kde_libdir/kde4/kofficethumbnail.so
 %_kde_libdir/kde4/kolcmsengine.so
@@ -698,7 +695,7 @@ Kexi is an integrated environment for managing data.
 %{_kde_services}/kexidb_pqxxsqldriver.desktop
 %{_kde_services}/kexidb_sqlite3driver.desktop
 %{_kde_services}/kexidb_sybasedriver.desktop
-%{_kde_services}/kexidb_xbasedriver.desktop
+#%{_kde_services}/kexidb_xbasedriver.desktop
 %{_kde_services}/keximigrate_kspread.desktop
 %{_kde_services}/keximigrate_mdb.desktop
 %{_kde_services}/keximigrate_mysql.desktop
@@ -719,7 +716,7 @@ Kexi is an integrated environment for managing data.
 %{_kde_libdir}/kde4/kexidb_pqxxsqldriver.so
 %{_kde_libdir}/kde4/kexidb_sqlite3driver.so
 %{_kde_libdir}/kde4/kexidb_sybasedriver.so
-%{_kde_libdir}/kde4/kexidb_xbasedriver.so
+#%{_kde_libdir}/kde4/kexidb_xbasedriver.so
 %{_kde_libdir}/kde4/kexihandler_csv_importexport.so
 %{_kde_libdir}/kde4/kexihandler_form.so
 %{_kde_libdir}/kde4/kexihandler_migration.so
@@ -1671,10 +1668,9 @@ Header files needed for developing koffice2 applications.
 
 %prep
 %setup -q -n %name-%version
-%patch0 -p0
 
 %build
-%cmake_kde4
+%cmake_kde4 -DBUILD_xbase=OFF
 %make
 
 %if %compile_apidox
