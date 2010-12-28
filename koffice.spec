@@ -3,10 +3,10 @@
 Name: koffice
 URL: http://www.koffice.org/
 Summary: Set of office applications for KDE
-Version: 2.2.91
+Version: 2.3.0
 Release: %mkrel 1
 Epoch: 11
-Source: http://fr2.rpmfind.net/linux/KDE/unstable/koffice-%version/src/%name-%version.tar.bz2
+Source: http://fr2.rpmfind.net/linux/KDE/stable/koffice-%version/src/%name-%version.tar.bz2
 Group: Office
 License: GPL
 BuildRoot: %_tmppath/%name-%version-%release-root
@@ -23,6 +23,7 @@ BuildRequires: libexiv-devel
 BuildRequires: libart_lgpl-devel
 BuildRequires: libxslt-devel
 BuildRequires: libxml2-utils
+BuildRequires: xbase-devel
 BuildRequires: boost-devel
 BuildRequires: libpoppler-qt4-devel
 BuildRequires: libjbig-devel
@@ -147,8 +148,6 @@ Common files for Koffice
 %_kde_libdir/kde4/textshape.so
 %_kde_libdir/kde4/textvariables.so
 %_kde_libdir/kde4/thesaurustool.so
-%_kde_libdir/kde4/treeshape.so
-%_kde_libdir/kde4/vectorshape.so
 %_kde_libdir/kde4/videoshape.so
 %_kde_libdir/kde4/xsltexport.so
 %_kde_libdir/kde4/xsltimport.so
@@ -209,8 +208,6 @@ Common files for Koffice
 %_kde_services/textshape.desktop
 %_kde_services/textvariables.desktop
 %_kde_services/thesaurustool.desktop
-%_kde_services/treeshape.desktop
-%_kde_services/vectorshape.desktop
 %_kde_services/videoshape.desktop
 %_kde_services/xslt_export.desktop
 %_kde_services/xslt_import.desktop
@@ -695,7 +692,7 @@ Kexi is an integrated environment for managing data.
 %{_kde_services}/kexidb_pqxxsqldriver.desktop
 %{_kde_services}/kexidb_sqlite3driver.desktop
 %{_kde_services}/kexidb_sybasedriver.desktop
-#%{_kde_services}/kexidb_xbasedriver.desktop
+%{_kde_services}/kexidb_xbasedriver.desktop
 %{_kde_services}/keximigrate_kspread.desktop
 %{_kde_services}/keximigrate_mdb.desktop
 %{_kde_services}/keximigrate_mysql.desktop
@@ -716,7 +713,7 @@ Kexi is an integrated environment for managing data.
 %{_kde_libdir}/kde4/kexidb_pqxxsqldriver.so
 %{_kde_libdir}/kde4/kexidb_sqlite3driver.so
 %{_kde_libdir}/kde4/kexidb_sybasedriver.so
-#%{_kde_libdir}/kde4/kexidb_xbasedriver.so
+%{_kde_libdir}/kde4/kexidb_xbasedriver.so
 %{_kde_libdir}/kde4/kexihandler_csv_importexport.so
 %{_kde_libdir}/kde4/kexihandler_form.so
 %{_kde_libdir}/kde4/kexihandler_migration.so
@@ -1667,10 +1664,10 @@ Header files needed for developing koffice2 applications.
 #--------------------------------------------------------------------
 
 %prep
-%setup -q -n %name-%version
+%setup -qn %name-%version
 
 %build
-%cmake_kde4 -DBUILD_xbase=OFF
+%cmake_kde4
 %make
 
 %if %compile_apidox
