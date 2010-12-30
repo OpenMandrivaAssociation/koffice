@@ -23,7 +23,7 @@ BuildRequires: libexiv-devel
 BuildRequires: libart_lgpl-devel
 BuildRequires: libxslt-devel
 BuildRequires: libxml2-utils
-BuildRequires: xbase-devel
+#BuildRequires: xbase-devel
 BuildRequires: boost-devel
 BuildRequires: libpoppler-qt4-devel
 BuildRequires: libjbig-devel
@@ -692,7 +692,7 @@ Kexi is an integrated environment for managing data.
 %{_kde_services}/kexidb_pqxxsqldriver.desktop
 %{_kde_services}/kexidb_sqlite3driver.desktop
 %{_kde_services}/kexidb_sybasedriver.desktop
-%{_kde_services}/kexidb_xbasedriver.desktop
+#%{_kde_services}/kexidb_xbasedriver.desktop
 %{_kde_services}/keximigrate_kspread.desktop
 %{_kde_services}/keximigrate_mdb.desktop
 %{_kde_services}/keximigrate_mysql.desktop
@@ -713,7 +713,7 @@ Kexi is an integrated environment for managing data.
 %{_kde_libdir}/kde4/kexidb_pqxxsqldriver.so
 %{_kde_libdir}/kde4/kexidb_sqlite3driver.so
 %{_kde_libdir}/kde4/kexidb_sybasedriver.so
-%{_kde_libdir}/kde4/kexidb_xbasedriver.so
+#%{_kde_libdir}/kde4/kexidb_xbasedriver.so
 %{_kde_libdir}/kde4/kexihandler_csv_importexport.so
 %{_kde_libdir}/kde4/kexihandler_form.so
 %{_kde_libdir}/kde4/kexihandler_migration.so
