@@ -3,7 +3,7 @@
 Name: koffice
 URL: http://www.koffice.org/
 Summary: Set of office applications for KDE
-Version: 2.3.1
+Version: 2.3.2
 Release: %mkrel 1
 Epoch: 11
 Source: http://fr2.rpmfind.net/linux/KDE/stable/koffice-%version/src/%name-%version.tar.bz2
@@ -1668,7 +1668,7 @@ Header files needed for developing koffice2 applications.
 
 %build
 %cmake_kde4
-%make
+%make -j16
 
 %if %compile_apidox
 make apidox
