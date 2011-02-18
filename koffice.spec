@@ -647,17 +647,11 @@ Kformula is a formula editor for kde project.
 
 %files -n kformula
 %defattr(-,root,root)
-%_kde_bindir/kformula
-%_kde_libdir/libkdeinit_kformula.so
-%_kde_applicationsdir/kformula.desktop
 %_kde_libdir/kde4/formulashape.so
-%_kde_libdir/kde4/kformulapart.so
 %_kde_datadir/apps/formulashape
-%_kde_datadir/apps/kformula
 %_kde_iconsdir/*/*/*/kformula.png
 %_kde_services/ServiceMenus/kformula_konqi.desktop
 %_kde_services/formulashape.desktop
-%_kde_services/kformulapart.desktop
 %_kde_docdir/HTML/en/kformula
 
 #--------------------------------------------------------------------
@@ -1668,7 +1662,7 @@ Header files needed for developing koffice2 applications.
 
 %build
 %cmake_kde4
-%make -j16
+%make
 
 %if %compile_apidox
 make apidox
