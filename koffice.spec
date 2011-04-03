@@ -4,9 +4,12 @@ Name: koffice
 URL: http://www.koffice.org/
 Summary: Set of office applications for KDE
 Version: 2.3.3
-Release: %mkrel 3
+Release: %mkrel 4
 Epoch: 11
 Source: http://fr2.rpmfind.net/linux/KDE/stable/koffice-%version/src/%name-%version.tar.bz2
+Patch1: fix-crash-in-kexidb-queries-2.3.patch
+Patch2: fix-form-color-properties-2.3.patch
+Patch3: fix-inserting-required-value-2.3.patch
 Group: Office
 License: GPL
 BuildRoot: %_tmppath/%name-%version-%release-root
@@ -1659,6 +1662,9 @@ Header files needed for developing koffice2 applications.
 
 %prep
 %setup -qn %name-%version
+%patch1 -p0
+%patch2 -p0
+%patch3 -p0
 
 %build
 %cmake_kde4
