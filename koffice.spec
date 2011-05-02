@@ -11,6 +11,8 @@ Patch1: fix-crash-in-kexidb-queries-2.3.patch
 Patch2: fix-form-color-properties-2.3.patch
 Patch3: fix-inserting-required-value-2.3.patch
 Patch4: koffice-2.3.3-glibc.patch
+Patch5: koffice-2.3.2-gcc46.patch
+Patch6: koffice-2.3.1-libwpg02.patch
 Group: Office
 License: GPL
 BuildRoot: %_tmppath/%name-%version-%release-root
@@ -1667,6 +1669,8 @@ Header files needed for developing koffice2 applications.
 %patch2 -p0
 %patch3 -p0
 %patch4 -p0
+%patch5 -p1
+%patch6 -p1
 
 %build
 %cmake_kde4
