@@ -4,7 +4,7 @@ Name: koffice
 URL: http://www.koffice.org/
 Summary: Set of office applications for KDE
 Version: 2.3.3
-Release: %mkrel 5
+Release: %mkrel 6
 Epoch: 15
 Source: http://fr2.rpmfind.net/linux/KDE/stable/koffice-%version/src/%name-%version.tar.bz2
 Patch1: fix-crash-in-kexidb-queries-2.3.patch
