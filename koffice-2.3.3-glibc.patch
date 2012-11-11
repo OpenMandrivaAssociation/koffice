@@ -1,0 +1,11 @@
+--- kexi/migration/mdb/src/mdbtools/libmdb/file.c.glibc	2011-04-03 13:57:58.000000000 +0200
++++ kexi/migration/mdb/src/mdbtools/libmdb/file.c	2011-04-03 13:58:30.000000000 +0200
+@@ -167,7 +167,7 @@
+ 	open_flags |= O_BINARY;
+ #endif
+ 
+-	mdb->f->fd = open(mdb->f->filename, open_flags);
++	mdb->f->fd = open(mdb->f->filename, open_flags, 0644);
+ 
+ 	if (mdb->f->fd==-1) {
+ 		fprintf(stderr,"Couldn't open file %s\n",mdb->f->filename); 
