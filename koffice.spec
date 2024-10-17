@@ -1,7 +1,7 @@
 %define compile_apidox 0
 
 Name: koffice
-URL: http://www.koffice.org/
+URL: https://www.koffice.org/
 Summary: Set of office applications for KDE
 Version: 2.3.3
 Release: %mkrel 6
@@ -242,7 +242,7 @@ Common files for Koffice
 Summary:	Word processor for koffice2
 Group:		Graphical desktop/KDE
 Requires:	%name-core = %{epoch}:%{version}-%{release}
-URL:            http://www.koffice.org/kword
+URL:            https://www.koffice.org/kword
 Requires:	wordnet
 Provides:	%name-apps
 Provides:       kword2
@@ -314,7 +314,7 @@ Kword is a word processor for kde project
 Summary:	A new project management application for koffice2
 Group:		Graphical desktop/KDE
 Requires:	%name-core = %{epoch}:%{version}-%{release}
-URL:            http://www.koffice.org/kplato
+URL:            https://www.koffice.org/kplato
 Provides:       %name-apps
 Provides:       kplato2
 Obsoletes:      kplatowork
@@ -365,7 +365,7 @@ A new project management application for koffice2.
 Summary:	SpreadSheet for koffice2
 Group:		Graphical desktop/KDE
 Requires:	%name-core = %{epoch}:%{version}-%{release}
-URL:            http://www.koffice.org/kspread
+URL:            https://www.koffice.org/kspread
 Provides:       %name-apps
 Provides:       kspread2
 Obsoletes:      %name-kspread <= 11:1.9.95.3-0.766453.5
@@ -423,7 +423,7 @@ KSpread is a spreadsheet for kde project
 Summary:	Presentation for koffice2
 Group:		Graphical desktop/KDE
 Requires:	%name-core = %{epoch}:%{version}-%{release}
-URL:            http://www.koffice.org/kpresenter
+URL:            https://www.koffice.org/kpresenter
 Requires:	xdg-utils
 Provides:       %name-apps
 Provides:       kpresenter2
@@ -499,7 +499,7 @@ KPresenter is a presentation for kde project.
 Summary:        Chart and diagram drawing
 Group:          Graphical desktop/KDE
 Requires:       %name-core = %{epoch}:%{version}-%{release}
-URL:            http://www.koffice.org/
+URL:            https://www.koffice.org/
 Provides:       %name-apps
 Provides:       kchart2
 Obsoletes:      %name-kchart <= 11:1.9.95.3-0.766453.5
@@ -528,7 +528,7 @@ Kchart is a chart and diagram drawing program.
 %package -n krita
 Summary:        A pixel-based image manipulation program
 Group:          Graphical desktop/KDE
-URL:            http://krita.org/
+URL:            https://krita.org/
 Requires:	%name-core = %{epoch}:%{version}-%{release}
 Provides:       %name-apps
 Provides:       krita2
@@ -585,7 +585,7 @@ Krita is a pixel-based image manipulation program.
 Summary:	Scalable drawing for koffice2
 Group:		Graphical desktop/KDE
 Requires:	%name-core = %{epoch}:%{version}-%{release}
-URL:            http://www.koffice.org/karbon
+URL:            https://www.koffice.org/karbon
 Provides:       %name-apps
 Provides:       karbon2
 Obsoletes:      %name-karbon <= 11:1.9.95.3-0.766453.5
@@ -644,7 +644,7 @@ Karbon is a scalable drawing for kde project.
 Summary:        Formula Editor for koffice2
 Group:          Graphical desktop/KDE
 Requires:       %name-core = %{epoch}:%{version}-%{release}
-URL:            http://www.koffice.org/
+URL:            https://www.koffice.org/
 Provides:       %name-kformula = %epoch:%version-%release
 Conflicts:      koffice-core < 11:2.0.91
 
@@ -665,7 +665,7 @@ Kformula is a formula editor for kde project.
 %package -n kexi
 Summary:    An integrated environment for managing data
 Group:      Graphical desktop/KDE
-URL:        http://www.koffice.org/kexi
+URL:        https://www.koffice.org/kexi
 Requires:   koffice-core = %epoch:%version-%release
 Conflicts:  koffice <= %epoch:1.2.1-9mdk
 Obsoletes:  kexi <= 0.1-0.beta5.5mdk
