@@ -16,6 +16,7 @@ Patch6: koffice-2.3.1-libwpg02.patch
 Group: Office
 License: GPL
 BuildRoot: %_tmppath/%name-%version-%release-root
+BuildRequires:	make
 BuildRequires: kdelibs4-devel
 BuildRequires: kdepimlibs4-devel
 BuildRequires: lcms-devel
